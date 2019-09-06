@@ -1,0 +1,26 @@
+header {
+    display: flex;
+    background-color: rgb(57, 61, 66);
+    height: 7em;
+    justify-content: center;
+    align-items: center;
+}
+
+h1.header {
+    display: flex;
+    font-size: 2.6em;
+    color: rgb(25, 176, 247);
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.input {
+    display: flex;
+    width: 20em;
+}
+
