@@ -1,7 +1,7 @@
-## Installation
+﻿## Installation
 
 ### Clone this repository
-git clone https://github.com/msk4862/image-search.git
+git clone https://github.com/msk4862/images-search.git
 
 ### Go to working directory
 cd image-search
