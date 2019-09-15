@@ -34,17 +34,13 @@ class App extends React.Component{
   }
 
   render() {
-    const imageList = this.state.images.map((image) => {
-      return <ImageList key={image.id} image={image}/>
-    })
 
     return (
       <div className="App">
         <Header />
         <SearchBar onSubmit={this.onSearchSubmit}/>
-        Found: {this.state.images.length} images
-        
-        {imageList}
+        {/* Found: {this.state.images.length} images */}
+        <ImageList images = {this.state.images} />
       </div>
     )
   }
