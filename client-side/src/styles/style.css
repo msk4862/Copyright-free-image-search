@@ -1,6 +1,6 @@
 header {
     display: flex;
-    background-color: rgb(57, 61, 66);
+    background-color: #00204a;
     height: 7em;
     justify-content: center;
     align-items: center;
@@ -9,7 +9,7 @@ header {
 h1.header {
     display: flex;
     font-size: 2.6em;
-    color: rgb(25, 176, 247);
+    color: #00bbf0;
 }
 
 .search-bar {
