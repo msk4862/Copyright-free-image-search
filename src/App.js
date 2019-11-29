@@ -19,18 +19,18 @@ class App extends React.Component{
   //async onSearchSubmit(term) (this will required to bind in constructor)
   onSearchSubmit = async term => {
     console.log(term)
-    const response = await axios.get('https://api.unsplash.com/search/photos', {
-      params : {
-        query : term
-      },
-      headers : {
-        Authorization: 'Client-ID 2b25b83960bf91b73fd95161ff78768171fdfe41c4d55ede8d0c472c0d1402eb'
-      }
-    })
+    // const response = await axios.get('https://api.unsplash.com/search/photos', {
+    //   params : {
+    //     query : term
+    //   },
+    //   headers : {
+    //     Authorization: 'Client-ID 2b25b83960bf91b73fd95161ff78768171fdfe41c4d55ede8d0c472c0d1402eb'
+    //   }
+    // })
 
-    this.setState({
-      images : response.data.results
-    })
+    // this.setState({
+    //   images : response.data.results
+    // })
   }
 
   render() {
