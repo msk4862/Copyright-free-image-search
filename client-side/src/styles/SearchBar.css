@@ -13,16 +13,18 @@
 .search-bar .disc {
     top: 2rem;
     position: absolute;
-    width: 60%;
+    width: 50%;
 }
 
 .search-bar .disc p:nth-of-type(1) {
     font-size: 2.5rem;
 }
 
-.search-bar .disc:nth-of-type(2) {
-    font-size: 0.1rem;
+.search-bar .disc p:nth-of-type(2) {
+    font-size: 1rem;
+    margin-top: 1rem;
 }
+
 
 .form {
     margin-top: 80px;

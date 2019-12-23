@@ -32,7 +32,7 @@ class SearchBar extends React.Component {
                     <p>Stunning and copyright free images</p>
                     <p>Tired of searching images from diffrent websites? Try using NCI which 
                         searches copyright free images from across the platforms 
-                        like pixabay, unsplash, etc. and shows the results in a single platform.
+                        like pixabay, unsplash, etc. and shows you the results in a single platform.
                     </p>
                 </div>
                 <form className='ui form' onSubmit={this.handleSubmit}> 

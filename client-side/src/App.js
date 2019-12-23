@@ -1,8 +1,10 @@
 import React from 'react'
 import axios from 'axios'
+
 import Header from './components/Header'
 import SearchBar from './components/SearchBar'
 import ImageList from './components/ImageList'
+import Footer from './components/Footer'
 
 import './styles/style.css'
 
@@ -39,8 +41,8 @@ class App extends React.Component{
       <div className="App">
         <Header />
         <SearchBar onSubmit={this.onSearchSubmit}/>
-        {/* Found: {this.state.images.length} images */}
         <ImageList images = {this.state.images} />
+        <Footer/>
       </div>
     )
   }

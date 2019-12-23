@@ -9,7 +9,6 @@ function ImageList(props) {
 
     function renderList() {
         if (props.images === null) {
-            console.log('BULL')
             return <div className='empty'>Type something in search bar...</div>
         }
         return <div className='image-list'>
