@@ -45,8 +45,6 @@ NCIRouter.route('/')
         }
     }, function(err, results) {
         // results is now equals to: {one: 1, two: 2}
-        // console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-        // console.log(results.unsplash);
 
         pixImgs = JSON.parse(results.pixabay).hits
         upImgs = JSON.parse(results.unsplash).results

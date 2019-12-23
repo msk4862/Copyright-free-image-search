@@ -25,10 +25,11 @@ class App extends React.Component{
       }
     })
 
-    // this.setState({
-    //   images : response.data.results
-    // })
-    console.log(response.data.total + 'RECAT')
+    this.setState({
+      images : response.data
+    })
+    console.log((response.data))
+
   }
 
   render() {
