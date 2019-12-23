@@ -18,7 +18,6 @@
     opacity: 0;
     transition: .5s ease;
     text-align: center;
-    color: ;
 }
 
 .overlay > .link {
@@ -28,12 +27,15 @@
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 10px;
-    background-color: aqua;
+    background-color: #3f72af;
     text-decoration: none;
     color: #eeeeee;
   }
 
-  .overlay > .source {
+  .overlay > p.source {
+      margin-top: 0.5rem;
+      font-weight: 550;
+      color: #263f44;
       margin-top: 0.2rem;
   }
 

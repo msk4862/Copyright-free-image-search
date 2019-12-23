@@ -3,11 +3,16 @@
     src: url(../fonts/ncs.ttf);
 }
   
+* {
+    margin: 0;
+    padding: 0;
+    color: #f9f7f7;
+}
 
 header {
     display: flex;
     background-color: #112d4e;
-    height: 7em;
+    height: 6rem;
     justify-content: center;
     align-items: center;
 }
@@ -15,19 +20,7 @@ header {
 h1.header {
     font-family: ncs;
     display: flex;
-    color: #f9f7f7;
     font-weight: 300;
 }
 
-.search-bar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5%;
-}
-
-.input {
-    display: flex;
-    width: 35em;
-}
 

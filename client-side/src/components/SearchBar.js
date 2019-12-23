@@ -1,5 +1,7 @@
 import React from 'react'
 
+import '../styles/SearchBar.css'
+
 class SearchBar extends React.Component {
     constructor() {
         super()
@@ -26,6 +28,13 @@ class SearchBar extends React.Component {
     render () {
         return (
             <div className='search-bar'>
+                <div className='disc'>
+                    <p>Stunning and copyright free images</p>
+                    <p>Tired of searching images from diffrent websites? Try using NCI which 
+                        searches copyright free images from across the platforms 
+                        like pixabay, unsplash, etc. and shows the results in a single platform.
+                    </p>
+                </div>
                 <form className='ui form' onSubmit={this.handleSubmit}> 
                     <div className='ui icon input'>
                         <input type='text' placeholder='Search...'

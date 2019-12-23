@@ -31,7 +31,7 @@ class ImageCard extends React.Component {
             <div className='imgCard' style={{gridRowEnd : `span ${this.state.spans}`}}>
                 <img className='img' ref={this.imageRef} src={url} alt={tags}/>
                 <div className='overlay'>
-                        <p className='source'>{source}</p>
+                        <p className='source'>Source: {source.toUpperCase()}</p>
                         <a className='link' href={url}
                          target='_blank' rel="noopener noreferrer">View Image</a>
                 </div>
