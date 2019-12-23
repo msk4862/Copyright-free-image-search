@@ -12,7 +12,7 @@ class App extends React.Component{
       super()
 
       this.state = {
-        images : []
+        images : null
       }
     } 
 

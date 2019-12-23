@@ -1,5 +1,5 @@
 .image-list {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-gap: 0 5px;
@@ -8,4 +8,11 @@
 
 .image-list img {
     width: 250px;
+}
+
+div.empty {
+    margin-top: 5rem;
+    font-size: 3rem;
+    color: #758184;
+    text-align: center;
 }

@@ -2,11 +2,17 @@
     font-family: ncs;
     src: url(../fonts/ncs.ttf);
 }
-  
+
+@font-face {
+    font-family: raleway;
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+
 * {
     margin: 0;
     padding: 0;
     color: #f9f7f7;
+    font-family: raleway;
 }
 
 header {

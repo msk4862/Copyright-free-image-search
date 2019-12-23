@@ -4,13 +4,29 @@ import '../styles/ImageList.css'
 import ImageCard from './ImageCard'
 
 function ImageList(props) {
-    const imageList = props.images.map((image) => {
-        return <ImageCard key={image.id} image={image}/>
-      })
 
+    
+
+    function renderList() {
+        if (props.images === null) {
+            console.log('BULL')
+            return <div className='empty'>Type something in search bar...</div>
+        }
+        return <div className='image-list'>
+                {renderCards()}
+            </div>
+        
+    }
+
+    function renderCards() {
+        return props.images.map((image) => {
+            return <ImageCard key={image.id} image={image}/>
+        })
+    }
+    
     return (
-        <div className='image-list'>
-            {imageList}
+        <div>
+            {renderList()}
         </div>
     )
 }
