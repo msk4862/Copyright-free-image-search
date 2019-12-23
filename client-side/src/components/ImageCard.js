@@ -1,5 +1,7 @@
 import React from 'react'
 
+import '../styles/ImageCard.css'
+
 class ImageCard extends React.Component {
     constructor(props) {
         super(props)
@@ -24,10 +26,15 @@ class ImageCard extends React.Component {
 
 
     render() {
-        const {url, tags} = this.props.image
+        const {url, tags, source} = this.props.image
         return (
-            <div style={{gridRowEnd : `span ${this.state.spans}`}}>
-                <img ref={this.imageRef} src={url} alt={tags}/>
+            <div className='imgCard' style={{gridRowEnd : `span ${this.state.spans}`}}>
+                <img className='img' ref={this.imageRef} src={url} alt={tags}/>
+                <div className='overlay'>
+                        <p className='source'>{source}</p>
+                        <a className='link' href={url}
+                         target='_blank' rel="noopener noreferrer">View Image</a>
+                </div>
             </div>
         )
     }

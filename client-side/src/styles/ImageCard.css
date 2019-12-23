@@ -1,0 +1,48 @@
+.imgCard {
+    position: relative;
+}
+
+.img {
+    opacity: 1;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    z-index: 0;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: .5s ease;
+    text-align: center;
+    color: ;
+}
+
+.overlay > .link {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    background-color: aqua;
+    text-decoration: none;
+    color: #eeeeee;
+  }
+
+  .overlay > .source {
+      margin-top: 0.2rem;
+  }
+
+
+  .imgCard:hover .img {
+      opacity: 0.3;
+  }
+
+  .imgCard:hover .overlay {
+      opacity: 1;
+  }
+  

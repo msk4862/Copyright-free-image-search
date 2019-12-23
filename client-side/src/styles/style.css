@@ -1,15 +1,22 @@
+@font-face {
+    font-family: ncs;
+    src: url(../fonts/ncs.ttf);
+}
+  
+
 header {
     display: flex;
-    background-color: #00204a;
+    background-color: #112d4e;
     height: 7em;
     justify-content: center;
     align-items: center;
 }
 
 h1.header {
+    font-family: ncs;
     display: flex;
-    font-size: 2.6em;
-    color: #00bbf0;
+    color: #f9f7f7;
+    font-weight: 300;
 }
 
 .search-bar {
@@ -21,6 +28,6 @@ h1.header {
 
 .input {
     display: flex;
-    width: 20em;
+    width: 35em;
 }
 
