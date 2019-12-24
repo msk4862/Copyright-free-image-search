@@ -16,9 +16,10 @@ The page will reload if you make edits.<br />
 
 
 #### 2. Go to `server-side` folder
+> First create an environment file `.env` and add your API KEYS in it.
 ### `npm start`
 
-It will start the backend server
+It will start the backend server.
 <br />
 <br />
 ### Give it a 🌟 to show your support 😃😃 
