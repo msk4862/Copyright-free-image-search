@@ -2,25 +2,22 @@ const express = require('express')
 const request = require ('request')
 var async = require('async');
 const bodyParser = require('body-parser')
+const dotenv = require('dotenv')
 
 const NCIRouter = express.Router()
 NCIRouter.use(bodyParser.json())
-
+//for reading .env file
+dotenv.config()
 
 NCIRouter.route('/')
-//always be executed (all method)
-// .all((req, res, next) => {
-//     res.statusCode = 200
-//     res.setHeader('Content-Type', 'text/plain')
-//     next()
-// })
+
 .get((req, res, next) => {
     async.parallel({
         unsplash: function(callback) {
             var url = 'https://api.unsplash.com/search/photos?query=' + req.query.img;
 
             var headers = {
-                'Authorization': 'Client-ID 2b25b83960bf91b73fd95161ff78768171fdfe41c4d55ede8d0c472c0d1402eb'
+                'Authorization': `Client-ID ${process.env.REACT_APP_UNSPLASH_API_KEY}`
             };
 
             request.get( {url: url, headers: headers} , function (error, response, body) {
@@ -32,8 +29,7 @@ NCIRouter.route('/')
             });
         },
         pixabay: function(callback) {
-            var key = '14709044-f900eaae4148f529ec881ca47'
-            var url = `https://pixabay.com/api/?key=${key}&q=${req.query.img}`;
+            var url = `https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_API_KEY}&q=${req.query.img}`;
 
             request.get( {url: url} , function (error, response, body) {
                 if (!error && response.statusCode == 200) {
