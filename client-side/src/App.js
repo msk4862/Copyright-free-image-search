@@ -22,7 +22,7 @@ class App extends React.Component{
   //async onSearchSubmit(term) (this will required to bind in constructor)
   onSearchSubmit = async term => {
     console.log(term)
-    const response = await axios.get('http://localhost:9000/images', {
+    const response = await axios.get('http://nciserver-env.m2ecpqkmqs.ap-south-1.elasticbeanstalk.com/images', {
       params : {
         img : term
       }
@@ -38,7 +38,7 @@ class App extends React.Component{
   render() {
 
     return (
-      <div className="App">
+      <div className="d-flex flex-column App">
         <Header />
         <SearchBar onSubmit={this.onSearchSubmit}/>
         <ImageList images = {this.state.images} />

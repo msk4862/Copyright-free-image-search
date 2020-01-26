@@ -20,18 +20,12 @@ div.App, div#root {
     height: 100%;
 }
 
-header {
+.navbar {
     display: flex;
     background-color: #112d4e;
-    height: 6rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    font-family: ncs;
     justify-content: center;
     align-items: center;
 }
-
-h1.header {
-    font-family: ncs;
-    display: flex;
-    font-weight: 300;
-}
-
-

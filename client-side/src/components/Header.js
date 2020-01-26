@@ -2,9 +2,9 @@ import React from 'react'
 
 function Header() {
     return (
-        <header>
-            <h1 className='header'>No Copyright Images</h1>
-        </header>
+        <nav className='navbar'>
+            <h2>No Copyright Images</h2>
+        </nav>
     )
 }
 

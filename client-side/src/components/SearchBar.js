@@ -27,17 +27,20 @@ class SearchBar extends React.Component {
 
     render () {
         return (
-            <div className='search-bar'>
-                <div className='disc'>
-                    <p>Stunning and copyright free images</p>
-                    <p>Tired of searching images from diffrent websites? Try using NCI which 
-                        searches copyright free images from across the platforms 
-                        like pixabay, unsplash, etc. and shows you the results in a single platform.
-                    </p>
+            <div className='d-flex flex-column search-bar'>
+                <div className='d-flex justify-content-center row disc mt-auto'>
+                    <div className='col-10 col-sm-8 flex-column'>
+                        <p>Stunning and copyright free images</p>
+                        <p>Tired of searching images from diffrent websites? Try using NCI which 
+                            searches copyright free images from across the platforms 
+                            like pixabay, unsplash, etc. and shows you the results in a single platform.
+                        </p>
+                    </div>
                 </div>
-                <form className='ui form' onSubmit={this.handleSubmit}> 
-                    <div className='ui icon input'>
-                        <input type='text' placeholder='Search...'
+                
+                <form className='d-flex justify-content-center row mb-auto' onSubmit={this.handleSubmit}> 
+                    <div className='col-12 col-sm-8'>
+                        <input className='col-10 col-sm-6 form-input' type='text' placeholder='Search...'
                              name='search'
                              value={this.state.serachTerm}
                              onChange={this.handleChange}/>
