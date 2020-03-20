@@ -1,14 +1,30 @@
 .image-list {
-    margin-top: 1.5rem;
+    margin-top: 1.75rem;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-gap: 0 5px;
     grid-auto-rows: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 35px;
     min-height: calc(100vh - 120px);
 }
 
+.load {
+    height: 50px;
+    width: 50px;
+
+    animation: infinite-spinning 1s infinite linear;
+}
+
+.load-text {
+    font-size: 1rem;
+    color: #758184;
+}
+
 .empty {
+    margin-top: 5rem;
+    font-size: 3rem;
+    color: #758184;
+    text-align: center;
     margin-bottom: 20px;
     height: 170px;
 }
@@ -17,9 +33,33 @@
     width: 250px;
 }
 
-div.empty {
-    margin-top: 5rem;
-    font-size: 3rem;
-    color: #758184;
-    text-align: center;
+
+@-webkit-keyframes infinite-spinning {
+	from { 	-webkit-transform: rotate(0deg) translateX(8px) rotate(0deg); }
+	to   {  -webkit-transform: rotate(360deg) translateX(8px) rotate(-360deg); }
 }
+
+@-moz-keyframes infinite-spinning {
+	from { 	-moz-transform: rotate(0deg) translateX(8px) rotate(0deg); }
+	to   {  -moz-transform: rotate(360deg) translateX(8px) rotate(-360deg); }
+}
+
+@-o-keyframes infinite-spinning {
+	from { 	-o-transform: rotate(0deg) translateX(8px) rotate(0deg); }
+	to   {  -o-transform: rotate(360deg) translateX(8px) rotate(-360deg); }
+}
+
+@keyframes infinite-spinning {
+	from { 	transform: rotate(0deg) translateX(8px) rotate(0deg); }
+	to   {  transform: rotate(360deg) translateX(8px) rotate(-360deg); }
+}
+
+
+@media screen and (max-width: 576px) {
+    .empty {
+        margin-top: 2rem;
+        font-size: 1rem;
+        min-height: 250px;
+
+    }
+  }

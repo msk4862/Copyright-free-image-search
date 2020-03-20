@@ -28,12 +28,12 @@ class ImageCard extends React.Component {
     render() {
         const {url, tags, source} = this.props.image
         return (
-            <div className='imgCard' style={{gridRowEnd : `span ${this.state.spans}`}}>
-                <img className='img' ref={this.imageRef} src={url} alt={tags}/>
-                <div className='overlay'>
+            <div className='row imgCard justify-content-center' style={{gridRowEnd : `span ${this.state.spans}`}}>
+                <img className='col-10 col-sm-12 img' ref={this.imageRef} src={url} alt={tags}/>
+                <div className='row overlay justify-content-center'>
                         <p className='source'>Source: {source.toUpperCase()}</p>
                         <a className='link' href={url}
-                         target='_blank' rel="noopener noreferrer">View Image</a>
+                         target='_blank' rel="noopener noreferrer">View</a>
                 </div>
             </div>
         )

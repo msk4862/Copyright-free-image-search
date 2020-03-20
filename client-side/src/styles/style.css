@@ -26,6 +26,14 @@ div.App, div#root {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     font-family: ncs;
+    font-size: 2rem;
     justify-content: center;
     align-items: center;
 }
+
+
+@media screen and (max-width: 576px) {
+    .navbar {
+        font-size: 1.25rem;
+    }
+  }

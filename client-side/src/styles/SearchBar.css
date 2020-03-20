@@ -1,6 +1,6 @@
 
 .search-bar {
-    height: 300px;
+    min-height: 250px;
     background-image: url('../imgs/w2.jpg');
     text-align: center;
 }
@@ -14,7 +14,26 @@
     margin-top: 1rem;
 }
 
-
-.input {
-    box-shadow: 5px 8px 15px #000;
+form {
+    margin-bottom: 10px;
 }
+
+input {
+    margin-right: 10px;
+}
+
+
+@media screen and (max-width: 576px) {
+    .search-bar {
+        height: 250px;
+    }
+
+    .search-bar .disc p:nth-of-type(1) {
+        font-size: 1.25rem;
+    }
+    
+    .search-bar .disc p:nth-of-type(2) {
+        font-size: 0.75rem;
+        margin-top: 0.5rem;
+    }
+  }

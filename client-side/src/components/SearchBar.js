@@ -7,9 +7,8 @@ class SearchBar extends React.Component {
         super()
 
         this.state = {
-            serachTerm : ''
+            serachTerm : '',
         }
-        
         //NO need to bind while using ARROW METHODS
         //this.handleChange = this.handleChange.bind(this)
     }
@@ -31,20 +30,21 @@ class SearchBar extends React.Component {
                 <div className='d-flex justify-content-center row disc mt-auto'>
                     <div className='col-10 col-sm-8 flex-column'>
                         <p>Stunning and copyright free images</p>
-                        <p>Tired of searching images from diffrent websites? Try using NCI which 
+                        <p>Tired of searching images from diffrent websites?<br/> Try using NCI which 
                             searches copyright free images from across the platforms 
                             like pixabay, unsplash, etc. and shows you the results in a single platform.
                         </p>
                     </div>
                 </div>
                 
-                <form className='d-flex justify-content-center row mb-auto' onSubmit={this.handleSubmit}> 
-                    <div className='col-12 col-sm-8'>
-                        <input className='col-10 col-sm-6 form-input' type='text' placeholder='Search...'
-                             name='search'
-                             value={this.state.serachTerm}
-                             onChange={this.handleChange}/>
-                        <i className='search icon'></i>
+                <form className='mb-auto' onSubmit={this.handleSubmit}> 
+                    <div className='row justify-content-center'>
+                        <input className='col-10 col-sm-6 form-control' type='text' 
+                            placeholder='Type something to search...'
+                            name='search'
+                            value={this.state.serachTerm}
+                            onChange={this.handleChange}/>
+                        <button type="submit" className="btn btn-success">Search</button>
                     </div>
                 </form>
             </div>

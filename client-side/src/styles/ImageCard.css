@@ -1,5 +1,6 @@
 .imgCard {
     position: relative;
+    margin-bottom: 8.75px;
 }
 
 .img {
@@ -11,11 +12,12 @@
 
 .overlay {
     position: absolute;
-    bottom: 0;
+    opacity: 0;
     left: 0;
     right: 0;
-    opacity: 0;
-    width: 100%;
+    bottom: 0;
+
+    overflow: hidden;
     height: 0;
     transition: .5s ease;
     text-align: center;
@@ -25,19 +27,17 @@
     margin: 0;
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 10px;
+    padding: 5px 15px 5px 15px;
     background-color: #3f72af;
     text-decoration: none;
     color: #f9f7f7;
   }
 
   .overlay > p.source {
-      margin-top: 1rem;
-      font-weight: 550;
-      color: #263f44;
-      margin-top: 0.2rem;
+
+    font-weight: 550;
+    color: #263f44;
+    margin-top: 1rem;
   }
 
 
@@ -47,6 +47,6 @@
 
   .imgCard:hover .overlay {
       opacity: 1;
-      height: 90%;
-  }
+      height: 100%;
+  } 
   
