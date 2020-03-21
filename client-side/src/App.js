@@ -37,12 +37,6 @@ class App extends React.Component{
       }
     })
 
-    // const response = await API.get('http://nciserver-env.m2ecpqkmqs.ap-south-1.elasticbeanstalk.com/images', {
-    //   params : {
-    //     img : term
-    //   }
-    // })
-
     this.setState({
       loading:false,
       images : response.data
