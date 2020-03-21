@@ -14,7 +14,7 @@ NCIRouter.route('/')
 .get((req, res, next) => {
     async.parallel({
         unsplash: function(callback) {
-            var url = 'https://api.unsplash.com/search/photos?query='+req.query.img+
+            var url = 'https://api.unsplash.com/search/photos/?query='+req.query.img+
             '&per_page=30'
 
             var headers = {
@@ -31,8 +31,8 @@ NCIRouter.route('/')
         },
 
         pixabay: function(callback) {
-            var url = `https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_API_KEY}
-            &q=${req.query.img}`+'&per_page=30'
+            var url = `https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_API_KEY}`+
+            `&q=${req.query.img}&per_page=30`
 
             request.get( {url: url} , function (error, response, body) {
                 if (!error && response.statusCode == 200) {
@@ -62,7 +62,6 @@ NCIRouter.route('/')
         // result is now equals to: {one: 1, two: 2}
 
         if(!err) {
-            
             pexels = JSON.parse(results.pexels).photos
             pixImgs = JSON.parse(results.pixabay).hits
             upImgs = JSON.parse(results.unsplash).results
@@ -101,8 +100,11 @@ NCIRouter.route('/')
 
             shuffleArray(imgs)
             console.log(imgs.length)
-
-            res.writeHead(200, {"Content-Type": "application/json"});
+            
+            res.writeHead(200, {
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*",
+            });
             res.end(JSON.stringify(imgs));
         }
         else {

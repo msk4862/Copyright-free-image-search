@@ -1,6 +1,5 @@
 import React from 'react'
 
-import Header from './components/Header'
 import SearchBar from './components/SearchBar'
 import ImageList from './components/ImageList'
 import Footer from './components/Footer'
@@ -16,6 +15,7 @@ class App extends React.Component{
       this.state = {
         images : null,
         loading: false,
+        error: false,
       }
     } 
 
@@ -28,28 +28,38 @@ class App extends React.Component{
   onSearchSubmit = async term => {
     console.log(term)
     this.setState ({
+      error: false,
       loading: true
     })
 
-    const response = await API.get('images/', {
-      params : {
-        img : term
-      }
-    })
 
-    this.setState({
-      loading:false,
-      images : response.data
-    })
+    try {
+        const response = await API.get('images/', {
+        params : {
+          img : term
+        }
+      })
+
+      this.setState({
+        loading:false,
+        images : response.data
+      })
+    }
+    catch (error) {
+      this.setState({
+        loading:false,
+        error: true,
+      })
+    }
   }
+  
 
   render() {
 
     return (
       <div className="d-flex flex-column App">
-        <Header />
         <SearchBar onSubmit={this.onSearchSubmit}/>
-        <ImageList images = {this.state.images} loading={this.state.loading}/>
+        <ImageList images = {this.state.images} loading={this.state.loading} error={this.state.error}/>
         <Footer/>
       </div>
     )

@@ -9,7 +9,10 @@ function ImageList(props) {
     
 
     function renderList() {
-        if (props.images === null && !props.loading) {
+        if(props.error) {
+            return <div className='empty'>Something went wrong!</div>
+        }
+        else if (props.images === null && !props.loading) {
             return <div className='empty'>Type something in search bar...</div>
         } else if(props.loading) {
             return <div className='empty'>

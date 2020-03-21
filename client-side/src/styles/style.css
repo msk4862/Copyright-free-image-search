@@ -17,28 +17,10 @@
 
 ::-moz-selection { /* Code for Firefox */
     color: #f8f8f8;
-    background:#2cbb67;
+    background:#24436f;
   }
   
 ::selection {
     color: #f8f8f8;
-    background: #2cbb67;
-}  
-
-.navbar {
-    display: flex;
-    background-color: #112d4e;
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-    font-family: ncs;
-    font-size: 2rem;
-    justify-content: center;
-    align-items: center;
+    background: #24436f;
 }
-
-
-@media screen and (max-width: 576px) {
-    .navbar {
-        font-size: 1.25rem;
-    }
-  }

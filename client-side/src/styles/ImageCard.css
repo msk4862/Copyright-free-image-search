@@ -41,4 +41,10 @@
       opacity: 1;
       height: 100%;
   } 
-  
+
+
+  @media screen and (max-width: 576px) {
+    .imgCard {
+        margin-bottom: 3rem;
+    }
+}

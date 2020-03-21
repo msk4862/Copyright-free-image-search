@@ -1,7 +1,8 @@
 footer {
-    min-height: 100px; 
-    background-color: #112d4e;
+    min-height: 150px; 
+    background-color: #24436f;
     text-align: center;
+    bottom: 0;
   }
 
   .social {

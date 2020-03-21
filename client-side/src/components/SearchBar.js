@@ -27,6 +27,9 @@ class SearchBar extends React.Component {
     render () {
         return (
             <div className='d-flex flex-column search-bar'>
+                <div className='row header'>
+                    No Copyright Images
+                </div>
                 <div className='d-flex justify-content-center row disc mt-auto'>
                     <div className='col-10 col-sm-8 flex-column'>
                         <p>Stunning and copyright free images</p>

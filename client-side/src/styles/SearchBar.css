@@ -1,11 +1,24 @@
 
 .search-bar {
-    min-height: 300px;
-    background-image: url('../imgs/w2.jpg');
+    min-height: 420px;
+    background-image: url('../imgs/w4.jpg');
     text-align: center;
 }
 
+
+.header {
+    display: flex;
+    margin-top: 10px;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    font-family: ncs;
+    font-size: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
 .search-bar .disc p {
+    margin-top: 0.5rem;
     font-family: Verdana, Geneva, sans-serif; 
 }
 
@@ -15,10 +28,11 @@
 
 .search-bar .disc p:nth-of-type(2) {
     font-size: 1rem;
-    margin-top: 1rem;
+    margin-top: 0.15rem;
 }
 
 form {
+    margin-top: 1.25rem;
     margin-bottom: 15px;
 }
 
@@ -29,14 +43,18 @@ input {
 
 @media screen and (max-width: 576px) {
     .search-bar {
-        min-height: 300px;
+        min-height: 400px;
+    }
+
+    .header {
+        font-size: 1.25rem;
     }
 
     .btn {
         margin-top: 10px;
     }
     .search-bar .disc p:nth-of-type(1) {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
     }
     
     .search-bar .disc p:nth-of-type(2) {
