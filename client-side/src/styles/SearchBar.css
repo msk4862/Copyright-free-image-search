@@ -1,8 +1,12 @@
 
 .search-bar {
-    min-height: 250px;
+    min-height: 300px;
     background-image: url('../imgs/w2.jpg');
     text-align: center;
+}
+
+.search-bar .disc p {
+    font-family: Verdana, Geneva, sans-serif; 
 }
 
 .search-bar .disc p:nth-of-type(1) {
@@ -15,7 +19,7 @@
 }
 
 form {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 input {
@@ -25,9 +29,12 @@ input {
 
 @media screen and (max-width: 576px) {
     .search-bar {
-        height: 250px;
+        min-height: 300px;
     }
 
+    .btn {
+        margin-top: 10px;
+    }
     .search-bar .disc p:nth-of-type(1) {
         font-size: 1.25rem;
     }

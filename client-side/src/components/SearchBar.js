@@ -30,9 +30,9 @@ class SearchBar extends React.Component {
                 <div className='d-flex justify-content-center row disc mt-auto'>
                     <div className='col-10 col-sm-8 flex-column'>
                         <p>Stunning and copyright free images</p>
-                        <p>Tired of searching images from diffrent websites?<br/> Try using NCI which 
-                            searches copyright free images from across the platforms 
-                            like pixabay, unsplash, etc. and shows you the results in a single platform.
+                        <p>Tired of searching images from diffrent websites?<br/> Try using NCI which
+                            searches copyright free images from across 
+                            the most popular platforms and shows you the results in a single platform.
                         </p>
                     </div>
                 </div>

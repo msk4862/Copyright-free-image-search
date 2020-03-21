@@ -18,7 +18,7 @@ class ImageCard extends React.Component {
     }
 
     setSpan = () => {
-        console.log(this.imageRef.current.clientHeight)
+        // console.log(this.imageRef.current.clientHeight)
         // grid-auto-rows=10 in css
         const span = Math.ceil(this.imageRef.current.clientHeight / 10)
         this.setState({spans : span})

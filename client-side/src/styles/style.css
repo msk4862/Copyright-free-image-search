@@ -15,10 +15,15 @@
     font-family: raleway;
 }
 
-div.App, div#root {
-    margin: 0;
-    height: 100%;
-}
+::-moz-selection { /* Code for Firefox */
+    color: #f8f8f8;
+    background:#2cbb67;
+  }
+  
+::selection {
+    color: #f8f8f8;
+    background: #2cbb67;
+}  
 
 .navbar {
     display: flex;
