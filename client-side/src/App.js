@@ -1,11 +1,11 @@
 import React from 'react'
-import axios from 'axios'
 
 import Header from './components/Header'
 import SearchBar from './components/SearchBar'
 import ImageList from './components/ImageList'
 import Footer from './components/Footer'
 
+import API from './apis/imageAPI'
 import './styles/style.css'
 
 class App extends React.Component{
@@ -31,11 +31,17 @@ class App extends React.Component{
       loading: true
     })
 
-    const response = await axios.get('http://nciserver-env.m2ecpqkmqs.ap-south-1.elasticbeanstalk.com/images', {
+    const response = await API.get('images/', {
       params : {
         img : term
       }
     })
+
+    // const response = await API.get('http://nciserver-env.m2ecpqkmqs.ap-south-1.elasticbeanstalk.com/images', {
+    //   params : {
+    //     img : term
+    //   }
+    // })
 
     this.setState({
       loading:false,

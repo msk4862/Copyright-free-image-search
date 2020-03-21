@@ -19,10 +19,11 @@ app.use('/images', NCIRouter)
 app.use(express.static(__dirname + '/public'))
 
 app.use((req, res, next) => {
-  console.log(req.headers)
   res.statusCode = 200
   res.setHeader('Content-Type', 'test/html')
-  res.end('<html><body>Hello from this side!!!</body></html>')
+  res.end(
+    '<html><body>Hello sunshine!!!<br\>Use <code>/images</code> route to search photos!</body></html>'
+    )
 })
 
 const server = http.createServer(app)

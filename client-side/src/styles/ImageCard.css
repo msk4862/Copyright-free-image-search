@@ -27,19 +27,11 @@
     margin: 0;
     position: absolute;
     top: 50%;
-    padding: 5px 15px 5px 15px;
+    padding: 5px 10px 5px 10px;
     background-color: #3f72af;
     text-decoration: none;
     color: #f9f7f7;
   }
-
-  .overlay > p.source {
-
-    font-weight: 550;
-    color: #263f44;
-    margin-top: 1rem;
-  }
-
 
   .imgCard:hover .img {
       opacity: 0.3;

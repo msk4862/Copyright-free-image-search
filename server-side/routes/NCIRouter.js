@@ -14,7 +14,8 @@ NCIRouter.route('/')
 .get((req, res, next) => {
     async.parallel({
         unsplash: function(callback) {
-            var url = 'https://api.unsplash.com/search/photos?query=' + req.query.img;
+            var url = 'https://api.unsplash.com/search/photos?query='+req.query.img+
+            '&per_page=30'
 
             var headers = {
                 'Authorization': `Client-ID ${process.env.REACT_APP_UNSPLASH_API_KEY}`
@@ -28,8 +29,10 @@ NCIRouter.route('/')
                 }
             });
         },
+
         pixabay: function(callback) {
-            var url = `https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_API_KEY}&q=${req.query.img}`;
+            var url = `https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_API_KEY}
+            &q=${req.query.img}`+'&per_page=30'
 
             request.get( {url: url} , function (error, response, body) {
                 if (!error && response.statusCode == 200) {
@@ -38,39 +41,73 @@ NCIRouter.route('/')
                     callback(error, {})
                 }
             });
+        },
+
+        pexels: function(callback) {
+            var url = 'https://api.pexels.com/v1/search?query='+req.query.img+'&per_page=30&page=2'
+
+            var headers = {
+                'Authorization' : process.env.REACT_APP_PEXELS_API_KEY
+            }
+
+            request.get({url, headers}, function(error, response, body) {
+                if(!error && response.statusCode == 200) {
+                    callback(null, body)
+                } else {
+                    callback(error, null);
+                }
+            });
         }
     }, function(err, results) {
-        // results is now equals to: {one: 1, two: 2}
+        // result is now equals to: {one: 1, two: 2}
 
-        pixImgs = JSON.parse(results.pixabay).hits
-        upImgs = JSON.parse(results.unsplash).results
+        if(!err) {
+            
+            pexels = JSON.parse(results.pexels).photos
+            pixImgs = JSON.parse(results.pixabay).hits
+            upImgs = JSON.parse(results.unsplash).results
+            
+            imgs = []
 
+            //Pexels
+            for (img in pexels) {
+                imgs.push({
+                    id: pexels[img].id,
+                    url: pexels[img].url,
+                    tags: null,
+                    src: pexels[img].src.medium
+                })
+            }
+            
+            //Pixabay
+            for (img in pixImgs) {
+                imgs.push({
+                    id: pixImgs[img].id,
+                    url: pixImgs[img].pageURL,
+                    tags: pixImgs[img].tags,
+                    src: pixImgs[img].webformatURL
+                })
+            }
 
-        imgs = []
-        for (img in pixImgs) {
-            imgs.push({
-                id: pixImgs[img].id,
-                url: pixImgs[img].webformatURL,
-                tags: pixImgs[img].tags,
-                source: 'pixabay'
-            })
+            //Unsplash
+            for (img in upImgs) {
+                imgs.push({
+                    id: upImgs[img].id,
+                    url: upImgs[img].links.html,
+                    tags: upImgs[img].alt_description,
+                    src: upImgs[img].urls.regular
+                })
+            }
+
+            shuffleArray(imgs)
+            console.log(imgs.length)
+
+            res.writeHead(200, {"Content-Type": "application/json"});
+            res.end(JSON.stringify(imgs));
         }
-
-        for (img in upImgs) {
-            imgs.push({
-                id: upImgs[img].id,
-                url: upImgs[img].urls.regular,
-                tags: upImgs[img].alt_description,
-                source: 'unsplash'
-            })
+        else {
+            res.json({'error': err})
         }
-
-
-        shuffleArray(imgs)
-        console.log(imgs.length)
-
-        res.writeHead(200, {"Content-Type": "application/json"});
-        res.end(JSON.stringify(imgs));
       });
     
 
