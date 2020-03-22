@@ -8,6 +8,9 @@
     transition: .5s ease;
     backface-visibility: hidden;
     z-index: 0;
+
+    height: 100%;   
+
 }
 
 .overlay {
@@ -21,6 +24,7 @@
     height: 0;
     transition: .5s ease;
     text-align: center;
+
 }
 
 .overlay > .link {
@@ -41,10 +45,3 @@
       opacity: 1;
       height: 100%;
   } 
-
-
-  @media screen and (max-width: 576px) {
-    .imgCard img {
-        height: 100%;
-    }
-}
