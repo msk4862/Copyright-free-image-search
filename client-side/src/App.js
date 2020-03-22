@@ -35,9 +35,9 @@ class App extends React.Component{
 
     try {
         const response = await API.get('images/', {
-        params : {
-          img : term
-        }
+          params : {
+            img : term
+          }
       })
 
       this.setState({

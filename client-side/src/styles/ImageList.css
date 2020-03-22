@@ -5,8 +5,6 @@
     grid-gap: 0 5px;
     grid-auto-rows: 10px;
     min-height: calc(100vh - 120px);
-
-    margin-bottom: 50px;
 }
 
 .load {
@@ -61,6 +59,5 @@
         margin-top: 2rem;
         font-size: 1rem;
         min-height: 250px;
-
     }
   }
