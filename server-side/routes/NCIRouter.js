@@ -9,13 +9,15 @@ NCIRouter.use(bodyParser.json())
 //for reading .env file
 dotenv.config()
 
+const imageCount = 50
+
 NCIRouter.route('/')
 
 .get((req, res, next) => {
     async.parallel({
         unsplash: function(callback) {
             var url = 'https://api.unsplash.com/search/photos/?query='+req.query.img+
-            '&per_page=30'
+            '&per_page='+imageCount
 
             var headers = {
                 'Authorization': `Client-ID ${process.env.REACT_APP_UNSPLASH_API_KEY}`
@@ -32,7 +34,7 @@ NCIRouter.route('/')
 
         pixabay: function(callback) {
             var url = `https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_API_KEY}`+
-            `&q=${req.query.img}&per_page=30`
+            `&q=${req.query.img}&per_page=`+imageCount
 
             request.get( {url: url} , function (error, response, body) {
                 if (!error && response.statusCode == 200) {
@@ -44,7 +46,7 @@ NCIRouter.route('/')
         },
 
         pexels: function(callback) {
-            var url = 'https://api.pexels.com/v1/search?query='+req.query.img+'&per_page=30&page=2'
+            var url = 'https://api.pexels.com/v1/search?query='+req.query.img+'&per_page='+imageCount+'&page=2'
 
             var headers = {
                 'Authorization' : process.env.REACT_APP_PEXELS_API_KEY
