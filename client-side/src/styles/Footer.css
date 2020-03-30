@@ -9,8 +9,13 @@ footer {
     margin: 20px 0 15px 0;
   }
 
-  .copyright {
-    bottom: 0;
+  .social i {
+    transition: transform 0.35s;
+
+  }
+
+  .social i:hover{
+    transform: scale(1.35);
   }
 
   .fab {
