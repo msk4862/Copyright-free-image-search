@@ -20,14 +20,14 @@ function Pagination(props) {
             if (number === props.currentPage) {    
 
                 return <li key={number} className='page-item active'>
-                        <a onClick={() => props.paginate(number)} href='!#' className='page-link'>
+                        <a onClick={() => props.paginate(number)} href='#' className='page-link'>
                             {number}
                         </a>
                     </li>    
             } else {
                 
                 return <li key={number} className='page-item'>
-                    <a onClick={() => props.paginate(number)} href='!#' className='page-link'>
+                    <a onClick={() => props.paginate(number)} href='#' className='page-link'>
                         {number}
                     </a>
                 </li>
