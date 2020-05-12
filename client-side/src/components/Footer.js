@@ -1,11 +1,12 @@
 import React from "react";
 
 import "../styles/Footer.css";
-import {  SOCIAL_GITHUB,
-          SOCIAL_LINKEDIN,
-          SOCIAL_FACEBOOK,
-          SOCIAL_TWITTER,  
-        } from '../uitilities/Constants'
+import {
+  SOCIAL_GITHUB,
+  SOCIAL_LINKEDIN,
+  SOCIAL_FACEBOOK,
+  SOCIAL_TWITTER,
+} from "../uitilities/Constants";
 
 function Footer() {
   return (
@@ -28,7 +29,9 @@ function Footer() {
           </div>
         </div>
         <div className="row copyright justify-content-center">
-          <p className="col-12 col-sm-6">Copyright &#x24B8; {new Date().getFullYear()} NCI.</p>
+          <p className="col-12 col-sm-6">
+            Copyright &#x24B8; {new Date().getFullYear()} NCI.
+          </p>
         </div>
       </div>
     </footer>

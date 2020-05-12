@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "format": "prettier \"./**/*.js\" --write",
     "start": "node app.js"
   },
   "author": "",
@@ -17,5 +18,8 @@
     "http": "0.0.0",
     "morgan": "^1.9.1",
     "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.0.5"
   }
 }

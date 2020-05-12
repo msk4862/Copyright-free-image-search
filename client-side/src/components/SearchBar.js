@@ -1,7 +1,7 @@
 import React from "react";
 
 import "../styles/SearchBar.css";
-import { TITLE } from '../uitilities/Constants'
+import { TITLE } from "../uitilities/Constants";
 
 class SearchBar extends React.Component {
   constructor() {

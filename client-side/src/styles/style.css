@@ -1,26 +1,27 @@
 @font-face {
-    font-family: ncs;
-    src: url(../fonts/ncs.ttf);
+  font-family: ncs;
+  src: url(../fonts/ncs.ttf);
 }
 
 @font-face {
-    font-family: raleway;
-    src: url(../fonts/Roboto-Regular.ttf);
+  font-family: raleway;
+  src: url(../fonts/Roboto-Regular.ttf);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    color: #f9f7f7;
-    font-family: raleway;
+  margin: 0;
+  padding: 0;
+  color: #f9f7f7;
+  font-family: raleway;
 }
 
-::-moz-selection { /* Code for Firefox */
-    color: #f8f8f8;
-    background:#24436f;
-  }
-  
+::-moz-selection {
+  /* Code for Firefox */
+  color: #f8f8f8;
+  background: #24436f;
+}
+
 ::selection {
-    color: #f8f8f8;
-    background: #24436f;
+  color: #f8f8f8;
+  background: #24436f;
 }

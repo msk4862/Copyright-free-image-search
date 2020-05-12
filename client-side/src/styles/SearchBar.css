@@ -1,73 +1,71 @@
-
 .search-bar {
-    min-height: 420px;
-    background-image: url('../imgs/w4.jpg');
-    text-align: center;
+  min-height: 420px;
+  background-image: url("../imgs/w4.jpg");
+  text-align: center;
 }
 
-
 .header {
-    display: flex;
-    margin-top: 10px;
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-    font-family: ncs;
-    font-size: 2rem;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  margin-top: 10px;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-family: ncs;
+  font-size: 2rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .search-bar .disc p {
-    margin-top: 0.5rem;
-    font-family: Verdana, Geneva, sans-serif; 
+  margin-top: 0.5rem;
+  font-family: Verdana, Geneva, sans-serif;
 }
 
 .search-bar .disc p:nth-of-type(1) {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 
 .search-bar .disc p:nth-of-type(2) {
-    font-size: 1rem;
-    margin-top: 0.15rem;
+  font-size: 1rem;
+  margin-top: 0.15rem;
 }
 
 form {
-    margin-top: 1.25rem;
-    margin-bottom: 15px;
+  margin-top: 1.25rem;
+  margin-bottom: 15px;
 }
 
 input {
-    margin-right: 10px;
-    box-shadow: 5px 8px 2px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 5px 8px 2px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 5px 8px 2px rgba(0, 0, 0, 0.3);
+  margin-right: 10px;
+  box-shadow: 5px 8px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 5px 8px 2px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 5px 8px 2px rgba(0, 0, 0, 0.3);
 }
 
 form .btn {
-    box-shadow: 5px 8px 2px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 5px 8px 2px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 5px 8px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 5px 8px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 5px 8px 2px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 5px 8px 2px rgba(0, 0, 0, 0.3);
 }
 
 @media screen and (max-width: 576px) {
-    .search-bar {
-        min-height: 400px;
-    }
-
-    .header {
-        font-size: 1.25rem;
-    }
-
-    form .btn {
-        margin-top: 10px;
-    }
-
-    .search-bar .disc p:nth-of-type(1) {
-        font-size: 1.5rem;
-    }
-    
-    .search-bar .disc p:nth-of-type(2) {
-        font-size: 0.75rem;
-        margin-top: 0.5rem;
-    }
+  .search-bar {
+    min-height: 400px;
   }
+
+  .header {
+    font-size: 1.25rem;
+  }
+
+  form .btn {
+    margin-top: 10px;
+  }
+
+  .search-bar .disc p:nth-of-type(1) {
+    font-size: 1.5rem;
+  }
+
+  .search-bar .disc p:nth-of-type(2) {
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+  }
+}

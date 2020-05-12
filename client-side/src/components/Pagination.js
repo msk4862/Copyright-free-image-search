@@ -12,7 +12,6 @@ const getPagenumbers = (totalImages, imagesPerPage) => {
 };
 
 function Pagination(props) {
-  
   function renderPageNumbers() {
     const pageNumbers = getPagenumbers(props.totalImages, props.imagesPerPage);
 
