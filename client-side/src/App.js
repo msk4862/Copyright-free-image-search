@@ -24,8 +24,7 @@ class App extends React.Component {
     var DEFAULT = "nature";
     this.onSearchSubmit(DEFAULT);
   }
-  //use async with non-arrow methods
-  //async onSearchSubmit(term) (this will required to bind in constructor)
+
   onSearchSubmit = async (term) => {
     console.log(term);
     this.setState({

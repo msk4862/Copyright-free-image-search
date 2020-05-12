@@ -6,11 +6,11 @@
     "axios": "^0.19.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-scripts": "^3.3.0",
+    "react-scripts": "^3.4.0",
     "serialize-javascript": "^2.1.1"
   },
   "scripts": {
-    "format": "prettier \"src/**/*.{js,html}\" --write",
+    "format": "prettier \"src/**/*.{js,html,css}\" --write",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
