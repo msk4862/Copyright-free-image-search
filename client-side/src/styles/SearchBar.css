@@ -1,6 +1,7 @@
 .search-bar {
   min-height: 420px;
-  background-image: url("../imgs/w4.jpg");
+  background-image: url("../assets/imgs/w4.webp"),
+  url("../assets/imgs//w4.jpg");
   text-align: center;
 }
 
