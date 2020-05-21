@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 
 import "../styles/ImageList.css";
 import ImageCard from "./ImageCard";

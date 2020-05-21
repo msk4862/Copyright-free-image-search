@@ -1,7 +1,7 @@
 import React from "react";
 
 import "../styles/SearchBar.css";
-import { TITLE } from "../uitilities/Constants";
+import { TITLE, TEXTS } from "../uitilities/Constants";
 
 class SearchBar extends React.Component {
   constructor() {
@@ -31,12 +31,9 @@ class SearchBar extends React.Component {
         <div className="row header">{TITLE}</div>
         <div className="d-flex justify-content-center row disc mt-auto">
           <div className="col-10 col-sm-8 flex-column">
-            <p>Stunning and copyright free images</p>
+            <p>{TEXTS.h1}</p>
             <p>
-              Tired of searching images from diffrent websites?
-              <br /> Try using NCI which searches copyright free images from
-              across the most popular platforms and shows you the results in a
-              single platform.
+              {TEXTS.h2}
             </p>
           </div>
         </div>
