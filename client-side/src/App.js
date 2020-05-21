@@ -1,12 +1,16 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 
 import SearchBar from "./components/SearchBar";
-import ImageList from "./components/ImageList";
-import Pagination from "./components/Pagination";
+// import ImageList from "./components/ImageList";
+// import Pagination from "./components/Pagination";
 import Footer from "./components/Footer";
 
 import API from "./apis/imageAPI";
 import "./styles/style.css";
+
+// using lazy loading
+const ImageList = lazy(()=> import("./components/ImageList"))
+const Pagination = lazy(()=> import("./components/Pagination"))
 
 class App extends React.Component {
   constructor() {
@@ -79,17 +83,21 @@ class App extends React.Component {
     return (
       <div className="d-flex flex-column App">
         <SearchBar onSubmit={this.onSearchSubmit} />
-        <ImageList
-          images={currentImages}
-          loading={this.state.loading}
-          error={this.state.error}
-        />
-        <Pagination
-          totalImages={totalImages}
-          imagesPerPage={this.state.imagesPerPage}
-          currentPage={this.state.currentPage}
-          paginate={this.paginate}
-        />
+        <Suspense fallback={<h1>Loading...</h1>}>
+          <ImageList
+            images={currentImages}
+            loading={this.state.loading}
+            error={this.state.error}
+          />
+        </Suspense>
+        <Suspense fallback={<h1>Loading...</h1>}>
+          <Pagination
+            totalImages={totalImages}
+            imagesPerPage={this.state.imagesPerPage}
+            currentPage={this.state.currentPage}
+            paginate={this.paginate}
+          />
+        </Suspense>
         <Footer />
       </div>
     );
