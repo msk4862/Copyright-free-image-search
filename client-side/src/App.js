@@ -89,8 +89,6 @@ class App extends React.Component {
             loading={this.state.loading}
             error={this.state.error}
           />
-        </Suspense>
-        <Suspense fallback={<h1>Loading...</h1>}>
           <Pagination
             totalImages={totalImages}
             imagesPerPage={this.state.imagesPerPage}
