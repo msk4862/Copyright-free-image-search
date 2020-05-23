@@ -37,23 +37,24 @@ class App extends React.Component {
       currentPage: 1,
     });
 
-    try {
-      const response = await API.get("images/", {
+      await API.get("images/", {
         params: {
           img: term,
         },
-      });
-
-      this.setState({
-        loading: false,
-        images: response.data,
-      });
-    } catch (error) {
-      this.setState({
-        loading: false,
-        error: true,
-      });
-    }
+      })
+      .then(res => {
+        this.setState({
+          loading: false,
+          images: res.data,
+        });  
+      })
+      .catch(err => {
+        console.log(err);
+        this.setState({
+          loading: false,
+          error: true,
+        });
+    });
   };
 
   //Change page number
@@ -67,7 +68,7 @@ class App extends React.Component {
     let currentImages = null;
     let totalImages = 0;
     if (this.state.images) {
-      //Get current posts
+      //Get current images
       const indexOfLastImage =
         this.state.currentPage * this.state.imagesPerPage;
       const indexOfFirstImage = indexOfLastImage - this.state.imagesPerPage;
@@ -81,7 +82,7 @@ class App extends React.Component {
     }
 
     return (
-      <div className="d-flex flex-column App">
+      <div className="d-flex flex-column">
         <SearchBar onSubmit={this.onSearchSubmit} />
         <Suspense fallback={<h1>Loading...</h1>}>
           <ImageList

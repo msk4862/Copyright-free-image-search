@@ -2,7 +2,7 @@ import React from "react";
 
 import "../styles/ImageList.css";
 import ImageCard from "./ImageCard";
-import loading from "../imgs/search.png";
+import loading from "../assets/imgs/search.png";
 
 function ImageList(props) {
   function renderList() {
@@ -14,7 +14,7 @@ function ImageList(props) {
       return (
         <div className="empty">
           <img className="load" src={loading} alt="loading"></img>
-          <p className="load-text">searching...</p>
+          <p className="load-text">Searching...</p>
         </div>
       );
     }
