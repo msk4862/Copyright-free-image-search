@@ -4,8 +4,7 @@ import "../styles/ImageList.css";
 import ImageCard from "./ImageCard";
 import loading from "../assets/imgs/search.png";
 
-const ImageList = props => {
-
+const ImageList = (props) => {
   function renderList() {
     if (props.error) {
       return <div className="empty">Something went wrong!</div>;
@@ -30,6 +29,6 @@ const ImageList = props => {
   }
 
   return <>{renderList()}</>;
-}
+};
 
 export default ImageList;

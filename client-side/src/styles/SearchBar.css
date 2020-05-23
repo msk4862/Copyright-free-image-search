@@ -1,7 +1,6 @@
 .search-bar {
   min-height: 420px;
-  background-image: url("../assets/imgs/w4.webp"),
-  url("../assets/imgs//w4.jpg");
+  background-image: url("../assets/imgs/w4.webp"), url("../assets/imgs//w4.jpg");
   text-align: center;
 }
 
@@ -29,7 +28,6 @@
   font-size: 1rem;
   margin-top: 0.15rem;
 }
-
 
 @media screen and (max-width: 576px) {
   .search-bar {

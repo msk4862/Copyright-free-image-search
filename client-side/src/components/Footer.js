@@ -8,7 +8,6 @@ import {
 } from "../uitilities/Constants";
 
 const Footer = () => {
-  
   return (
     <footer className="page-footer">
       <div className="container-fluid">
@@ -27,12 +26,13 @@ const Footer = () => {
         </div>
         <div className="row copyright justify-content-center">
           <p className="col-12 col-sm-6">
-            Copyright &#x24B8; {new Date().getFullYear()} NCI | Developed by Shoaib Asgar
+            Copyright &#x24B8; {new Date().getFullYear()} NCI | Developed by
+            Shoaib Asgar
           </p>
         </div>
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;

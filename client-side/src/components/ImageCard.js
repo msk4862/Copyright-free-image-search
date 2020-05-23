@@ -3,7 +3,6 @@ import React from "react";
 import "../styles/ImageCard.css";
 
 class ImageCard extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -43,7 +42,8 @@ class ImageCard extends React.Component {
             className="link btn"
             href={url}
             target="_blank"
-            rel="noopener noreferrer">
+            rel="noopener noreferrer"
+          >
             View Image
           </a>
         </div>

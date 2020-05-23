@@ -32,9 +32,7 @@ class SearchBar extends React.Component {
         <div className="d-flex justify-content-center disc mt-auto">
           <div className="col-10 col-sm-8 flex-column">
             <p>{TEXTS.h1}</p>
-            <p>
-              {TEXTS.h2}
-            </p>
+            <p>{TEXTS.h2}</p>
           </div>
         </div>
 

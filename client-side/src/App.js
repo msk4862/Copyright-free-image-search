@@ -7,11 +7,10 @@ import API from "./apis/imageAPI";
 import "./styles/style.css";
 
 // using lazy loading
-const ImageList = lazy(()=> import("./components/ImageList"))
-const Pagination = lazy(()=> import("./components/Pagination"))
+const ImageList = lazy(() => import("./components/ImageList"));
+const Pagination = lazy(() => import("./components/Pagination"));
 
 class App extends React.Component {
-
   constructor() {
     super();
     this.state = {
@@ -29,25 +28,25 @@ class App extends React.Component {
   }
 
   onSearchSubmit = async (term) => {
-      console.log(term);
-      this.setState({
-        error: false,
-        loading: true,
-        currentPage: 1,
-      });
+    console.log(term);
+    this.setState({
+      error: false,
+      loading: true,
+      currentPage: 1,
+    });
 
-      await API.get("images/", {
-        params: {
-          img: term,
-        },
-      })
-      .then(res => {
+    await API.get("images/", {
+      params: {
+        img: term,
+      },
+    })
+      .then((res) => {
         this.setState({
           loading: false,
           images: res.data,
-        });  
+        });
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
         this.setState({
           loading: false,
@@ -57,11 +56,11 @@ class App extends React.Component {
   };
 
   //Change page number
-  paginate = pageNumber => {
+  paginate = (pageNumber) => {
     this.setState({
       currentPage: pageNumber,
     });
-  }
+  };
 
   render() {
     let currentImages = null;

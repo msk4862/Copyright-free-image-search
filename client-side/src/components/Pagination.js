@@ -11,8 +11,7 @@ const getPagenumbers = (totalImages, imagesPerPage) => {
   return pageNumbers;
 };
 
-const Pagination = props => {
-
+const Pagination = (props) => {
   function renderPageNumbers() {
     const pageNumbers = getPagenumbers(props.totalImages, props.imagesPerPage);
 
@@ -23,19 +22,20 @@ const Pagination = props => {
             <a
               onClick={() => props.paginate(number)}
               href="#"
-              className="page-link">
+              className="page-link"
+            >
               {number}
             </a>
           </li>
         );
-      } 
-      else {
+      } else {
         return (
           <li key={number} className="page-item">
             <a
               onClick={() => props.paginate(number)}
               href="#"
-              className="page-link">
+              className="page-link"
+            >
               {number}
             </a>
           </li>
@@ -51,6 +51,6 @@ const Pagination = props => {
       </div>
     </nav>
   );
-}
+};
 
 export default Pagination;
