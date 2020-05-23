@@ -1,8 +1,6 @@
 import React, { lazy, Suspense } from "react";
 
 import SearchBar from "./components/SearchBar";
-// import ImageList from "./components/ImageList";
-// import Pagination from "./components/Pagination";
 import Footer from "./components/Footer";
 
 import API from "./apis/imageAPI";
@@ -13,6 +11,7 @@ const ImageList = lazy(()=> import("./components/ImageList"))
 const Pagination = lazy(()=> import("./components/Pagination"))
 
 class App extends React.Component {
+
   constructor() {
     super();
     this.state = {
@@ -30,12 +29,12 @@ class App extends React.Component {
   }
 
   onSearchSubmit = async (term) => {
-    console.log(term);
-    this.setState({
-      error: false,
-      loading: true,
-      currentPage: 1,
-    });
+      console.log(term);
+      this.setState({
+        error: false,
+        loading: true,
+        currentPage: 1,
+      });
 
       await API.get("images/", {
         params: {
@@ -54,15 +53,15 @@ class App extends React.Component {
           loading: false,
           error: true,
         });
-    });
+      });
   };
 
   //Change page number
-  paginate = (pageNumber) => {
+  paginate = pageNumber => {
     this.setState({
       currentPage: pageNumber,
     });
-  };
+  }
 
   render() {
     let currentImages = null;

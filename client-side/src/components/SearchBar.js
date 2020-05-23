@@ -28,8 +28,8 @@ class SearchBar extends React.Component {
   render() {
     return (
       <div className="d-flex flex-column search-bar">
-        <div className="row header">{TITLE}</div>
-        <div className="d-flex justify-content-center row disc mt-auto">
+        <div className="header">{TITLE}</div>
+        <div className="d-flex justify-content-center disc mt-auto">
           <div className="col-10 col-sm-8 flex-column">
             <p>{TEXTS.h1}</p>
             <p>
@@ -39,7 +39,7 @@ class SearchBar extends React.Component {
         </div>
 
         <form className="mb-auto" onSubmit={this.handleSubmit}>
-          <div className="row justify-content-center">
+          <div className="row justify-content-center m-0">
             <input
               className="col-10 col-sm-6 form-control"
               type="text"

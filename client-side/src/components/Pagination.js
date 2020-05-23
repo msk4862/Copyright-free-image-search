@@ -45,7 +45,7 @@ const Pagination = props => {
   }
 
   return (
-    <nav className="row justify-content-center">
+    <nav className="row justify-content-center m-0">
       <div className="conatainer-fluid">
         <ul className="pagination col-6 col-sm-4">{renderPageNumbers()}</ul>
       </div>
