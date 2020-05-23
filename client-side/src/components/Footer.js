@@ -7,7 +7,8 @@ import {
   SOCIAL_TWITTER,
 } from "../uitilities/Constants";
 
-function Footer() {
+const Footer = () => {
+  
   return (
     <footer className="page-footer">
       <div className="container-fluid">
