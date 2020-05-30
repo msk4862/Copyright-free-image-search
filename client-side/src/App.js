@@ -42,16 +42,18 @@ class App extends React.Component {
     })
       .then((res) => {
         this.setState({
-          loading: false,
           images: res.data,
         });
+        setTimeout(()=> this.setState({loading: false}), 2500);
+
       })
       .catch((err) => {
         console.log(err);
         this.setState({
-          loading: false,
           error: true,
         });
+        setTimeout(()=> this.setState({loading: false}), 2500);
+
       });
   };
 
@@ -66,6 +68,7 @@ class App extends React.Component {
     let currentImages = null;
     let totalImages = 0;
     if (this.state.images) {
+
       //Get current images
       const indexOfLastImage =
         this.state.currentPage * this.state.imagesPerPage;

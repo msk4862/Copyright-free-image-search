@@ -2,7 +2,7 @@ import React from "react";
 
 import "../styles/ImageList.css";
 import ImageCard from "./ImageCard";
-import loading from "../assets/imgs/search.png";
+import LoadSVG from "../components/LoaderSVG";
 
 const ImageList = (props) => {
   function renderList() {
@@ -13,7 +13,7 @@ const ImageList = (props) => {
     } else if (props.loading) {
       return (
         <div className="empty">
-          <img className="load" src={loading} alt="loading"></img>
+          <LoadSVG />
           <p className="load-text">Searching...</p>
         </div>
       );

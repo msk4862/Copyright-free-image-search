@@ -10,12 +10,10 @@
 
   min-height: calc(100vh - 120px);
 }
-
-.load {
-  height: 50px;
-  width: 50px;
-
-  animation: infinite-spinning 1s infinite linear;
+ 
+.load-svg {
+  width: calc(100% * 1/5);
+  height: auto;
 }
 
 .load-text {
@@ -29,47 +27,12 @@
   color: #758184;
   text-align: center;
   margin-bottom: 20px;
-  height: 170px;
+
+  min-height: 180px;
 }
 
 .image-list img {
   width: 250px;
-}
-
-@-webkit-keyframes infinite-spinning {
-  from {
-    -webkit-transform: rotate(0deg) translateX(8px) rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg) translateX(8px) rotate(-360deg);
-  }
-}
-
-@-moz-keyframes infinite-spinning {
-  from {
-    -moz-transform: rotate(0deg) translateX(8px) rotate(0deg);
-  }
-  to {
-    -moz-transform: rotate(360deg) translateX(8px) rotate(-360deg);
-  }
-}
-
-@-o-keyframes infinite-spinning {
-  from {
-    -o-transform: rotate(0deg) translateX(8px) rotate(0deg);
-  }
-  to {
-    -o-transform: rotate(360deg) translateX(8px) rotate(-360deg);
-  }
-}
-
-@keyframes infinite-spinning {
-  from {
-    transform: rotate(0deg) translateX(8px) rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg) translateX(8px) rotate(-360deg);
-  }
 }
 
 @media screen and (max-width: 576px) {
