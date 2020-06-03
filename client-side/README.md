@@ -14,6 +14,10 @@ Run ```npm install```
 Run ```npm start``` to run on localhost port 8080.
 
 
+### Run tests
+Run ```npm run test``` to launch the test runner in the interactive watch mode.
+
+
 ### Building
 Run ```npm run build``` to generate a production build.
 
