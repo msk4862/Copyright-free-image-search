@@ -10,8 +10,6 @@ class SearchBar extends React.Component {
     this.state = {
       serachTerm: "",
     };
-    //NO need to bind while using ARROW METHODS
-    //this.handleChange = this.handleChange.bind(this)
   }
 
   handleChange = (event) => {
