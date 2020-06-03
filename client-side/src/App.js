@@ -2,8 +2,8 @@ import React, { lazy, Suspense } from "react";
 
 import SearchBar from "./components/SearchBar";
 import Footer from "./components/Footer";
-
 import API from "./apis/imageAPI";
+import { getCurrentPageImages } from "./uitilities/paginatonUtils";
 import "./styles/style.css";
 
 // using lazy loading
@@ -65,21 +65,15 @@ class App extends React.Component {
   };
 
   render() {
-    let currentImages = null;
+    let currentImages;
     let totalImages = 0;
-    if (this.state.images) {
 
-      //Get current images
-      const indexOfLastImage =
-        this.state.currentPage * this.state.imagesPerPage;
-      const indexOfFirstImage = indexOfLastImage - this.state.imagesPerPage;
+    const { images, currentPage, imagesPerPage } = this.state;
 
-      currentImages = this.state.images.slice(
-        indexOfFirstImage,
-        indexOfLastImage
-      );
-
-      totalImages = this.state.images.length;
+    if (images) {
+      //Get images for current page
+      currentImages = getCurrentPageImages(currentPage, imagesPerPage, images);
+      totalImages = images.length;
     }
 
     return (

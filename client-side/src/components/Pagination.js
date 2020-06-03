@@ -1,19 +1,12 @@
 import React from "react";
 
 import "../styles/Pagination.css";
-
-const getPagenumbers = (totalImages, imagesPerPage) => {
-  // finding availables page numbers
-  const pageNumbers = [];
-  for (let i = 1; i <= Math.ceil(totalImages / imagesPerPage); ++i) {
-    pageNumbers.push(i);
-  }
-  return pageNumbers;
-};
+import {getPageNumbers} from "../uitilities/paginatonUtils";
 
 const Pagination = (props) => {
+
   function renderPageNumbers() {
-    const pageNumbers = getPagenumbers(props.totalImages, props.imagesPerPage);
+    const pageNumbers = getPageNumbers(props.totalImages, props.imagesPerPage);
 
     return pageNumbers.map((number) => {
       if (number === props.currentPage) {
