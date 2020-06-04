@@ -7,4 +7,8 @@ export const TEXTS = {
   h1: "Stunning and copyright free images",
   h2:
     "Tired of searching images from diffrent websites? Try using NCI which searches copyright free images from across the most popular platforms and shows you the results in a single platform.",
+  errorMessage: "Something went wrong!",
+  emptyBodyText: "Type something in search bar...",
 };
+
+

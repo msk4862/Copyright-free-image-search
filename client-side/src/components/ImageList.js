@@ -3,13 +3,14 @@ import React from "react";
 import "../styles/ImageList.css";
 import ImageCard from "./ImageCard";
 import LoadSVG from "../components/LoaderSVG";
+import { TEXTS } from "../uitilities/Constants";
 
 const ImageList = (props) => {
   function renderList() {
     if (props.error) {
-      return <div className="empty">Something went wrong!</div>;
+      return <div className="empty">{TEXTS.errorMessage}</div>;
     } else if (props.images === null && !props.loading) {
-      return <div className="empty">Type something in search bar...</div>;
+      return <div className="empty">{TEXTS.emptyBodyText}</div>;
     } else if (props.loading) {
       return (
         <div className="empty">
