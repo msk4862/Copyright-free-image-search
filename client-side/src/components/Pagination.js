@@ -1,10 +1,9 @@
 import React from "react";
 
 import "../styles/Pagination.css";
-import {getPageNumbers} from "../uitilities/paginatonUtils";
+import { getPageNumbers } from "../uitilities/paginatonUtils";
 
 const Pagination = (props) => {
-
   function renderPageNumbers() {
     const pageNumbers = getPageNumbers(props.totalImages, props.imagesPerPage);
 

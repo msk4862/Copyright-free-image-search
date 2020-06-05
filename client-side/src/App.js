@@ -44,16 +44,14 @@ class App extends React.Component {
         this.setState({
           images: res.data,
         });
-        setTimeout(()=> this.setState({loading: false}), 2500);
-
+        setTimeout(() => this.setState({ loading: false }), 2500);
       })
       .catch((err) => {
         console.log(err);
         this.setState({
           error: true,
         });
-        setTimeout(()=> this.setState({loading: false}), 2500);
-
+        setTimeout(() => this.setState({ loading: false }), 2500);
       });
   };
 

@@ -10,9 +10,9 @@
 
   min-height: calc(100vh - 120px);
 }
- 
+
 .load-svg {
-  width: calc(100% * 1/5);
+  width: calc(100% * 1 / 5);
   height: auto;
 }
 

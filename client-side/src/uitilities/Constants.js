@@ -10,5 +10,3 @@ export const TEXTS = {
   errorMessage: "Something went wrong!",
   emptyBodyText: "Type something in search bar...",
 };
-
-
