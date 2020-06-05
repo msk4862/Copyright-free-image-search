@@ -1,8 +1,8 @@
 import React from "react";
-import { render, fireEvent, cleanup } from "@testing-library/react";
+import { render, cleanup } from "@testing-library/react";
 
-import ImageList from "../components/ImageList";
-import { TEXTS } from "../uitilities/Constants";
+import ImageList from "../ImageList";
+import { TEXTS } from "../../uitilities/Constants";
 
 afterEach(cleanup);
 test("Error message renders if an error has occured", ()=> {
