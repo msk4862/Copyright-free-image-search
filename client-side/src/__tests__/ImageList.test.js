@@ -10,7 +10,7 @@ test("Error message renders if an error has occured", ()=> {
     const loading = false;
     const error = true;
     
-    const {container, getByText} = render(
+    const {container} = render(
         <ImageList 
             images={images}
             loading={loading}
@@ -26,3 +26,24 @@ test("Error message renders if an error has occured", ()=> {
     
 });
 
+test("Loading svg renders", ()=> {
+    const images = Array();
+    const loading = true;
+    const error = false;
+    
+    const {container} = render(
+        <ImageList 
+            images={images}
+            loading={loading}
+            error={error}
+        />
+    )
+
+    const loadingNode = container.querySelector('div');
+    const loadingSVGNode = loadingNode.querySelector('svg');
+
+    // check if only error message is loading
+    expect(container.children).toHaveLength(1);
+    expect(loadingSVGNode).toHaveClass('load-svg');
+    
+});
