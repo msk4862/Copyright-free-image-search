@@ -13,12 +13,12 @@
   font-style: normal;
 }
 
-* {
+/* * {
   margin: 0;
   padding: 0;
   color: #f9f7f7;
   font-family: raleway;
-}
+} */
 
 form {
   margin-top: 1.25rem;
@@ -38,8 +38,7 @@ form .btn {
   -moz-box-shadow: 5px 8px 2px rgba(0, 0, 0, 0.3);
 }
 
-::-moz-selection {
-  /* Code for Firefox */
+/* ::-moz-selection {
   color: #f8f8f8;
   background: #24436f;
 }
@@ -47,4 +46,4 @@ form .btn {
 ::selection {
   color: #f8f8f8;
   background: #24436f;
-}
+} */

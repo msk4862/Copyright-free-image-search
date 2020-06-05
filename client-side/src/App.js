@@ -4,7 +4,7 @@ import SearchBar from "./components/SearchBar";
 import Footer from "./components/Footer";
 import API from "./apis/imageAPI";
 import { getCurrentPageImages } from "./uitilities/paginatonUtils";
-import "./styles/style.css";
+import "./styles/base.scss";
 
 // using lazy loading
 const ImageList = lazy(() => import("./components/ImageList"));

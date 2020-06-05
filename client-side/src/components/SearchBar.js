@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../styles/SearchBar.css";
+import "../styles/SearchBar.scss";
 import { TITLE, TEXTS } from "../uitilities/Constants";
 
 class SearchBar extends React.Component {
@@ -26,8 +26,8 @@ class SearchBar extends React.Component {
   render() {
     return (
       <div className="d-flex flex-column search-bar">
-        <div className="header">{TITLE}</div>
-        <div className="d-flex justify-content-center disc mt-auto">
+        <h2>{TITLE}</h2>
+        <div className="d-flex desc justify-content-center">
           <div className="col-10 col-sm-8 flex-column">
             <p>{TEXTS.h1}</p>
             <p>{TEXTS.h2}</p>
@@ -44,7 +44,7 @@ class SearchBar extends React.Component {
               value={this.state.serachTerm}
               onChange={this.handleChange}
             />
-            <button type="submit" className="btn btn-success">
+            <button type="submit" className="btn">
               Search
             </button>
           </div>

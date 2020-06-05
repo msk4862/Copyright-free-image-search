@@ -1,0 +1,23 @@
+@import 'config';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: $font-color;
+    font-family: $font-stack;
+}
+
+// Not working on comnined
+::selection {
+    color: $font-color;
+    background: $primary-color;
+}
+
+::-moz-selection {
+    color: $font-color;
+    background: $primary-color;
+}

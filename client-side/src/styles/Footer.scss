@@ -1,0 +1,35 @@
+@import 'config';
+
+footer {
+    min-height: 150px;
+    background-color: $primary-color;
+    text-align: center;
+    bottom: 0;
+  }
+  
+  .social {
+    margin: 20px 0 15px 0;
+  }
+  
+  .social i {
+    transition: transform 0.35s;
+  }
+  
+  .social i:hover {
+    transform: scale(1.35);
+  }
+  
+  .fab {
+    padding: 10px;
+  }
+  
+  @media screen and (max-width: 576px) {
+    footer {
+      padding: 1rem;
+    }
+  
+    .social {
+      margin: 10px 0 10px 0;
+    }
+  }
+  
