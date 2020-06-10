@@ -7,18 +7,12 @@
   /* for dynamic grid */
   /* grid-auto-rows: 10px; */
   grid-auto-rows: minmax(min-content, max-content);
-
   min-height: calc(100vh - 120px);
-}
 
-.load-svg {
-  width: calc(100% * 1 / 5);
-  height: auto;
-}
-
-.load-text {
-  font-size: 1rem;
-  color: #758184;
+  svg {
+    width: calc(100% * 1 / 5);
+    height: auto;
+  }
 }
 
 .empty {
@@ -31,8 +25,9 @@
   min-height: 180px;
 }
 
-.image-list img {
-  width: 250px;
+.load-text {
+  font-size: 1rem;
+  color: #758184;
 }
 
 @media screen and (max-width: 576px) {

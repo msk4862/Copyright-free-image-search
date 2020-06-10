@@ -1,82 +1,76 @@
-@import 'utilities';
-@import 'config';
+@import "utilities";
+@import "config";
 
 @font-face {
-    font-family: ncs;
-    src: url("../assets/fonts/ncs.woff2"), url("../assets/fonts/ncs.woff"),
+  font-family: ncs;
+  src: url("../assets/fonts/ncs.woff2"), url("../assets/fonts/ncs.woff"),
     url("../assets/fonts/ncs.ttf");
 }
-  
+
 .search-bar {
-    min-height: 450px;
-    background-image: url("../assets/imgs/w4.webp"), url("../assets/imgs//w4.jpg");
-    text-align: center;
+  min-height: 450px;
+  background-image: url("../assets/imgs/w4.webp"), url("../assets/imgs//w4.jpg");
+  text-align: center;
 
-    .desc {
-        margin-top: 4.5rem;
+  .desc {
+    margin-top: 4.5rem;
+  }
+
+  h2 {
+    display: flex;
+    margin-top: 10px;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    font-family: ncs;
+    justify-content: center;
+    align-items: center;
+  }
+
+  p {
+    margin-top: 0.5rem;
+  }
+  p:nth-child(1) {
+    font-size: 2.5rem;
+  }
+
+  p:nth-of-type(2) {
+    font-size: 1rem;
+    margin-top: 0.15rem;
+  }
+
+  form {
+    margin-top: 1.25rem;
+    margin-bottom: 15px;
+
+    input {
+      margin-right: 10px;
+      @include box-shadow;
     }
 
-    h2 {
-        display: flex;
-        margin-top: 10px;
-        padding-top: 0.75rem;
-        padding-bottom: 0.75rem;
-        font-family: ncs;
-        justify-content: center;
-        align-items: center;
-    }
-
-    p {
-        margin-top: 0.5rem;
-        
-        
-    }
-    p:nth-child(1) {
-        font-size: 2.5rem;
-    }
-    
-    p:nth-of-type(2) {
-        font-size: 1rem;
-        margin-top: 0.15rem;
-    }
-
-    form {
-        margin-top: 1.25rem;
-        margin-bottom: 15px;
-        
-        input {
-            margin-right: 10px;
-            @include box-shadow;
-        }
-
-        .btn {
-            @include box-shadow;
-            background-color: $secondary-color;
-            color: $font-color;
-        }
-    }
-     
-}
-
-
-  
-  @media screen and (max-width: 576px) {
-    .search-bar {
-        min-height: 420px;
-
-        .btn {
-        margin-top: 10px;
-        }
-    
-        p:nth-of-type(1) {
-            margin-top: 10px;
-        font-size: 1.5rem;
-        }
-    
-        p:nth-of-type(2) {
-        font-size: 0.75rem;
-        margin-top: 10px;
-        }
+    .btn {
+      @include box-shadow;
+      background-color: $secondary-color;
+      color: $font-color;
     }
   }
-  
+}
+
+@media screen and (max-width: 576px) {
+  .search-bar {
+    min-height: 420px;
+
+    .btn {
+      margin-top: 10px;
+    }
+
+    p:nth-of-type(1) {
+      margin-top: 10px;
+      font-size: 1.5rem;
+    }
+
+    p:nth-of-type(2) {
+      font-size: 0.75rem;
+      margin-top: 10px;
+    }
+  }
+}

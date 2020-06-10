@@ -9,7 +9,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="page-footer">
+    <footer>
       <div className="container-fluid">
         <div className="row social justify-content-center">
           <div className="col-12 col-sm-6">

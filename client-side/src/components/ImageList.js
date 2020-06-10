@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../styles/ImageList.css";
+import "../styles/ImageList.scss";
 import ImageCard from "./ImageCard";
 import LoadSVG from "../components/LoaderSVG";
 import { TEXTS } from "../uitilities/Constants";

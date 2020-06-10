@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../styles/ImageCard.css";
+import "../styles/ImageCard.scss";
 
 class ImageCard extends React.Component {
   constructor(props) {
@@ -20,8 +20,10 @@ class ImageCard extends React.Component {
   setSpan = () => {
     // console.log(this.imageRef.current.clientHeight)
     // grid-auto-rows=10 in css
-    const span = Math.ceil(this.imageRef.current.clientHeight / 10);
-    this.setState({ spans: span });
+    if (this.imageRef.current) {
+      const span = Math.ceil(this.imageRef.current.clientHeight / 10);
+      this.setState({ spans: span });
+    }
   };
 
   render() {
@@ -32,14 +34,14 @@ class ImageCard extends React.Component {
         style={{ gridRowEnd: `span ${this.state.spans}` }}
       >
         <img
-          className="col-10 col-sm-12 img"
+          className="col-10 col-sm-12"
           ref={this.imageRef}
           src={src}
           alt={tags}
         />
         <div className="row overlay justify-content-center">
           <a
-            className="link btn"
+            className="btn"
             href={url}
             target="_blank"
             rel="noopener noreferrer"

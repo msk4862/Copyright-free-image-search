@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../styles/Pagination.css";
+import "../styles/Pagination.scss";
 import { getPageNumbers } from "../uitilities/paginatonUtils";
 
 const Pagination = (props) => {
@@ -22,7 +22,7 @@ const Pagination = (props) => {
         );
       } else {
         return (
-          <li key={number} className="page-item">
+          <li key={number}>
             <a
               onClick={() => props.paginate(number)}
               href="#"

@@ -12,7 +12,7 @@
     "serialize-javascript": "^2.1.1"
   },
   "scripts": {
-    "format": "prettier \"src/**/*.{js,html,css}\" --write",
+    "format": "prettier \"src/**/*.{js,html,scss,css}\" --write",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
