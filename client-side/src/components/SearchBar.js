@@ -35,7 +35,7 @@ class SearchBar extends React.Component {
         </div>
 
         <form className="mb-auto" onSubmit={this.handleSubmit}>
-          <div className="row justify-content-center">
+          <div className="row justify-content-center m-0">
             <input
               className="col-10 col-sm-8 form-control"
               type="text"
