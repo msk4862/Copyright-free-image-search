@@ -6,6 +6,28 @@
   padding: 0;
 }
 
+h1 {
+  font-size: $h1;
+}
+h2 {
+  font-size: $h2;
+}
+h3 {
+  font-size: $h3;
+}
+h4 {
+  font-size: $h4;
+}
+h5 {
+  font-size: $h5;
+}
+p {
+  font-size: $base-size;
+}
+small {
+  font-size: $small;
+}
+
 body {
   color: $font-color;
   font-family: $font-stack;

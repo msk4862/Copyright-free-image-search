@@ -9,15 +9,16 @@
   grid-auto-rows: minmax(min-content, max-content);
   min-height: calc(100vh - 120px);
 
-  svg {
-    width: calc(100% * 1 / 5);
-    height: auto;
-  }
+}
+
+
+svg {
+  width: calc(100vw / 8);
+  height: auto;
 }
 
 .empty {
   margin-top: 5rem;
-  font-size: 3rem;
   color: #758184;
   text-align: center;
   margin-bottom: 20px;
@@ -25,15 +26,10 @@
   min-height: 180px;
 }
 
-.load-text {
-  font-size: 1rem;
-  color: #758184;
-}
 
 @media screen and (max-width: 576px) {
   .empty {
     margin-top: 2rem;
-    font-size: 1rem;
     min-height: 250px;
   }
 }

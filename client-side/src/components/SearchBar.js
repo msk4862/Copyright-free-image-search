@@ -26,18 +26,18 @@ class SearchBar extends React.Component {
   render() {
     return (
       <div className="d-flex flex-column search-bar">
-        <h2>{TITLE}</h2>
+        <h1>{TITLE}</h1>
         <div className="d-flex desc justify-content-center">
           <div className="col-10 col-sm-8 flex-column">
-            <p>{TEXTS.h1}</p>
-            <p>{TEXTS.h2}</p>
+            <h2>{TEXTS.h1}</h2>
+            <small>{TEXTS.h2}</small>
           </div>
         </div>
 
         <form className="mb-auto" onSubmit={this.handleSubmit}>
-          <div className="row justify-content-center m-0">
+          <div className="row justify-content-center">
             <input
-              className="col-10 col-sm-6 form-control"
+              className="col-10 col-sm-8 form-control"
               type="text"
               placeholder="Type something to search..."
               name="search"
