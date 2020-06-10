@@ -43,3 +43,75 @@ body {
   color: $font-color;
   background: $primary-color;
 }
+
+
+/* For tablet screens */
+@media screen and (max-width: 992px) {
+  $base-size: 0.95em;
+  $h5: calc(#{$base-size} * #{$type-scale});
+  $h4: calc(#{$h5} * #{$type-scale});
+  $h3: calc(#{$h4} * #{$type-scale});
+  $h2: calc(#{$h3} * #{$type-scale});
+  $h1: calc(#{$h2} * #{$type-scale});
+  $small: calc(#{$base-size} / #{$type-scale});
+
+  h1 {
+    font-size: $h1;
+  }
+  h2 {
+    font-size: $h2;
+  }
+  h3 {
+    font-size: $h3;
+  }
+  h4 {
+    font-size: $h4;
+  }
+  h5 {
+    font-size: $h5;
+  }
+  p {
+    font-size: $base-size;
+  }
+  small {
+    font-size: $small;
+  }
+}
+
+/* For mobo screens */
+@media screen and (max-width: 600px) {
+
+  * {
+    line-height: 1;
+  }
+
+  $base-size: 0.75rem;
+  $h5: calc(#{$base-size} * #{$type-scale});
+  $h4: calc(#{$h5} * #{$type-scale});
+  $h3: calc(#{$h4} * #{$type-scale});
+  $h2: calc(#{$h3} * #{$type-scale});
+  $h1: calc(#{$h2} * #{$type-scale});
+  $small: calc(#{$base-size} / #{$type-scale});
+
+  h1 {
+    font-size: $h1;
+  }
+  h2 {
+    font-size: $h2;
+  }
+  h3 {
+    font-size: $h3;
+  }
+  h4 {
+    font-size: $h4;
+  }
+  h5 {
+    font-size: $h5;
+  }
+  p {
+    font-size: $base-size;
+  }
+  small {
+    font-size: $small;
+  }
+}
