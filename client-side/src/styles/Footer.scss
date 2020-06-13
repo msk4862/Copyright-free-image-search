@@ -5,6 +5,10 @@ footer {
   background-color: $primary-color;
   text-align: center;
   bottom: 0;
+
+  p {
+    opacity: 0.65;
+  }
 }
 
 .social {
