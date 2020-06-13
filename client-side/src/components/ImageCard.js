@@ -1,5 +1,4 @@
 import React from "react";
-import { TweenMax } from "gsap";
 
 import "../styles/ImageCard.scss";
 
@@ -11,16 +10,12 @@ class ImageCard extends React.Component {
     };
 
     this.imageRef = React.createRef();
+
   }
 
   componentDidMount() {
     //when image is loaded
     this.imageRef.current.addEventListener("load", this.setSpan);
-
-    // TweenMax.from('.img-card', 0.5, {
-    //   x: -50,
-    //   ease: Elastic.easeOut
-    // });
   }
 
   setSpan = () => {

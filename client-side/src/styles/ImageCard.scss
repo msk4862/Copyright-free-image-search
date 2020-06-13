@@ -9,7 +9,6 @@
     transition: 0.5s ease;
     backface-visibility: hidden;
     z-index: 0;
-
     height: 100%;
   }
 
@@ -22,7 +21,7 @@
 
     overflow: hidden;
     height: 0;
-    transition: 0.5s ease;
+    transition: 0.5s ease-out;
     text-align: center;
 
     a {
