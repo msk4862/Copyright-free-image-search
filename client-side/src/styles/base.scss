@@ -44,7 +44,6 @@ body {
   background: $primary-color;
 }
 
-
 /* For tablet screens */
 @media screen and (max-width: 992px) {
   $base-size: 0.95em;
@@ -80,7 +79,6 @@ body {
 
 /* For mobo screens */
 @media screen and (max-width: 600px) {
-
   * {
     line-height: 1;
   }

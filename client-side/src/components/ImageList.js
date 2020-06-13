@@ -8,9 +8,17 @@ import { TEXTS } from "../uitilities/Constants";
 const ImageList = (props) => {
   function renderList() {
     if (props.error) {
-      return <div className="empty"><h2>{TEXTS.errorMessage}</h2></div>;
+      return (
+        <div className="empty">
+          <h2>{TEXTS.errorMessage}</h2>
+        </div>
+      );
     } else if (props.images === null && !props.loading) {
-      return <div className="empty"><h2>{TEXTS.emptyBodyText}</h2></div>;
+      return (
+        <div className="empty">
+          <h2>{TEXTS.emptyBodyText}</h2>
+        </div>
+      );
     } else if (props.loading) {
       return (
         <div className="empty">
