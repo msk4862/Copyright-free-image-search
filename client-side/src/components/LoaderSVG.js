@@ -50,7 +50,7 @@ const LoadSVG = () => {
   }, []);
 
   return (
-    <svg viewBox="0 -100 512 712">
+    <svg className='load-svg' viewBox="0 -100 512 712">
       <g className="panda">
         <g className="ears">
           <circle fill="#4B3F4E" cx="421.16" cy="90.84" r="90.84" />
