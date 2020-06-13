@@ -37,7 +37,7 @@ class SearchBar extends React.Component {
         <form className="mb-auto" onSubmit={this.handleSubmit}>
           <div className="row justify-content-center m-0">
             <input
-              className="col-10 col-sm-8 form-control"
+              className="col-10 col-sm-6 form-control"
               type="text"
               placeholder="Type something to search..."
               name="search"
