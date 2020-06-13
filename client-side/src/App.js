@@ -62,6 +62,10 @@ class App extends React.Component {
     });
   };
 
+  renderPagination = () => {
+    return 
+  }
+
   render() {
     let currentImages;
     let totalImages = 0;
@@ -83,12 +87,16 @@ class App extends React.Component {
             loading={this.state.loading}
             error={this.state.error}
           />
-          <Pagination
-            totalImages={totalImages}
-            imagesPerPage={this.state.imagesPerPage}
-            currentPage={this.state.currentPage}
-            paginate={this.paginate}
-          />
+          {!this.state.loading ? 
+            <Pagination
+              totalImages={totalImages}
+              imagesPerPage={this.state.imagesPerPage}
+              currentPage={this.state.currentPage}
+              paginate={this.paginate}
+            /> 
+            :
+            null
+          }
         </Suspense>
         <Footer />
       </div>

@@ -11,25 +11,23 @@ const Pagination = (props) => {
       if (number === props.currentPage) {
         return (
           <li key={number} className="page-item active">
-            <a
+            <button
               onClick={() => props.paginate(number)}
-              href="#"
               className="page-link"
             >
               {number}
-            </a>
+            </button>
           </li>
         );
       } else {
         return (
           <li key={number}>
-            <a
+            <button
               onClick={() => props.paginate(number)}
-              href="#"
               className="page-link"
             >
               {number}
-            </a>
+            </button>
           </li>
         );
       }
