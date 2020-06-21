@@ -1,10 +1,10 @@
 ﻿## Installation
 
 ### Clone this repository
-git clone https://github.com/msk4862/images-search.git
+https://github.com/msk4862/Copyright-free-image-search
 
 ### Go to working directory
-cd image-search
+cd Copyright-free-image-search
 
 ### Install Dependencies
 Run ```npm install```
