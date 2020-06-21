@@ -1,6 +1,8 @@
 <div align="center">
     <h1>NCI</h1>
-     <b>Tired of searching images from diffrent websites? Try using NCI which searches copyright free images from across the platforms like pixabay, unsplash, etc. and shows you the results in a single platform.</b>
+    <p>
+         <b>Tired of searching images from diffrent websites? Try using NCI which searches copyright free images from across the platforms like pixabay, unsplash, etc. and shows you the results in a single platform.</b>
+    </p>
       <img src="https://img.shields.io/github/license/msk4862/Copyright-free-image-search?style=flat-square" width="120">
       <img src="https://img.shields.io/github/v/release/msk4862/Copyright-free-image-search?style=flat-square" width="120">
       <img src="https://img.shields.io/github/license/msk4862/Copyright-free-image-search?style=flat-square" width="120">
