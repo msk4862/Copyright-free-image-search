@@ -7,7 +7,8 @@
       <img src="https://img.shields.io/github/v/release/msk4862/Copyright-free-image-search?style=flat-square" width="120">
       <img src="https://forthebadge.com/images/badges/powered-by-responsibility.svg" width="250">
       <img src="https://forthebadge.com/images/badges/made-with-javascript.svg" width="200">
-      <img src="https://forthebadge.com/images/badges/built-with-love.svg" width="250">
+      </br>
+      <img src="https://forthebadge.com/images/badges/built-with-love.svg" width="200">
 </div>
 
 ### Tools
