@@ -1,5 +1,6 @@
 <div align="center">
     <h1>NCI</h1>
+     <b>Tired of searching images from diffrent websites? Try using NCI which searches copyright free images from across the platforms like pixabay, unsplash, etc. and shows you the results in a single platform.</b>
       <img src="https://img.shields.io/github/license/msk4862/Copyright-free-image-search?style=flat-square" width="120">
       <img src="https://img.shields.io/github/v/release/msk4862/Copyright-free-image-search?style=flat-square" width="120">
       <img src="https://img.shields.io/github/license/msk4862/Copyright-free-image-search?style=flat-square" width="120">
@@ -8,8 +9,13 @@
       <img src="https://forthebadge.com/images/badges/made-with-javascript.svg" width="250">
 </div>
 
-> **Tired of searching images from diffrent websites? Try using NCI which searches copyright free images from across the platforms
-like pixabay, unsplash, etc. and shows you the results in a single platform.**
+### Tools
+
+- [React](https://reactjs.org/) - A JavaScript library for building user interfaces. 
+- [Node](https://nodejs.org/en/)- Executes JavaScript code outside of a browser.
+- [Express](https://expressjs.com/) - Node.js web application framework.
+- [GreenSock](https://greensock.com/) - A JavaScript animation libraray.
+- [React Testing Library](https://github.com/testing-library/react-testing-library) - Testing library library for React.
 
 ## Getting Started
 #### 1. Go to client-side folder
