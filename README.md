@@ -17,7 +17,7 @@
 - [Node](https://nodejs.org/en/)- Executes JavaScript code outside of a browser.
 - [Express](https://expressjs.com/) - Node.js web application framework.
 - [GreenSock](https://greensock.com/) - A JavaScript animation libraray.
-- [React Testing Library](https://github.com/testing-library/react-testing-library) - Testing library library for React.
+- [React Testing Library](https://github.com/testing-library/react-testing-library) - Testing library for React.
 
 ## Getting Started
 #### 1. Go to client-side folder
