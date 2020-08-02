@@ -7,6 +7,12 @@ install:
     - npm ci
 
 before_script:
-    - echo "hay"
+    - echo "running scripts"
 script: 
+    - npm run format
     - npm run test
+
+after_success:
+    - echo "Succsss"
+after_failure:
+    - echo "Failed!"
