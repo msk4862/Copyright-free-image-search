@@ -7,7 +7,7 @@ const cors = require("cors");
 const NCIRouter = require("./routes/NCIRouter");
 
 const hostname = "localhost";
-const port = process.env.PORT;
+const port = process.env.SERVER_PORT;
 const app = express();
 
 app.use(cors());

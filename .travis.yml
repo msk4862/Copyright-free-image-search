@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+    - 10.14.2
+cache: npm
+
+install:
+    - npm ci
+
+before_script:
+    - echo "hay"
+script: 
+    - npm run test

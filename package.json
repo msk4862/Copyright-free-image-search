@@ -20,11 +20,14 @@
     "request": "^2.88.0"
   },
   "scripts": {
-    "format": "prettier \"src/**/*.{js,html,scss,css}\" --write",
-    "start": "react-scripts start",
+    "start": "concurrently \"npm:watch:server\" \"npm:start:web\"",
+    "start:web": "react-scripts start",
+    "start:server": "node src/server/app.js",
+    "watch:server": "nodemon src/server/app.js",
     "build": "react-scripts build",
     "serve": "npm run build && serve -s build",
     "test": "react-scripts test",
+    "format": "prettier \"src/**/*.{js,html,scss,css}\" --write",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -45,6 +48,8 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.9.0",
     "@testing-library/react": "^10.0.6",
+    "concurrently": "^5.2.0",
+    "nodemon": "^2.0.4",
     "prettier": "^2.0.4"
   },
   "jest": {
