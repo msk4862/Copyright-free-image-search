@@ -1,9 +1,23 @@
-# NCI
-## No Copyright Images
-> **Tired of searching images from diffrent websites? Try using NCI which searches copyright free images from across the platforms
-like pixabay, unsplash, etc. and shows you the results in a single platform.**
+<div align="center">
+    <h1>NCI</h1>
+    <p>
+         <b>Tired of searching images from diffrent websites? Try using NCI which searches copyright free images from across the platforms like pixabay, unsplash, etc. and shows you the results in a single platform.</b>
+    </p>
+      <img src="https://img.shields.io/github/license/msk4862/Copyright-free-image-search?style=flat-square" width="80">
+      <img src="https://img.shields.io/github/v/release/msk4862/Copyright-free-image-search?style=flat-square" width="85">
+      <img src="https://forthebadge.com/images/badges/made-with-javascript.svg" width="130">
+      <img src="https://forthebadge.com/images/badges/powered-by-responsibility.svg" width="170">
+      </br>
+      <img src="https://forthebadge.com/images/badges/built-with-love.svg" width="180">
+</div>
 
-![Untitled](https://user-images.githubusercontent.com/24875366/71412759-198e3280-2675-11ea-82a3-d5310477cd8f.png)
+### Tools
+
+- [React](https://reactjs.org/) - A JavaScript library for building user interfaces. 
+- [Node](https://nodejs.org/en/)- Executes JavaScript code outside of a browser.
+- [Express](https://expressjs.com/) - Node.js web application framework.
+- [GreenSock](https://greensock.com/) - A JavaScript animation libraray.
+- [React Testing Library](https://github.com/testing-library/react-testing-library) - Testing library for React.
 
 ## Getting Started
 #### 1. Go to client-side folder
