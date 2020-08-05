@@ -22,8 +22,8 @@
   "scripts": {
     "start": "concurrently \"npm:watch:server\" \"npm:start:web\"",
     "start:web": "react-scripts start",
-    "start:server": "node src/server/app.js",
-    "watch:server": "nodemon src/server/app.js",
+    "start:server": "node server/app.js",
+    "watch:server": "nodemon server/app.js",
     "build": "react-scripts build",
     "serve": "npm run build && serve -s build",
     "test": "react-scripts test",
