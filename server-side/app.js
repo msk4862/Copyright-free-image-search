@@ -1,29 +1,26 @@
 var express = require("express");
 const http = require("http");
 const logger = require("morgan");
-const bodyPasrser = require("body-parser");
+const bodyPasser = require("body-parser");
 const cors = require("cors");
 
 const NCIRouter = require("./routes/NCIRouter");
 
 const hostname = "localhost";
-const port = process.env.PORT;
+const port = process.env.PORT || 9000;
 const app = express();
 
 app.use(cors());
 //applying middlewares using use()
 app.use(logger("dev"));
-app.use(bodyPasrser.json());
+app.use(bodyPasser.json());
 
 app.use("/images", NCIRouter);
 app.use(express.static(__dirname + "/public"));
 
 app.use((req, res, next) => {
   res.statusCode = 200;
-  res.setHeader("Content-Type", "test/html");
-  res.end(
-    "<html><body>Hello sunshine!!!<br>Use <code>/images</code> route to search photos!</body></html>"
-  );
+  res.json({ error: "Use /images to request photos"})
 });
 
 const server = http.createServer(app);
