@@ -1,7 +1,7 @@
 var express = require("express");
 const http = require("http");
 const logger = require("morgan");
-const bodyPasser = require("body-parser");
+const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const NCIRouter = require("./routes/NCIRouter");
@@ -13,7 +13,7 @@ const app = express();
 app.use(cors());
 //applying middlewares using use()
 app.use(logger("dev"));
-app.use(bodyPasser.json());
+app.use(bodyParser.json());
 
 app.use("/images", NCIRouter);
 app.use(express.static(__dirname + "/public"));
