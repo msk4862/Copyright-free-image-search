@@ -35,6 +35,9 @@ NCIRouter.route("/").get((req, res, next) => {
         }
         if(successfulServices.length > 0)
         {
+          for (let i = 0; i < images.length; i++) {
+            images[i].id = i;
+          }
           res.json({ successfulServices: successfulServices, unsuccessfulServices: unsuccessfulServices, result: images});
         }
         else

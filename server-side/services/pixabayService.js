@@ -21,7 +21,7 @@ class PixabayService
                {
                   result.push(new Image(
                      image.pageURL,
-                     image.previewURL,
+                     image.webformatURL,
                      image.user,
                      "Pixabay"
                   ))

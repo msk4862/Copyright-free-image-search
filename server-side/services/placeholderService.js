@@ -10,7 +10,7 @@ class PlaceholderService
    request(query) {
       const result = []
       for (let i = 0; i < 50; i++) {
-         result.push(new Image('', 'https://picsum.photos/200?r=' + i, 'Placeholder', 'PlaceholderService'))
+         result.push(new Image('', 'http://via.placeholder.com/200', 'Placeholder', 'PlaceholderService'))
       }
       return Promise.resolve(result)
    }

@@ -27,7 +27,7 @@ class ImageCard extends React.Component {
   };
 
   render() {
-    const { url, tags, src } = this.props.image;
+    const { URL, previewURL, author, service } = this.props.image;
     return (
       <div
         className="row imgCard justify-content-center"
@@ -36,13 +36,13 @@ class ImageCard extends React.Component {
         <img
           className="col-10 col-sm-12"
           ref={this.imageRef}
-          src={src}
-          alt={tags}
+          src={previewURL}
+          alt={service + " image by " + author}
         />
         <div className="row overlay justify-content-center">
           <a
             className="btn"
-            href={url}
+            href={URL}
             target="_blank"
             rel="noopener noreferrer"
           >
