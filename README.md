@@ -19,6 +19,13 @@
 - [GreenSock](https://greensock.com/) - A JavaScript animation library.
 - [React Testing Library](https://github.com/testing-library/react-testing-library) - Testing library for React.
 
+## How NCI handle services
+
+Some of services that we are using require to register an app to get the API key.
+When you are working on parts of the app which don't require access to all of the apis,
+you can supply only one or even none of the keys.
+If you want to contribute to the project we would suggest setting up only Pixabay key.
+
 ## Running Locally
 
 If you wish to run local instancie of NCI reefer to this guide!
@@ -30,6 +37,9 @@ Option | Type | Description
 - | - | -
 `NODE_ENV` | Recommended | You would generally want to set if for `development` as it separate backend and frontend to different ports.
 `NCI_BACKEND_PORT` | Optional | This variable specify application port of backend server, if not set it defaults to `8000`
+`NCI_PIXABAY_KEY` | Optional | Pixabay [API key](https://pixabay.com/api/docs/)
+`NCI_PEXELS_KEY` | Optional | Pexels [API key](https://www.pexels.com/api/new/)
+`NCI_UNSPLASH_KEY` | Optional | Unsplash [API key](https://unsplash.com/oauth/applications)
 
 
 ### 2. Running client side
@@ -54,5 +64,4 @@ Open [http://localhost:8000](http://localhost:8000) to view it in the browser.
 Give this project a 🌟 to show your support 😃😃 
 
 ## Contributing
-
 We greatly appreciate any work contributed, no matter how small! Contributions, issues and feature requests are welcome ❤️
