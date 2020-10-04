@@ -1,7 +1,9 @@
 const PlaceholderService = require('./services/placeholderService')
-const PixabayService = require('./services/pixabayService')
+const PixabayService = require('./services/pixabayService');
+const UnsplashService = require('./services/unsplashService');
+const PexelsService = require('./services/pexelsService');
 
-const services = [ PixabayService ];
+const services = [ PixabayService, UnsplashService, PexelsService ];
 
 class ServicesList
 {
