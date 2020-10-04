@@ -23,7 +23,7 @@ NCIRouter.route("/").get((req, res, next) => {
         const serviceResult = result[i];
         const serviceName = ServicesList.getServicesList()[i].name;
         if(serviceResult instanceof Error) {
-          console.log(`Service failed - ${serviceName}: `, serviceResult)
+          console.log(`Service failed - ${serviceName}: `, serviceResult.stack)
           unsuccessfulServices.push(serviceName);
         }
         else {
