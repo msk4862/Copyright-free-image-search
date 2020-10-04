@@ -11,30 +11,48 @@
       <img src="https://forthebadge.com/images/badges/built-with-love.svg" width="180">
 </div>
 
-### Tools
+## Tools
 
 - [React](https://reactjs.org/) - A JavaScript library for building user interfaces. 
 - [Node](https://nodejs.org/en/)- Executes JavaScript code outside of a browser.
 - [Express](https://expressjs.com/) - Node.js web application framework.
-- [GreenSock](https://greensock.com/) - A JavaScript animation libraray.
+- [GreenSock](https://greensock.com/) - A JavaScript animation library.
 - [React Testing Library](https://github.com/testing-library/react-testing-library) - Testing library for React.
 
-## Getting Started
-#### 1. Go to client-side folder
-### `npm start`
+## Running Locally
 
-Runs the app in the development mode.<br />
+If you wish to run local instancie of NCI reefer to this guide!
+
+### 1. Configuration
+All of the configuration is handled via environmental variables.
+
+Option | Type | Description
+- | - | -
+`NODE_ENV` | Recommended | You would generally want to set if for `development` as it separate backend and frontend to different ports.
+`NCI_BACKEND_PORT` | Optional | This variable specify application port of backend server, if not set it defaults to `8000`
+
+
+### 2. Running client side
+To run React fronted of the app please use following commands executed in project directory:
+```sh
+cd client-side
+npm start
+```
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
+
+### 3. Running server side
+To run Express backend used for getting images please use following commands executed in project directory:
+```sh
+cd server-side
+npm start
+```
+Open [http://localhost:8000](http://localhost:8000) to view it in the browser.
 
 
-#### 2. Go to `server-side` folder
-> First create an environment file `.env` and add your API KEYS in it.
-### `npm start`
+## Show Support
+Give this project a 🌟 to show your support 😃😃 
 
-It will start the backend server.
-<br />
-<br />
-### Give it a 🌟 to show your support 😃😃 
-### And of course, feel free for any kind of contribution.
+## Contributing
+
+We greatly appreciate any work contributed, no matter how small! Contributions, issues and feature requests are welcome ❤️

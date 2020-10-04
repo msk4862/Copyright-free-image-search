@@ -7,7 +7,7 @@ const cors = require("cors");
 const NCIRouter = require("./routes/NCIRouter");
 
 const hostname = "localhost";
-const port = process.env.PORT || 9000;
+const port = process.env.NCI_BACKEND_PORT || 8000;
 const app = express();
 
 app.use(cors());
@@ -25,5 +25,5 @@ app.use((req, res, next) => {
 
 const server = http.createServer(app);
 server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}`);
+  console.log(`Backend is running at http://${hostname}:${port}`);
 });

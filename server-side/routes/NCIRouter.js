@@ -2,12 +2,9 @@ const express = require("express");
 const request = require("request");
 var async = require("async");
 const bodyParser = require("body-parser");
-const dotenv = require("dotenv");
 
 const NCIRouter = express.Router();
 NCIRouter.use(bodyParser.json());
-//for reading .env file
-dotenv.config();
 
 const imageCount = 50;
 
