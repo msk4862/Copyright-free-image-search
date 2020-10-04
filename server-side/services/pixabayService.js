@@ -12,11 +12,10 @@ class PixabayService
       return new Promise((resolve, reject) => {
          var url =
             `https://pixabay.com/api/?key=${process.env.NCI_PIXABAY_KEY}` +
-            `&q=${query}&per_page=` +
-            imageCount;
+            `&q=${query}`;
          axios.get(url)
             .then((response) =>  {
-               const data = JSON.parse(response.data);
+               const data = response.data;
                const result = []
                for(const image of data.hits)
                {
