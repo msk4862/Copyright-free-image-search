@@ -42,7 +42,7 @@ class App extends React.Component {
     })
       .then((res) => {
         this.setState({
-          images: res.data,
+          images: res.data.result,
         });
         setTimeout(() => this.setState({ loading: false }), 2500);
       })
