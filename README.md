@@ -33,10 +33,15 @@ If you wish to run local instancie of NCI reefer to this guide!
 ### 1. Configuration
 All of the configuration is handled via environmental variables.
 
+#### Frontend Options
 Option | Type | Description
 - | - | -
-`NODE_ENV` | Recommended | You would generally want to set if for `development` as it separate backend and frontend to different ports.
-`NCI_BACKEND_PORT` | Optional | This variable specify application port of backend server, if not set it defaults to `8000`
+`NCI_BACKEND_IP`  | Optional | This variable specify where frontend should connect to fetch images. It defaults to `localhost:NCI_BACKEND_PORT` or if it is not set, to `localhost:8000`
+
+#### Backend Options
+Option | Type | Description
+- | - | -
+`NCI_BACKEND_PORT` | Optional | This variable specify application port to run backend server, if not set it defaults to `8000`
 `NCI_PIXABAY_KEY` | Optional | Pixabay [API key](https://pixabay.com/api/docs/)
 `NCI_PEXELS_KEY` | Optional | Pexels [API key](https://www.pexels.com/api/new/)
 `NCI_UNSPLASH_KEY` | Optional | Unsplash [API key](https://unsplash.com/oauth/applications)
