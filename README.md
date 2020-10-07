@@ -47,7 +47,7 @@ All of the configuration is handled via environmental variables (`.env` file).
 
 
 ### 2. Running client side
-To run React frontend of the app please use following commands executed in project directory:
+To run frontend please use following commands executed in project directory:
 ```sh
 cd client-side
 npm start
@@ -56,12 +56,20 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
 ### 3. Running server side
-To run Express backend used for getting images please use following commands executed in project directory:
+To run backend please use following commands executed in project directory:
 ```sh
 cd server-side
 npm start
 ```
 Open [http://localhost:8000](http://localhost:8000) to view it in the browser.
+
+
+## Running Using Docker 
+Execute following command in project directory: 
+```sh
+docker-compose up
+```
+It will run both backend and frontend. 
 
 
 ## Show Support

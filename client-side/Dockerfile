@@ -1,11 +1,15 @@
-# stage build
-FROM node:13.12.0-alpine AS builder
+# pull official base image
+FROM node:13.12.0-alpine
+
+# set working directory
 WORKDIR /app
-COPY  . .
-RUN npm ci && npm run build
-# stage build end
 
+# install app dependencies
+COPY package.json package-lock.json ./
+RUN npm ci
 
-# from builder stage
-FROM nginx:alpine
-COPY --from=builder /app/build /usr/share/nginx/html
+# add app
+COPY . ./
+
+# start app
+CMD ["npm", "start"]

@@ -8,19 +8,21 @@ class SearchBar extends React.Component {
         super();
 
         this.state = {
-            serachTerm: "",
+            searchTerm: "",
         };
     }
 
     handleChange = (event) => {
         this.setState({
-            serachTerm: event.target.value,
+            searchTerm: event.target.value,
         });
     };
 
     handleSubmit = (event) => {
         event.preventDefault();
-        this.props.onSubmit(this.state.serachTerm);
+        const { searchTerm } = this.state;
+        if(searchTerm!=="")
+            this.props.onSubmit(this.state.searchTerm);
     };
 
     render() {
@@ -41,7 +43,7 @@ class SearchBar extends React.Component {
                             type="text"
                             placeholder="Type something to search..."
                             name="search"
-                            value={this.state.serachTerm}
+                            value={this.state.searchTerm}
                             onChange={this.handleChange}
                         />
                         <button type="submit" className="btn">

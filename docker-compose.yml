@@ -3,22 +3,32 @@ version: '3'
 services: 
 
     backend:
-        # build: ./server-side
-        # container_name: image-search:backend
-        image: image-search:backend
-        command: ["node", "app.js"]
+        build: ./server-side
+        container_name: NCI-backend
+        env_file: ./server-side/.env
+        command: ["npm", "start"]
         volumes: 
             - ./server-side:/home/node/backend
+            - /home/node/backend/node_modules
         ports: 
-            - "8000:8000"
-
+            - 80:8000
+        
+        stdin_open: true
     
+
     frontend:
         depends_on: 
             - backend
         build: ./client-side
-        container_name: image-search:frontend
+        container_name: NCI-frontend
+        env_file: ./client-side/.env
         volumes: 
-            - ./client-side/build:/usr/share/nginx/html
+            - ./client-side:/app
+            - /app/node_modules
         ports: 
-            - "8080:80"
+            - 3000:3000
+        
+        # for enabling hot reloading
+        stdin_open: true
+        environment:
+            - CHOKIDAR_USEPOLLING=true
