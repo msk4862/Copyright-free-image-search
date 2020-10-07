@@ -19,36 +19,35 @@
 - [GreenSock](https://greensock.com/) - A JavaScript animation library.
 - [React Testing Library](https://github.com/testing-library/react-testing-library) - Testing library for React.
 
-## How NCI handle services
-
-Some of services that we are using require to register an app to get the API key.
-When you are working on parts of the app which don't require access to all of the apis,
-you can supply only one or even none of the keys.
-If you want to contribute to the project we would suggest setting up only Pixabay key.
-
 ## Running Locally
-
-If you wish to run local instancie of NCI reefer to this guide!
+If you wish to run local instancie of NCI refer to this guide!
 
 ### 1. Configuration
-All of the configuration is handled via environmental variables.
+All of the configuration is handled via environmental variables (`.env` file).
 
 #### Frontend Options
-Option | Type | Description
-- | - | -
-`NCI_BACKEND_IP`  | Optional | This variable specify where frontend should connect to fetch images. It defaults to `localhost:NCI_BACKEND_PORT` or if it is not set, to `localhost:8000`
+> Go to `client-side` directory and create `.env` file if you want to set any of the below environmental variable.
+
+| Option | Type | Description |
+| - | - | - |
+| `REACT_APP_ENV` | Optional | This variable specifies whether you are running in `development` or `production` environment, if not set it defaults to `development` |
+| `REACT_APP_DEVELOPMENT_API_BASE_URL` | Required | This variable specifies the development api url of backend `e.g. http:\\localhost:8000` |
+| `REACT_APP_PRODUCTION_API_BASE_URL` | Optional | This variable specifies production api url of backend |
+
 
 #### Backend Options
-Option | Type | Description
-- | - | -
-`NCI_BACKEND_PORT` | Optional | This variable specify application port to run backend server, if not set it defaults to `8000`
-`NCI_PIXABAY_KEY` | Optional | Pixabay [API key](https://pixabay.com/api/docs/)
-`NCI_PEXELS_KEY` | Optional | Pexels [API key](https://www.pexels.com/api/new/)
-`NCI_UNSPLASH_KEY` | Optional | Unsplash [API key](https://unsplash.com/oauth/applications)
+> Go to `server-side` directory and create `.env` file if you want to set any of the below environmental variable.
+
+| Option | Type | Description |
+| - | - | - |
+| `NCI_BACKEND_PORT` | Optional | This variable specify application port to run backend server, if not set it defaults to `8000` |
+| `NCI_PIXABAY_KEY` | Optional | Pixabay [API key](https://pixabay.com/api/docs/) |
+| `NCI_PEXELS_KEY` | Optional | Pexels [API key](https://www.pexels.com/api/new/) |
+| `NCI_UNSPLASH_KEY` | Optional | Unsplash [API key](https://unsplash.com/oauth/applications) |
 
 
 ### 2. Running client side
-To run React fronted of the app please use following commands executed in project directory:
+To run React frontend of the app please use following commands executed in project directory:
 ```sh
 cd client-side
 npm start
@@ -69,4 +68,4 @@ Open [http://localhost:8000](http://localhost:8000) to view it in the browser.
 Give this project a 🌟 to show your support 😃😃 
 
 ## Contributing
-We greatly appreciate any work contributed, no matter how small! Contributions, issues and feature requests are welcome ❤️
+All kind of contributions, issues and feature requests are welcome ❤️.
