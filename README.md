@@ -11,30 +11,62 @@
       <img src="https://forthebadge.com/images/badges/built-with-love.svg" width="180">
 </div>
 
-### Tools
+## Tools
 
 - [React](https://reactjs.org/) - A JavaScript library for building user interfaces. 
 - [Node](https://nodejs.org/en/)- Executes JavaScript code outside of a browser.
 - [Express](https://expressjs.com/) - Node.js web application framework.
-- [GreenSock](https://greensock.com/) - A JavaScript animation libraray.
+- [GreenSock](https://greensock.com/) - A JavaScript animation library.
 - [React Testing Library](https://github.com/testing-library/react-testing-library) - Testing library for React.
 
-## Getting Started
-#### 1. Go to client-side folder
-### `npm start`
+## How NCI handle services
 
-Runs the app in the development mode.<br />
+Some of services that we are using require to register an app to get the API key.
+When you are working on parts of the app which don't require access to all of the apis,
+you can supply only one or even none of the keys.
+If you want to contribute to the project we would suggest setting up only Pixabay key.
+
+## Running Locally
+
+If you wish to run local instancie of NCI reefer to this guide!
+
+### 1. Configuration
+All of the configuration is handled via environmental variables.
+
+#### Frontend Options
+Option | Type | Description
+- | - | -
+`NCI_BACKEND_IP`  | Optional | This variable specify where frontend should connect to fetch images. It defaults to `localhost:NCI_BACKEND_PORT` or if it is not set, to `localhost:8000`
+
+#### Backend Options
+Option | Type | Description
+- | - | -
+`NCI_BACKEND_PORT` | Optional | This variable specify application port to run backend server, if not set it defaults to `8000`
+`NCI_PIXABAY_KEY` | Optional | Pixabay [API key](https://pixabay.com/api/docs/)
+`NCI_PEXELS_KEY` | Optional | Pexels [API key](https://www.pexels.com/api/new/)
+`NCI_UNSPLASH_KEY` | Optional | Unsplash [API key](https://unsplash.com/oauth/applications)
+
+
+### 2. Running client side
+To run React fronted of the app please use following commands executed in project directory:
+```sh
+cd client-side
+npm start
+```
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
+
+### 3. Running server side
+To run Express backend used for getting images please use following commands executed in project directory:
+```sh
+cd server-side
+npm start
+```
+Open [http://localhost:8000](http://localhost:8000) to view it in the browser.
 
 
-#### 2. Go to `server-side` folder
-> First create an environment file `.env` and add your API KEYS in it.
-### `npm start`
+## Show Support
+Give this project a 🌟 to show your support 😃😃 
 
-It will start the backend server.
-<br />
-<br />
-### Give it a 🌟 to show your support 😃😃 
-### And of course, feel free for any kind of contribution.
+## Contributing
+We greatly appreciate any work contributed, no matter how small! Contributions, issues and feature requests are welcome ❤️
