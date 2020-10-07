@@ -1,49 +1,49 @@
 @import "config";
 
 .imgCard {
-  position: relative;
-  margin-bottom: 8.75px;
+    position: relative;
+    margin-bottom: 8.75px;
 
-  img {
-    opacity: 1;
-    transition: 0.5s ease;
-    backface-visibility: hidden;
-    z-index: 0;
-    height: 100%;
-  }
-
-  .overlay {
-    position: absolute;
-    opacity: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    overflow: hidden;
-    height: 0;
-    transition: 0.5s ease-out;
-    text-align: center;
-
-    a {
-      margin: 0;
-      position: absolute;
-      top: 50%;
-      padding: 5px 10px 5px 10px;
-      background-color: $primary-color;
-      text-decoration: none;
-      color: $font-color;
+    img {
+        opacity: 1;
+        transition: 0.5s ease;
+        backface-visibility: hidden;
+        z-index: 0;
+        height: 100%;
     }
-  }
+
+    .overlay {
+        position: absolute;
+        opacity: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        overflow: hidden;
+        height: 0;
+        transition: 0.5s ease-out;
+        text-align: center;
+
+        a {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            padding: 5px 10px 5px 10px;
+            background-color: $primary-color;
+            text-decoration: none;
+            color: $font-color;
+        }
+    }
 }
 .imgCard:hover {
-  img {
-    opacity: 0.45;
-  }
+    img {
+        opacity: 0.45;
+    }
 }
 
 .imgCard:hover {
-  .overlay {
-    opacity: 1;
-    height: 100%;
-  }
+    .overlay {
+        opacity: 1;
+        height: 100%;
+    }
 }

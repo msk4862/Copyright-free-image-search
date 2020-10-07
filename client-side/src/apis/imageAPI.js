@@ -1,5 +1,8 @@
 import axios from "axios";
 
+const API_BASE_URL = process.env.REACT_APP_ENV === "development"? process.env.REACT_APP_DEVELOPMENT_API_BASE_URL:
+                        process.env.REACT_APP_PRODUCTION_API_BASE_URL;
+
 export default axios.create({
-  baseURL: process.env.NCI_BACKEND_IP || `http://localhost:${process.env.NCI_BACKEND_PORT || 8000}/`,
+    baseURL: API_BASE_URL,
 });

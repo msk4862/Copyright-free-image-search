@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "format": "prettier \"./**/*.js\" --write",
-    "start": "node app.js"
+    "start": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",
@@ -20,6 +20,7 @@
     "morgan": "^1.9.1"
   },
   "devDependencies": {
+    "nodemon": "^2.0.4",
     "prettier": "^2.0.5"
   }
 }

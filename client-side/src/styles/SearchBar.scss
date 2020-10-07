@@ -2,71 +2,72 @@
 @import "config";
 
 @font-face {
-  font-family: ncs;
-  src: url("../assets/fonts/ncs.woff2"), url("../assets/fonts/ncs.woff"),
-    url("../assets/fonts/ncs.ttf");
+    font-family: ncs;
+    src: url("../assets/fonts/ncs.woff2"), url("../assets/fonts/ncs.woff"),
+        url("../assets/fonts/ncs.ttf");
 }
 
 .search-bar {
-  min-height: 450px;
-  background-image: url("../assets/imgs/w4.webp"), url("../assets/imgs//w4.jpg");
-  text-align: center;
+    min-height: 450px;
+    background-image: url("../assets/imgs/w4.webp"),
+        url("../assets/imgs//w4.jpg");
+    text-align: center;
 
-  .desc {
-    margin-top: 5rem;
+    .desc {
+        margin-top: 5rem;
 
-    h2 {
-      margin-bottom: 15px;
+        h2 {
+            margin-bottom: 15px;
+        }
+
+        small {
+            opacity: 0.75;
+        }
     }
 
-    small {
-      opacity: 0.75;
-    }
-  }
-
-  h1 {
-    display: flex;
-    margin-top: 10px;
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-    font-family: ncs;
-    justify-content: center;
-    align-items: center;
-  }
-
-  form {
-    margin-top: 1rem;
-    margin-bottom: 15px;
-
-    input {
-      margin-right: 10px;
-      @include box-shadow;
+    h1 {
+        display: flex;
+        margin-top: 10px;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        font-family: ncs;
+        justify-content: center;
+        align-items: center;
     }
 
-    .btn {
-      @include box-shadow;
-      background-color: $secondary-color;
-      color: $font-color;
+    form {
+        margin-top: 1rem;
+        margin-bottom: 15px;
+
+        input {
+            margin-right: 10px;
+            @include box-shadow;
+        }
+
+        .btn {
+            @include box-shadow;
+            background-color: $secondary-color;
+            color: $font-color;
+        }
     }
-  }
 }
 
 @media screen and (max-width: 992px) {
-  .search-bar {
-    min-height: 400px;
-  }
+    .search-bar {
+        min-height: 400px;
+    }
 }
 
 @media screen and (max-width: 600px) {
-  .search-bar {
-    min-height: 350px;
+    .search-bar {
+        min-height: 350px;
 
-    .btn {
-      margin-top: 15px;
-    }
+        .btn {
+            margin-top: 15px;
+        }
 
-    .desc {
-      margin-top: 1rem;
+        .desc {
+            margin-top: 1rem;
+        }
     }
-  }
 }
