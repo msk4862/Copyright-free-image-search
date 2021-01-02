@@ -60,7 +60,7 @@
             border-bottom-left-radius: 0;
             @include box-shadow;
             z-index: 2;
-            
+
             i {
                 color: $font-color;
             }
@@ -82,7 +82,7 @@
     .search-bar {
         min-height: 300px;
         .desc {
-            margin-top: 1rem;
+            margin-top: 0.5rem;
         }
         form {
             input {

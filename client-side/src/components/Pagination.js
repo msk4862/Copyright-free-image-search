@@ -1,18 +1,16 @@
-import React from "react";
-
-import "../styles/Pagination.scss";
+import React, { useEffect, useState } from "react";
 import { getPageNumbers } from "../uitilities/paginatonUtils";
 
 const Pagination = (props) => {
+    const [pages, setPages] = useState([]);
+
+    useEffect(() => {
+        setPages(getPageNumbers(totalImages, imagesPerPage));
+    }, []);
 
     const {totalImages, imagesPerPage, currentPage} = props;
 
     const renderPageNumbers = () => {
-        const pages = getPageNumbers(
-            totalImages,
-            imagesPerPage
-        );
-
         return pages.map((number) => {
             let activeCLass = number === currentPage ? "active" : "";
             return (
@@ -28,13 +26,15 @@ const Pagination = (props) => {
     }
 
     return (
-        <nav className="row justify-content-center m-0">
-            <div className="conatainer-fluid">
-                <ul className="pagination col-6 col-sm-4">
-                    {renderPageNumbers()}
-                </ul>
-            </div>
-        </nav>
+        <>
+            {pages.length > 1 &&
+                <nav>
+                    <ul className="d-flex flex-row justify-content-center mt-3 mb-3">
+                        {renderPageNumbers()}
+                    </ul>
+                </nav>
+            }
+        </>
     );
 };
 
