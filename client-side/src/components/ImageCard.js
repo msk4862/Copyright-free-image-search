@@ -33,7 +33,7 @@ class ImageCard extends React.Component {
                 className="row imgCard justify-content-center"
                 style={{ gridRowEnd: `span ${this.state.spans}` }}>
                 <img
-                    className="col-10 col-sm-12"
+                    className="col-10"
                     ref={this.imageRef}
                     src={previewURL}
                     alt={service + " image by " + author}

@@ -44,30 +44,59 @@
             @include box-shadow;
         }
 
-        .btn {
+        .search-btn {
             @include box-shadow;
             background-color: $secondary-color;
             color: $font-color;
+        }
+
+        .search-btn-small {
+            display: none;
+            outline: none;
+            background-color: $secondary-color;
+            margin-left: -5px;
+            padding: 0 10px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            @include box-shadow;
+            z-index: 2;
+            
+            i {
+                color: $font-color;
+            }
         }
     }
 }
 
 @media screen and (max-width: 992px) {
     .search-bar {
-        min-height: 400px;
+        min-height: 350px;
+
+        .desc {
+            margin-top: 2.5rem;
+        }
     }
 }
 
 @media screen and (max-width: 600px) {
     .search-bar {
-        min-height: 350px;
-
-        .btn {
-            margin-top: 15px;
-        }
-
+        min-height: 300px;
         .desc {
             margin-top: 1rem;
+        }
+        form {
+            input {
+                margin-right: 0;
+            }
+            .search-btn {
+                display: none;
+            }
+
+            .search-btn-small {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
         }
     }
 }

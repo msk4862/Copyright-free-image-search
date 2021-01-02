@@ -30,8 +30,8 @@ All of the configuration is handled via environmental variables (`.env` file).
 
 | Option | Type | Description |
 | - | - | - |
-| `REACT_APP_ENV` | Optional | This variable specifies whether you are running in `development` or `production` environment, if not set it defaults to `development` |
 | `REACT_APP_DEVELOPMENT_API_BASE_URL` | Required | This variable specifies the development api url of backend `e.g. http:\\localhost:8000` |
+| `REACT_APP_ENV` | Optional | This variable specifies whether you are running in `development` or `production` environment, if not set it defaults to `development` |
 | `REACT_APP_PRODUCTION_API_BASE_URL` | Optional | This variable specifies production api url of backend |
 
 
