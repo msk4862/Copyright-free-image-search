@@ -4,34 +4,26 @@ import "../styles/Pagination.scss";
 import { getPageNumbers } from "../uitilities/paginatonUtils";
 
 const Pagination = (props) => {
-    function renderPageNumbers() {
-        const pageNumbers = getPageNumbers(
-            props.totalImages,
-            props.imagesPerPage
+
+    const {totalImages, imagesPerPage, currentPage} = props;
+
+    const renderPageNumbers = () => {
+        const pages = getPageNumbers(
+            totalImages,
+            imagesPerPage
         );
 
-        return pageNumbers.map((number) => {
-            if (number === props.currentPage) {
-                return (
-                    <li key={number} className="page-item active">
-                        <button
-                            onClick={() => props.paginate(number)}
-                            className="page-link">
-                            {number}
-                        </button>
-                    </li>
-                );
-            } else {
-                return (
-                    <li key={number}>
-                        <button
-                            onClick={() => props.paginate(number)}
-                            className="page-link">
-                            {number}
-                        </button>
-                    </li>
-                );
-            }
+        return pages.map((number) => {
+            let activeCLass = number === currentPage ? "active" : "";
+            return (
+                <li key={number} className={`page-item ${activeCLass}`}>
+                    <button
+                        onClick={() => props.paginate(number)}
+                        className="page-link">
+                        {number}
+                    </button>
+                </li>
+            );
         });
     }
 

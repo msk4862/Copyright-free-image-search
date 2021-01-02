@@ -13,13 +13,13 @@ const ImageList = ({ error, images, loading }) => {
                     <h2>{TEXTS.errorMessage}</h2>
                 </div>
             );
-        } else if (!images && !loading) {
+        } if (!images && !loading) {
             return (
                 <div className="empty">
                     <h2>{TEXTS.emptyBodyText}</h2>
                 </div>
             );
-        } else if (loading) {
+        } if (loading) {
             return (
                 <div className="empty">
                     <LoadSVG />

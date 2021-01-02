@@ -3,8 +3,10 @@ import React, { lazy, Suspense } from "react";
 import SearchBar from "./components/SearchBar";
 import Footer from "./components/Footer";
 import API from "./apis/imageAPI";
+import { DEFAULT_SEARCH_TERM, IMAGES_PER_PAGE } from "./uitilities/Constants";
 import { getCurrentPageImages } from "./uitilities/paginatonUtils";
 import "./styles/base.scss";
+import LoadSVG from "./components/LoaderSVG";
 
 // using lazy loading
 const ImageList = lazy(() => import("./components/ImageList"));
@@ -18,15 +20,18 @@ class App extends React.Component {
             loading: false,
             error: false,
             currentPage: 1,
-            imagesPerPage: 25,
+            imagesPerPage: IMAGES_PER_PAGE,
         };
     }
 
     componentDidMount() {
-        var DEFAULT = "nature";
-        this.onSearchSubmit(DEFAULT);
+        this.onSearchSubmit(DEFAULT_SEARCH_TERM);
     }
 
+    /**
+     * calls api to get images related to the provided search term
+     * @param  {String} term
+     */
     onSearchSubmit = async (term) => {
         this.setState({
             error: false,
@@ -54,7 +59,10 @@ class App extends React.Component {
             });
     };
 
-    //Change page number
+    /**
+     * Change page number to the requested page
+     * @param  {Number} pageNumber
+     */
     paginate = (pageNumber) => {
         this.setState({
             currentPage: pageNumber,
@@ -80,7 +88,7 @@ class App extends React.Component {
         return (
             <div className="d-flex flex-column">
                 <SearchBar onSubmit={this.onSearchSubmit} />
-                <Suspense fallback={<h1>Loading...</h1>}>
+                <Suspense fallback={<LoadSVG />}>
                     <ImageList
                         images={currentImages}
                         loading={this.state.loading}
