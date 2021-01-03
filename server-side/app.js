@@ -1,15 +1,15 @@
-var express = require("express");
+const app = require("express")();
 const http = require("http");
 const logger = require("morgan");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const { PORT } = require("./utils/config")
 
 const NCIRouter = require("./routes/NCIRouter");
 const ServicesList = require("./utils/servicesList");
 
 const hostname = "localhost";
-const port = process.env.NCI_BACKEND_PORT || 8000;
-const app = express();
+const port = PORT || 8000;
 
 //applying middlewares using use()
 app.use(cors());
@@ -17,8 +17,6 @@ app.use(logger("dev"));
 app.use(bodyParser.json());
 
 app.use("/images", NCIRouter);
-app.use(express.static(__dirname + "/public"));
-
 app.use((_, res) => {
     res.statusCode = 200;
     res.json({ error: "Use /images to request photos" });
