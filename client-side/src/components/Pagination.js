@@ -6,6 +6,7 @@ const Pagination = (props) => {
 
     useEffect(() => {
         setPages(getPageNumbers(totalImages, imagesPerPage));
+    // eslint-disable-next-line
     }, []);
 
     const {totalImages, imagesPerPage, currentPage} = props;
