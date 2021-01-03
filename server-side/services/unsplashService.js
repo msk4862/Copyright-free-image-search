@@ -1,6 +1,6 @@
 const axios = require("axios");
 const { UNSPLASH_KEY } = require("../utils/config");
-const Image = require("../models/image");
+const Image = require("../models/Image");
 
 class UnsplashService {
     isEnabled() {

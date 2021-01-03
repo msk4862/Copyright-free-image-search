@@ -1,4 +1,4 @@
-const Image = require("../models/image");
+const Image = require("../models/Image");
 
 class PlaceholderService {
     constructor() {

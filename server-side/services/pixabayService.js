@@ -1,6 +1,6 @@
 const axios = require("axios");
 const { PIXABAY_KEY } = require("../utils/config");
-const Image = require("../models/image");
+const Image = require("../models/Image");
 
 class PixabayService {
     isEnabled() {

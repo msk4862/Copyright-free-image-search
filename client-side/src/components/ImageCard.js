@@ -13,12 +13,14 @@ class ImageCard extends React.Component {
     }
 
     componentDidMount() {
-        //when image is loaded
         this.imageRef.current.addEventListener("load", this.setSpan);
     }
 
+    componentWillUnmount() {
+        this.imageRef.current.removeEventListener("load", this.setSpan);
+    }
+
     setSpan = () => {
-        // console.log(this.imageRef.current.clientHeight)
         // grid-auto-rows=10 in css
         if (this.imageRef.current) {
             const span = Math.ceil(this.imageRef.current.clientHeight / 10);
@@ -27,7 +29,7 @@ class ImageCard extends React.Component {
     };
 
     render() {
-        const { URL, previewURL, author, service } = this.props.image;
+        const { url, previewURL, author, service } = this.props.image;
         return (
             <div
                 className="row imgCard justify-content-center"
@@ -41,7 +43,7 @@ class ImageCard extends React.Component {
                 <div className="row overlay justify-content-center">
                     <a
                         className="btn"
-                        href={URL}
+                        href={url}
                         target="_blank"
                         rel="noopener noreferrer">
                         View Image
