@@ -40,7 +40,7 @@ All of the configuration is handled via environmental variables (`.env` file).
 
 | Option | Type | Description |
 | - | - | - |
-| `NCI_BACKEND_PORT` | Optional | This variable specify application port to run backend server, if not set it defaults to `8000` |
+| `PORT` | Optional | This variable specify application port to run backend server, if not set it defaults to `8000` |
 | `NCI_PIXABAY_KEY` | Optional | Pixabay [API key](https://pixabay.com/api/docs/) |
 | `NCI_PEXELS_KEY` | Optional | Pexels [API key](https://www.pexels.com/api/new/) |
 | `NCI_UNSPLASH_KEY` | Optional | Unsplash [API key](https://unsplash.com/oauth/applications) |
