@@ -23,7 +23,7 @@ const ImageList = ({ error, images, loading }) => {
             return (
                 <div className="empty">
                     <LoadSVG />
-                    <p className="load-text">Searching...</p>
+                    <p>Searching...</p>
                 </div>
             );
         }

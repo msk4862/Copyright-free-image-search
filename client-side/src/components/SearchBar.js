@@ -41,17 +41,17 @@ class SearchBar extends React.Component {
                 <form className="mb-auto" onSubmit={this.handleSubmit}>
                     <div className="row justify-content-center m-0">
                         <input
-                            className="col-8 col-sm-6 form-control"
+                            className="col-10 col-sm-6 form-control"
                             type="text"
                             placeholder="Type something to search..."
                             name="search"
                             value={this.state.searchTerm}
                             onChange={this.handleChange}
                         />
-                        <button type="submit" className="btn search-btn">
+                        <button type="submit" className="btn search-btn align-items-stretch">
                             Search
                         </button>
-                        <button className="btn search-btn-small">
+                        <button className="btn search-btn-small" aria-label="Search">
                             <i className="fas fa-search"></i>
                         </button>
                     </div>

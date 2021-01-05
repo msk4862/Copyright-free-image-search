@@ -14,7 +14,7 @@ NCIRouter.route("/").get((req, res) => {
         promises.push(new service().request(query));
     }
 
-    const images = [];
+    let images = [];
     const successfulServices = [];
     const unsuccessfulServices = [];
     Promise.all(promises.map((p) => p.catch((e) => e)))
@@ -31,14 +31,13 @@ NCIRouter.route("/").get((req, res) => {
                     unsuccessfulServices.push(serviceName);
                 } else {
                     successfulServices.push(serviceName);
-                    for (const resultImage of serviceResult) {
-                        images.push(resultImage);
-                    }
+                    images = images.concat(serviceResult)
                 }
 			}
 			
 			if (successfulServices.length > 0) {
-				shuffleArray(images)
+                // shuffle images
+                shuffleArray(images)
 				return res.json({
 					successfulServices: successfulServices,
 					unsuccessfulServices: unsuccessfulServices,

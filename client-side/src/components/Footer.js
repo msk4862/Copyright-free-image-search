@@ -13,13 +13,13 @@ const Footer = () => {
             <div className="container-fluid">
                 <div className="row social justify-content-center">
                     <div className="col-12 col-sm-6">
-                        <a href={SOCIAL_LINKEDIN} target="blank">
+                        <a href={SOCIAL_LINKEDIN} target="blank" aria-label="link to Linkedin">
                             <i className="fab fa-linkedin fa-2x"></i>
                         </a>
-                        <a href={SOCIAL_GITHUB} target="blank">
+                        <a href={SOCIAL_GITHUB} target="blank" aria-label="link to Github">
                             <i className="fab fa-github fa-2x"></i>
                         </a>
-                        <a href={SOCIAL_TWITTER} target="blank">
+                        <a href={SOCIAL_TWITTER} target="blank" aria-label="link to Twitter">
                             <i className="fab fa-twitter fa-2x"></i>
                         </a>
                     </div>
