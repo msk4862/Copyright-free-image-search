@@ -7,11 +7,8 @@ services:
         container_name: NCI-backend
         env_file: ./server-side/.env
         command: ["npm", "start"]
-        volumes: 
-            - ./server-side:/home/node/backend
-            - /home/node/backend/node_modules
         ports: 
-            - 80:8000
+            - 9000:9000
         
         stdin_open: true
     
@@ -22,9 +19,6 @@ services:
         build: ./client-side
         container_name: NCI-frontend
         env_file: ./client-side/.env
-        volumes: 
-            - ./client-side:/app
-            - /app/node_modules
         ports: 
             - 3000:3000
         
