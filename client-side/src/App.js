@@ -73,7 +73,7 @@ class App extends Component {
         let currentImages;
         let totalImages = 0;
 
-        const { images, currentPage, imagesPerPage } = this.state;
+        const { images, currentPage, imagesPerPage, loading, error } = this.state;
 
         if (images) {
             //Get images for current page
@@ -91,14 +91,14 @@ class App extends Component {
                 <Suspense fallback={<LoadSVG />}>
                     <ImageList
                         images={currentImages}
-                        loading={this.state.loading}
-                        error={this.state.error}
+                        loading={loading}
+                        error={error}
                     />
                     {!this.state.loading ? (
                         <Pagination
                             totalImages={totalImages}
-                            imagesPerPage={this.state.imagesPerPage}
-                            currentPage={this.state.currentPage}
+                            imagesPerPage={imagesPerPage}
+                            currentPage={currentPage}
                             paginate={this.paginate}
                         />
                     ) : null}
