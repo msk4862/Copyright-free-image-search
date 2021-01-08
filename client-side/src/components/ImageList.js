@@ -13,13 +13,15 @@ const ImageList = ({ error, images, loading }) => {
                     <h2>{TEXTS.errorMessage}</h2>
                 </div>
             );
-        } if (!images && !loading) {
+        }
+        if (!images && !loading) {
             return (
                 <div className="empty">
                     <h2>{TEXTS.emptyBodyText}</h2>
                 </div>
             );
-        } if (loading) {
+        }
+        if (loading) {
             return (
                 <div className="empty">
                     <LoadSVG />
@@ -35,7 +37,16 @@ const ImageList = ({ error, images, loading }) => {
 
     function renderCards() {
         return images.map((image) => {
-            return <ImageCard key={image.id} image={image} />;
+            const { url, previewURL, author, service } = image;
+            return (
+                <ImageCard
+                    key={image.id}
+                    url={url}
+                    previewURL={previewURL}
+                    author={author}
+                    service={service}
+                />
+            );
         });
     }
 

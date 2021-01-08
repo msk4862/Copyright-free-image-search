@@ -6,10 +6,10 @@ const Pagination = (props) => {
 
     useEffect(() => {
         setPages(getPageNumbers(totalImages, imagesPerPage));
-    // eslint-disable-next-line
+        // eslint-disable-next-line
     }, []);
 
-    const {totalImages, imagesPerPage, currentPage} = props;
+    const { totalImages, imagesPerPage, currentPage } = props;
 
     const renderPageNumbers = () => {
         return pages.map((number) => {
@@ -24,17 +24,17 @@ const Pagination = (props) => {
                 </li>
             );
         });
-    }
+    };
 
     return (
         <>
-            {pages.length > 1 &&
+            {pages.length > 1 && (
                 <nav>
                     <ul className="d-flex flex-row justify-content-center mt-3 mb-3">
                         {renderPageNumbers()}
                     </ul>
                 </nav>
-            }
+            )}
         </>
     );
 };

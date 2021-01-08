@@ -9,7 +9,8 @@ export const TEXTS = {
 
     h2:
         "Tired of searching copyright free images from diffrent websites? Try using NCI which searches copyright free images from across the popular platforms and shows you the results in a single platform.",
-    h2_small_devices: "Try NCI to search copyright free images from across the popular platforms",
+    h2_small_devices:
+        "Try NCI to search copyright free images from across the popular platforms",
     errorMessage: "Something went wrong!",
     emptyBodyText: "Type something in search bar...",
 };

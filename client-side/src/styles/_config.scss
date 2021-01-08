@@ -7,7 +7,7 @@ $font-stack: "Open Sans", sans-serif;
 $minFontSize: 14px;
 $maxFontSize: 20px;
 $scaler: 2vw;
-$base-size: clamp( $minFontSize, $scaler, $maxFontSize);
+$base-size: clamp($minFontSize, $scaler, $maxFontSize);
 
 $type-scale: 1.12;
 $h5: calc(#{$base-size} * #{$type-scale});

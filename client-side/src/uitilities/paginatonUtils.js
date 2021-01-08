@@ -1,5 +1,5 @@
 /**
- * Calculates and returns the array of page nos. that will be required for `totalImages` and 
+ * Calculates and returns the array of page nos. that will be required for `totalImages` and
  * if one page can have maximum `imagesPerPage` images
  * @param  {Number} totalImages
  * @param  {Number} imagesPerPage

@@ -1,57 +1,45 @@
-import React from "react";
-
+import React, { useEffect, useRef, useState } from "react";
 import "../styles/ImageCard.scss";
 
-class ImageCard extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            spans: 0,
-        };
+const ImageCard = ({ url, previewURL, author, service }) => {
+    const [span, setSpan] = useState(0);
+    const imageRef = useRef(null);
 
-        this.imageRef = React.createRef();
-    }
+    useEffect(() => {
+        const imageNode = imageRef.current;
+        imageNode.addEventListener("load", setSpanToImage);
 
-    componentDidMount() {
-        this.imageRef.current.addEventListener("load", this.setSpan);
-    }
+        return () => imageNode.removeEventListener("load", setSpanToImage);
+    }, []);
 
-    componentWillUnmount() {
-        this.imageRef.current.removeEventListener("load", this.setSpan);
-    }
-
-    setSpan = () => {
-        // grid-auto-rows=10 in css
-        if (this.imageRef.current) {
-            const span = Math.ceil(this.imageRef.current.clientHeight / 10);
-            this.setState({ spans: span });
+    const setSpanToImage = () => {
+        if (imageRef.current) {
+            const spanValue = Math.ceil(imageRef.current.clientHeight / 10);
+            setSpan(spanValue);
         }
     };
 
-    render() {
-        const { url, previewURL, author, service } = this.props.image;
-        return (
-            <div
-                className="row imgCard justify-content-center"
-                style={{ gridRowEnd: `span ${this.state.spans}` }}>
-                <img
-                    className="col-10"
-                    ref={this.imageRef}
-                    src={previewURL}
-                    alt={service + " image by " + author}
-                />
-                <div className="row overlay justify-content-center">
-                    <a
-                        className="btn"
-                        href={url}
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        View Image
-                    </a>
-                </div>
+    return (
+        <div
+            className="row imgCard justify-content-center"
+            style={{ gridRowEnd: `span ${span}` }}>
+            <img
+                className="col-11"
+                ref={imageRef}
+                src={previewURL}
+                alt={service + " image by " + author}
+            />
+            <div className="row overlay justify-content-center">
+                <a
+                    className="btn"
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    View Image
+                </a>
             </div>
-        );
-    }
-}
+        </div>
+    );
+};
 
 export default ImageCard;

@@ -1,18 +1,18 @@
-import React, { lazy, Suspense } from "react";
+import React, { Component, lazy, Suspense } from "react";
 
 import SearchBar from "./components/SearchBar";
 import Footer from "./components/Footer";
 import API from "./apis/imageAPI";
+import LoadSVG from "./components/LoaderSVG";
 import { DEFAULT_SEARCH_TERM, IMAGES_PER_PAGE } from "./uitilities/Constants";
 import { getCurrentPageImages } from "./uitilities/paginatonUtils";
 import "./styles/base.scss";
-import LoadSVG from "./components/LoaderSVG";
 
 // using lazy loading
 const ImageList = lazy(() => import("./components/ImageList"));
 const Pagination = lazy(() => import("./components/Pagination"));
 
-class App extends React.Component {
+class App extends Component {
     constructor() {
         super();
         this.state = {
@@ -22,7 +22,7 @@ class App extends React.Component {
             currentPage: 1,
             imagesPerPage: IMAGES_PER_PAGE,
         };
-    }
+    }      
 
     componentDidMount() {
         this.onSearchSubmit(DEFAULT_SEARCH_TERM);
@@ -32,14 +32,14 @@ class App extends React.Component {
      * calls api to get images related to the provided search term
      * @param  {String} term
      */
-    onSearchSubmit = async (term) => {
+    onSearchSubmit = (term) => {
         this.setState({
             error: false,
             loading: true,
             currentPage: 1,
         });
 
-        await API.get("images/", {
+        API.get("images/", {
             params: {
                 img: term,
             },
