@@ -19,7 +19,7 @@ test("Testing Pagination functionality", () => {
         />
     );
 
-    const pagenumbersNodes = container.querySelectorAll("li");
+    const pageNumbersNodes = container.querySelectorAll("li");
     // clicking second page
     const selectedAnchor = getByText("2");
     fireEvent.click(selectedAnchor);
@@ -29,7 +29,7 @@ test("Testing Pagination functionality", () => {
         "page-item active"
     );
     // checking if pages are calculated correctly
-    expect(pagenumbersNodes.length).toEqual(
+    expect(pageNumbersNodes.length).toEqual(
         Math.ceil(totalImages / imagesPerPage)
     );
     //checking if changing page works
