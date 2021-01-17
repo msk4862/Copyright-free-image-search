@@ -1,4 +1,5 @@
 export const TITLE = "No Copyright Images";
+export const TITLE_SM = "NCI";
 export const SOCIAL_GITHUB = "https://github.com/msk4862";
 export const SOCIAL_LINKEDIN = "https://www.linkedin.com/in/msk4862";
 export const SOCIAL_TWITTER = "https://twitter.com/msk4862";
@@ -15,6 +16,7 @@ export const TEXTS = {
     emptyBodyText: "Type something in search bar...",
 };
 
-export const IMAGES_PER_PAGE = 25;
+export const HOMEPAGE_IMAGE_COUNT = 15;
+export const IMAGES_PER_PAGE = 30;
 
 export const DEFAULT_SEARCH_TERM = "india";
