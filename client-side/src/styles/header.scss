@@ -1,0 +1,49 @@
+@import "config";
+
+.navbar {
+    background-color: $primary-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .navbar-brand {
+        color: $font-color;
+        text-decoration: none;
+        font-family: ncs;
+
+        h2 {
+            margin-bottom: 0;
+        }
+    }
+
+    .image-serach-nav {
+        input {
+            border-radius: 0;
+            height: 2.25rem;
+            font-size: $small;
+            overflow: hidden;
+        }
+        button {
+            outline: none;
+            border: none;
+            cursor: pointer;
+            margin-left: -1.5rem;
+            color: $primary-color;
+            align-self: center;            
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .navbar {
+        padding-left: 8px;
+        padding-right: 8px;
+        .image-serach-nav {
+            input {
+                height: 2rem;
+            }
+            padding-left: 0;
+            padding-right: 5px;        
+        }
+    }
+}

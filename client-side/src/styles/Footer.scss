@@ -16,7 +16,7 @@ footer {
 
     i {
         color: $font-color;
-        transition: transform 0.25s ease-in;
+        transition: transform 0.5s cubic-bezier(0.9,-0.17, 0.06, 2.53);
         padding: 10px;
     }
 
