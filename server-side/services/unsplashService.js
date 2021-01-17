@@ -8,9 +8,9 @@ class UnsplashService {
         return key && key.length && key.length > 10;
     }
 
-    request(query) {
+    request(query, per_page_images) {
         return new Promise((resolve, reject) => {
-            var url = `https://api.unsplash.com/search/photos/?query=${query}&per_page=50`;
+            var url = `https://api.unsplash.com/search/photos/?query=${query}&per_page=${per_page_images}`;
             axios
                 .get(url, {
                     headers: { Authorization: "Client-ID " + UNSPLASH_KEY },

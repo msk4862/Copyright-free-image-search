@@ -8,10 +8,10 @@ class PixabayService {
         return key && key.length && key.length > 10;
     }
 
-    request(query) {
+    request(query, per_page_images) {
         return new Promise((resolve, reject) => {
             var url =
-                `https://pixabay.com/api/?key=${PIXABAY_KEY}` + `&q=${query}`;
+                `https://pixabay.com/api/?key=${PIXABAY_KEY}&q=${query}&per_page=${per_page_images}`;
             axios
                 .get(url)
                 .then((response) => {

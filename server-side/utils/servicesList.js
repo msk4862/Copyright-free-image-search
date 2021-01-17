@@ -6,6 +6,11 @@ const PexelsService = require("../services/pexelsService");
 const services = [PixabayService, UnsplashService, PexelsService];
 
 class ServicesList {
+    /**
+     * Returns all enabled services.
+     * If no service is enabled
+     * then PlaceholderService sevice will be get activated
+     */
     static getEnabledServicesList() {
         const enabledServices = [];
         for (const service of services) {
@@ -19,7 +24,9 @@ class ServicesList {
             return [PlaceholderService];
         }
     }
-
+    /**
+     * Returns all services
+     */
     static getAllServices() {
         return services;
     }

@@ -2,16 +2,24 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const shuffleArray = require("../utils/arrayShuffle");
 const ServicesList = require("../utils/servicesList");
+const { DEFAULT_PER_PAGE_IMAGE_COUNT } = require("../utils/config");
+
 
 const NCIRouter = express.Router();
-NCIRouter.use(bodyParser.json());
+// NCIRouter.use(bodyParser.json());
 
 NCIRouter.route("/").get((req, res) => {
     const query = req.query.img;
-	const promises = [];
-	// calling all services apis
-    for (const service of ServicesList.getEnabledServicesList()) {
-        promises.push(new service().request(query));
+    const per_page_images = req.query.per_page_images || DEFAULT_PER_PAGE_IMAGE_COUNT;
+
+    const enabledServices = ServicesList.getEnabledServicesList();
+    const per_service_images = Math.ceil(per_page_images / enabledServices.length);
+    console.log(per_page_images, per_service_images)
+
+    const promises = [];
+    // calling all enabled service's apis
+    for (const service of enabledServices) {
+        promises.push(new service().request(query, per_service_images));
     }
 
     let images = [];
@@ -52,7 +60,7 @@ NCIRouter.route("/").get((req, res) => {
             console.log("Main services fetching function failed - ", e);
             return res.json({
                 error:
-                    "Something went wrong while fetching data from external APIs",
+                    "Something went wrong while fetching data from external APIs: " + e,
             });
         });
 });

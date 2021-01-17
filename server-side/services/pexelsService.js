@@ -1,5 +1,5 @@
 const axios = require("axios");
-const { PEXELS_KEY } = require("../utils/config");
+const { PEXELS_KEY, LIMITED_IMAGE_COUNT } = require("../utils/config");
 const Image = require("../models/Image");
 
 class PexelsService {
@@ -8,9 +8,9 @@ class PexelsService {
         return key && key.length && key.length > 10;
     }
 
-    request(query) {
+    request(query, per_page_images) {
         return new Promise((resolve, reject) => {
-            var url = `https://api.pexels.com/v1/search?query=${query}&per_page=50`;
+            var url = `https://api.pexels.com/v1/search?query=${query}&per_page=${per_page_images}`;
             axios
                 .get(url, { headers: { Authorization: PEXELS_KEY } })
                 .then((response) => {
