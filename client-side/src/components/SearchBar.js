@@ -13,15 +13,14 @@ const SearchBar = () => {
     };
 
     const { h1, h2, h2_small_devices } = TEXTS;
-    return (
-        <>
-            {redirect && 
+    return redirect ?
             // redirect to `Images` page
             <Redirect 
                 to={{
                     pathname: `/search/${searchTerm}`,
                 }}
-            />}
+            /> : 
+            (
             <div className="d-flex flex-column search-bar">
                 <h1 className="d-none d-sm-block">{TITLE}</h1>
                 <h1 className="d-block d-sm-none">{TITLE_SM}</h1>
@@ -40,17 +39,19 @@ const SearchBar = () => {
                         <input
                             className="col-10 col-sm-6 form-control"
                             type="text"
-                            placeholder="Type something to search..."
+                            placeholder={`Try "apple" or "cat"`}
                             name="search"
                             value={searchTerm}
                             onChange={(evt) => setSearchTerm(evt.target.value)}
                         />
                         <button
                             type="submit"
+                            aria-label="Search"
                             className="btn search-btn align-items-stretch">
                             Search
                         </button>
                         <button
+                            type="submit"
                             className="btn search-btn-small"
                             aria-label="Search">
                             <i className="fas fa-search"></i>
@@ -58,7 +59,6 @@ const SearchBar = () => {
                     </div>
                 </form>
             </div>
-        </>
     );
     
 }
