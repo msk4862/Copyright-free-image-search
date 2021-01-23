@@ -16,7 +16,7 @@ export const TEXTS = {
     emptyBodyText: "Type something in search bar...",
 };
 
-export const HOMEPAGE_IMAGE_COUNT = 15;
+export const HOMEPAGE_IMAGE_COUNT = 20;
 export const MAX_IMAGES_PER_PAGE = 25;
 export const MAX_IMAGES = 100;
 
