@@ -1,0 +1,33 @@
+@import "config";
+
+.image-filters {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 1rem 1.75rem;
+    background-color: $secondary-bg;
+
+    .dropdown {
+        margin-right: 2rem;
+        [data-toggle="dropdown"] {
+            color: $primary-color;
+            cursor: pointer;   
+        }
+        .dropdown-menu {
+            border-radius: 0;
+            background-color: $primary-color;
+
+            .dropdown-item {
+                cursor: pointer;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                font-size: $xxs-small;
+                color: $secondary-bg;
+                background-color: $primary-color;
+                padding-bottom: 0.5rem;
+            }
+        }
+    }    
+}

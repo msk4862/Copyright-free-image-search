@@ -24,7 +24,7 @@ const Header = (props) => {
                     <input
                         className="form-control"
                         type="text"
-                        placeholder="Type something to search..."
+                        placeholder={`Try "apple" or "cat"`}
                         name="search"
                         value={searchTerm}
                         onChange={(evt) => setSearchTerm(evt.target.value)}

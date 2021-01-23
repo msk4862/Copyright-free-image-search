@@ -4,10 +4,14 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import API from "../apis/imageAPI";
 import LoadSVG from "../components/LoaderSVG";
-import { DEFAULT_SEARCH_TERM, IMAGES_PER_PAGE } from "../uitilities/Constants";
-import { getCurrentPageImages } from "../uitilities/paginatonUtils";
-import "../styles/base.scss";
 import history from "../history";
+import Filters from "../components/Filters";
+import "../styles/base.scss";
+import { DEFAULT_SEARCH_TERM, MAX_IMAGES, MAX_IMAGES_PER_PAGE } from "../uitilities/Constants";
+import { getCurrentPageImages } from "../uitilities/paginatonUtils";
+import { dataParser } from "../uitilities/dataUtils";
+
+export const ImagesContext = React.createContext(null);
 
 // using lazy loading
 const ImageList = lazy(() => import("../components/ImageList"));
@@ -18,10 +22,13 @@ class Images extends Component {
         super(props);
         this.state = {
             images: null,
+            parsedImages: null,
             loading: false,
             error: false,
             currentPage: 1,
-            imagesPerPage: IMAGES_PER_PAGE,
+            imagesPerPage: MAX_IMAGES_PER_PAGE,
+            totalProviders: [],
+            filterKeys: [],
         };
     }
 
@@ -30,6 +37,7 @@ class Images extends Component {
         let searchTerm = searchTermFromUrl ? searchTermFromUrl : DEFAULT_SEARCH_TERM;
         this.onSearchSubmit(searchTerm);
     }
+
     /**
      * Change query string in url
      * @param  {String} term
@@ -48,28 +56,38 @@ class Images extends Component {
             error: false,
             loading: true,
             currentPage: 1,
+            totalProviders: [],
         });
 
         API.get("images/", {
             params: {
                 img: term,
-                per_page_images: IMAGES_PER_PAGE
+                total_images: MAX_IMAGES
             },
         })
             .then((res) => {
+                const { result, successfulServices } = res.data;
                 this.setState({
-                    images: res.data.result,
+                    images: result,
+                    totalProviders: successfulServices,
                 });
-                setTimeout(() => this.setState({ loading: false }), 2500);
+                setTimeout(() => this.setState({ loading: false }), 1500);
             })
             .catch((err) => {
                 console.log(err);
                 this.setState({
                     error: true,
                 });
-                setTimeout(() => this.setState({ loading: false }), 2500);
+                setTimeout(() => this.setState({ loading: false }), 1500);
             });
     };
+
+    setFilterKey = (key) => {
+        this.setState({
+            filterKeys: [key], 
+            currentPage: 1,
+        });
+    }
 
     /**
      * Change page number to the requested page
@@ -82,38 +100,48 @@ class Images extends Component {
     };
 
     render() {
-        let currentImages;
+        let currentPageImages = [];
         let totalImages = 0;
+        let parsedImages = [];
 
-        const { images, currentPage, imagesPerPage, loading, error } = this.state;
+        const { images, totalProviders, filterKeys, currentPage, imagesPerPage, loading, error } = this.state;
 
         if (images) {
+            parsedImages = dataParser(images, filterKeys);
+            totalImages = parsedImages.length;
+
             //Get images for current page
-            currentImages = getCurrentPageImages(
+            currentPageImages = getCurrentPageImages(
                 currentPage,
                 imagesPerPage,
-                images
+                parsedImages
             );
-            totalImages = images.length;
         }
 
         return (
             <div className="d-flex flex-column">
                 <Header onSubmit={this.upadeQuery} />
                 <Suspense fallback={<LoadSVG />}>
+                    <ImagesContext.Provider 
+                        value={{
+                            images,
+                            setFilterKey: this.setFilterKey,
+                        }}>
+                        <Filters totalProviders={totalProviders}/>
+                    </ImagesContext.Provider>
                     <ImageList
-                        images={currentImages}
-                        loading={loading}
-                        error={error}
+                            images={currentPageImages}
+                            loading={loading}
+                            error={error}
                     />
-                    {!this.state.loading ? (
+                    {!loading &&
                         <Pagination
                             totalImages={totalImages}
                             imagesPerPage={imagesPerPage}
                             currentPage={currentPage}
                             paginate={this.paginate}
                         />
-                    ) : null}
+                    }
                 </Suspense>
                 <Footer />
             </div>

@@ -25,7 +25,7 @@ class Home extends Component {
         API.get("images/", {
             params: {
                 img: DEFAULT_SEARCH_TERM,
-                per_page_images: HOMEPAGE_IMAGE_COUNT
+                total_images: HOMEPAGE_IMAGE_COUNT
             },
         })
             .then((res) => {

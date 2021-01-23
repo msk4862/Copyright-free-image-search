@@ -1,6 +1,7 @@
 $font-color: #f8f8f8;
 $primary-color: #24436f;
 $secondary-color: #28a745;
+$secondary-bg: #e8eaec;
 $font-stack: "Open Sans", sans-serif;
 
 // Typography
@@ -8,11 +9,14 @@ $minFontSize: 14px;
 $maxFontSize: 20px;
 $scaler: 2vw;
 $base-size: clamp($minFontSize, $scaler, $maxFontSize);
-
 $type-scale: 1.12;
+
 $h5: calc(#{$base-size} * #{$type-scale});
 $h4: calc(#{$h5} * #{$type-scale});
 $h3: calc(#{$h4} * #{$type-scale});
 $h2: calc(#{$h3} * #{$type-scale});
 $h1: calc(#{$h2} * #{$type-scale});
 $small: calc(#{$base-size} / #{$type-scale});
+$xs-small: calc(#{$small} / #{$type-scale});
+$xxs-small: calc(#{$small} / #{$type-scale});
+

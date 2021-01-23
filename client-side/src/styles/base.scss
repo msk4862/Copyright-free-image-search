@@ -33,6 +33,12 @@ body {
     font-family: $font-stack;
 }
 
+.noselect {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
 // Not working on comnined
 ::selection {
     color: $font-color;
