@@ -10,11 +10,11 @@ const NCIRouter = express.Router();
 
 NCIRouter.route("/").get((req, res) => {
     const query = req.query.img;
-    const per_page_images = req.query.per_page_images || DEFAULT_PER_PAGE_IMAGE_COUNT;
+    const total_images = req.query.total_images || DEFAULT_PER_PAGE_IMAGE_COUNT;
 
-    const enabledServices = ServicesList.getEnabledServicesList();
-    const per_service_images = Math.ceil(per_page_images / enabledServices.length);
-    console.log(per_page_images, per_service_images)
+    // fetching all enabled services
+    const enabledServices = ServicesList.getEnabledServicesList();  
+    const per_service_images = Math.ceil(total_images / enabledServices.length);
 
     const promises = [];
     // calling all enabled service's apis
@@ -29,7 +29,7 @@ NCIRouter.route("/").get((req, res) => {
         .then((result) => {
             for (let i = 0; i < result.length; i++) {
                 const serviceResult = result[i];
-				const serviceName = ServicesList.getEnabledServicesList()[i].name;
+				const serviceName = ServicesList.getEnabledServicesList()[i].SERVICE_NAME;
 
 				if (serviceResult instanceof Error) {
                     console.log(
@@ -38,8 +38,8 @@ NCIRouter.route("/").get((req, res) => {
                     );
                     unsuccessfulServices.push(serviceName);
                 } else {
-                    successfulServices.push(serviceName);
                     images = images.concat(serviceResult)
+                    successfulServices.push(serviceName);
                 }
 			}
 			

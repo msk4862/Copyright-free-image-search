@@ -24,7 +24,7 @@ class UnsplashService {
                                 image.links.html,
                                 image.urls.small,
                                 image.user.username,
-                                "Pexels"
+                                UnsplashService.SERVICE_NAME,
                             )
                         );
                     }
@@ -34,5 +34,6 @@ class UnsplashService {
         });
     }
 }
+UnsplashService.SERVICE_NAME = "Unsplash";
 
 module.exports = UnsplashService;

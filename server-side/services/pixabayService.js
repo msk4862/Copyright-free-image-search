@@ -33,5 +33,6 @@ class PixabayService {
         });
     }
 }
+PixabayService.SERVICE_NAME = "Pixabay";
 
 module.exports = PixabayService;

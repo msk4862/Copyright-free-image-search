@@ -17,12 +17,13 @@ class PlaceholderService {
                     "",
                     "http://via.placeholder.com/200",
                     "Placeholder",
-                    "PlaceholderService"
+                    PlaceholderService.SERVICE_NAME,
                 )
             );
         }
         return Promise.resolve(result);
     }
 }
+PlaceholderService.SERVICE_NAME = "None";
 
 module.exports = PlaceholderService;

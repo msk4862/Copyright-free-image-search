@@ -1,5 +1,5 @@
 const axios = require("axios");
-const { PEXELS_KEY, LIMITED_IMAGE_COUNT } = require("../utils/config");
+const { PEXELS_KEY } = require("../utils/config");
 const Image = require("../models/Image");
 
 class PexelsService {
@@ -22,7 +22,7 @@ class PexelsService {
                                 image.url,
                                 image.src.medium,
                                 image.photographer,
-                                "Pexels"
+                                PexelsService.SERVICE_NAME,
                             )
                         );
                     }
@@ -32,5 +32,6 @@ class PexelsService {
         });
     }
 }
+PexelsService.SERVICE_NAME = "Pexels";
 
 module.exports = PexelsService;
