@@ -5,12 +5,12 @@
     flex-direction: row;
     justify-content: flex-start;
     padding: 1rem 1.75rem;
+    color: $primary-color;
     background-color: $secondary-bg;
 
     .dropdown {
-        margin-right: 2rem;
+        margin-left: 2rem;
         [data-toggle="dropdown"] {
-            color: $primary-color;
             cursor: pointer;   
         }
         .dropdown-menu {
@@ -23,10 +23,13 @@
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: center;
-                font-size: $xxs-small;
                 color: $secondary-bg;
                 background-color: $primary-color;
                 padding-bottom: 0.5rem;
+
+                i {
+                    font-size: xx-small;
+                }
             }
         }
     }    
