@@ -15,7 +15,7 @@ class Home extends Component {
         super();
         this.state = {
             images: null,
-            loading: false,
+            loading: true,
             error: false,
             redirect: false,
         };
@@ -32,12 +32,14 @@ class Home extends Component {
                 this.setState({
                     images: res.data.result,
                 });
+                setTimeout(() => this.setState({ loading: false }), 1000);
             })
             .catch((err) => {
                 console.log(err);
                 this.setState({
                     error: true,
                 });
+                setTimeout(() => this.setState({ loading: false }), 1000);
             });
     }
 

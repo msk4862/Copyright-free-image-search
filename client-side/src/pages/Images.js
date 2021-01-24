@@ -71,14 +71,14 @@ class Images extends Component {
                     images: result,
                     totalProviders: successfulServices,
                 });
-                setTimeout(() => this.setState({ loading: false }), 1500);
+                setTimeout(() => this.setState({ loading: false }), 1000);
             })
             .catch((err) => {
                 console.log(err);
                 this.setState({
                     error: true,
                 });
-                setTimeout(() => this.setState({ loading: false }), 1500);
+                setTimeout(() => this.setState({ loading: false }), 1000);
             });
     };
 
@@ -124,7 +124,6 @@ class Images extends Component {
                 <Suspense fallback={<LoadSVG />}>
                     <ImagesContext.Provider 
                         value={{
-                            images,
                             setFilterKey: this.setFilterKey,
                         }}>
                         <Filters totalProviders={totalProviders}/>
@@ -134,7 +133,7 @@ class Images extends Component {
                             loading={loading}
                             error={error}
                     />
-                    {!loading &&
+                    {!loading && !error &&
                         <Pagination
                             totalImages={totalImages}
                             imagesPerPage={imagesPerPage}

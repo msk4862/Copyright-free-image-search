@@ -6,7 +6,7 @@ const Filters  = ({ totalProviders }) => {
 
     return (
         <div className="image-filters">
-            <strong>Filter your search</strong>
+            <strong className="d-none d-sm-block">Filter your search</strong>
             <FilterDropdown 
                 filterName={"Owner"} 
                 options={totalProviders}
