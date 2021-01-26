@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/header.scss";
-import { TITLE, TITLE_SM } from "../uitilities/Constants";
+import logo_sm from "../assets/imgs/logo_sm.png";
 
 const Header = (props) => {
     const [searchTerm, setSearchTerm] = useState("");
@@ -14,12 +14,12 @@ const Header = (props) => {
 
     return (
         <nav className="nav navbar navbar-small">
-            <Link to={"/"} className="navbar-brand">
-                <h2 className="d-none d-sm-block" >{TITLE}</h2>
-                <h2 className="d-block d-sm-none" to={"/"}>{TITLE_SM}</h2>
-            </Link>
-            
-            <form className="col-10 col-sm-6 col-md-4 image-serach-nav" onSubmit={handleSubmit}>
+            <div className="logo">
+                <Link to={"/"}>
+                    <img src={logo_sm} alt="logo"/>
+                </Link>
+            </div>
+            <form className="col-12 col-sm-8 col-md-4" onSubmit={handleSubmit}>
                 <div className="d-flex flex-row">
                     <input
                         className="form-control"

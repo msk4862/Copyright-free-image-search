@@ -6,17 +6,14 @@
     justify-content: space-between;
     align-items: center;
 
-    .navbar-brand {
-        color: $font-color;
-        text-decoration: none;
-        font-family: ncs;
-
-        h2 {
-            margin-bottom: 0;
+    .logo {
+        img {
+            width: 100px;
+            height: 100%;
         }
     }
 
-    .image-serach-nav {
+    form {
         input {
             border-radius: 0;
             height: 2.25rem;
@@ -38,7 +35,19 @@
     .navbar {
         padding-left: 8px;
         padding-right: 8px;
-        .image-serach-nav {
+
+        .logo {
+            margin-left: auto;
+            margin-right: auto;
+
+            img {
+                width: 80px;
+                height: 100%;
+            }
+        }
+
+        form {
+            margin-top: 0.5rem;
             input {
                 height: 2rem;
             }

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import "../styles/SearchBar.scss";
-import { TITLE, TITLE_SM, TEXTS } from "../uitilities/Constants";
+import { TEXTS } from "../uitilities/Constants";
+import logo_sm from "../assets/imgs/logo_sm.png";
+import logo_lg from "../assets/imgs/logo_lg.png";
 
 const SearchBar = () => {
     const [searchTerm, setSearchTerm] = useState("");
@@ -22,8 +24,12 @@ const SearchBar = () => {
             /> : 
             (
             <div className="d-flex flex-column search-bar">
-                <h1 className="d-none d-sm-block">{TITLE}</h1>
-                <h1 className="d-block d-sm-none">{TITLE_SM}</h1>
+                <div className="logo">
+                    <Link to={"/"}>
+                        <img className="d-none d-sm-block" src={logo_lg} alt="logo"/>
+                        <img className="d-block d-sm-none" src={logo_sm} alt="logo"/>
+                    </Link>
+                </div>
                 <div className="d-flex desc justify-content-center">
                     <div className="col-10 col-sm-8 flex-column">
                         <h2>{h1}</h2>

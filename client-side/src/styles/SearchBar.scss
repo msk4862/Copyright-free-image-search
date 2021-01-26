@@ -1,35 +1,31 @@
 @import "utilities";
 @import "config";
 
-@font-face {
-    font-family: ncs;
-    src: url("../assets/fonts/ncs.woff2"), url("../assets/fonts/ncs.woff"),
-        url("../assets/fonts/ncs.ttf");
-}
-
 .search-bar {
     min-height: 450px;
     background-image: url("../assets/imgs/w4.webp"),
         url("../assets/imgs//w4.jpg");
     text-align: center;
 
+    .logo {
+        margin-top: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+
+        img {
+            width: 180px;
+            height: 100%;
+        }
+    }
+
     .desc {
-        margin-top: 5rem;
+        margin-top: 4.75rem;
         h2 {
             margin-bottom: 15px;
         }
         small {
             opacity: 0.75;
         }
-    }
-    h1 {
-        display: flex;
-        margin-top: 10px;
-        padding-top: 0.75rem;
-        padding-bottom: 0.75rem;
-        font-family: ncs;
-        justify-content: center;
-        align-items: center;
     }
 
     form {
@@ -84,6 +80,18 @@
 @media screen and (max-width: 600px) {
     .search-bar {
         min-height: 280px;
+
+        .logo {
+            margin-top: 1rem;
+            margin-left: auto;
+            margin-right: auto;
+    
+            img {
+                width: 100px;
+                height: 100%;
+            }
+        }
+
         .desc {
             margin-top: 0.5rem;
         }
@@ -99,6 +107,8 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                padding-left: 5px;
+                padding-right: 5px;
             }
         }
     }
