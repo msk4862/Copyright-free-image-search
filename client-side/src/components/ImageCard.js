@@ -30,7 +30,7 @@ const ImageCard = ({ url, previewURL, author, service }) => {
         // from css properties
         const gridGap = 10;
         const gridAutoRows = 5;
-        if(imageRef) {
+        if(imageRef && imageRef.current) {
             const rowSpan = Math.ceil((imageRef.current.getBoundingClientRect().height + gridGap)/(gridAutoRows + gridGap));
             setRowSpan(rowSpan);
         }
