@@ -37,7 +37,7 @@ const ImageList = ({ error, images, loading }) => {
 
     function renderCards() {
         return images.map((image) => {
-            const { url, previewURL, author, service } = image;
+            const { url, previewURL, author, service, serviceUrl } = image;
             return (
                 <ImageCard
                     key={image.id}
@@ -45,6 +45,7 @@ const ImageList = ({ error, images, loading }) => {
                     previewURL={previewURL}
                     author={author}
                     service={service}
+                    serviceUrl={serviceUrl}
                 />
             );
         });

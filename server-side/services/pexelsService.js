@@ -23,6 +23,7 @@ class PexelsService {
                                 image.src.medium,
                                 image.photographer,
                                 PexelsService.SERVICE_NAME,
+                                PexelsService.SERVICE_URL,
                             )
                         );
                     }
@@ -33,5 +34,6 @@ class PexelsService {
     }
 }
 PexelsService.SERVICE_NAME = "Pexels";
+PexelsService.SERVICE_URL = "https://www.pexels.com";
 
 module.exports = PexelsService;

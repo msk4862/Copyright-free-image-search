@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import imagesLoaded from "imagesloaded";
 import "../styles/ImageCard.scss";
 
-const ImageCard = ({ url, previewURL, author, service }) => {
+const ImageCard = ({ url, previewURL, author, service, serviceUrl }) => {
     const [rowSpan, setRowSpan] = useState(0);
     const imageRef = useRef(null);
 
@@ -35,7 +35,7 @@ const ImageCard = ({ url, previewURL, author, service }) => {
             setRowSpan(rowSpan);
         }
     }
-
+    
     return (
         <div
             className="imgCard"
@@ -50,8 +50,8 @@ const ImageCard = ({ url, previewURL, author, service }) => {
             </a>
             <div className="overlay">
                 <image-meta>
-                    <div>{author}</div>
-                    <div>{service}</div>
+                    <span>{author}</span>
+                    <a href={serviceUrl} rel="noopener noreferrer" target="_blank">{service}</a>
                 </image-meta>
             </div>
         </div>

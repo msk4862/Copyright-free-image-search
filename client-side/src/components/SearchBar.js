@@ -31,7 +31,7 @@ const SearchBar = () => {
                     </Link>
                 </div>
                 <div className="d-flex desc justify-content-center">
-                    <div className="col-10 col-sm-8 flex-column">
+                    <div className="col-12 col-sm-8 flex-column">
                         <h2>{h1}</h2>
                         <small className="d-none d-sm-block">{h2}</small>
                         <small className="d-block d-sm-none">

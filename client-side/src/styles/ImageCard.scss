@@ -22,13 +22,18 @@
         overflow: hidden;
         transition: 0.35s ease-out;
         background-color: rgba($color: #000, $alpha: 0.5);
-
+        
         image-meta {
             display: flex;
             flex-direction: row;
             justify-content: space-between;    
             padding-left: 5px;
-            padding-right: 5px;        
+            padding-right: 5px;    
+            
+            a, a:hover {
+                color: $font-color;
+                text-decoration: none;
+            }
         }
     }
 }
@@ -36,5 +41,6 @@
 .imgCard:hover {
     .overlay {
         height: 2rem;
+        margin-bottom: 5px;
     }
 }

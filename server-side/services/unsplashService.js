@@ -25,6 +25,7 @@ class UnsplashService {
                                 image.urls.small,
                                 image.user.username,
                                 UnsplashService.SERVICE_NAME,
+                                UnsplashService.SERVICE_URL,
                             )
                         );
                     }
@@ -35,5 +36,6 @@ class UnsplashService {
     }
 }
 UnsplashService.SERVICE_NAME = "Unsplash";
+UnsplashService.SERVICE_URL = "https://unsplash.com";
 
 module.exports = UnsplashService;

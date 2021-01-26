@@ -23,7 +23,8 @@ class PixabayService {
                                 image.pageURL,
                                 image.webformatURL,
                                 image.user,
-                                "Pixabay"
+                                PixabayService.SERVICE_NAME,
+                                PixabayService.SERVICE_URL,
                             )
                         );
                     }
@@ -34,5 +35,6 @@ class PixabayService {
     }
 }
 PixabayService.SERVICE_NAME = "Pixabay";
+PixabayService.SERVICE_URL = "https://pixabay.com";
 
 module.exports = PixabayService;

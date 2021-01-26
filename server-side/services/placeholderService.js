@@ -18,6 +18,7 @@ class PlaceholderService {
                     "http://via.placeholder.com/200",
                     "Placeholder",
                     PlaceholderService.SERVICE_NAME,
+                    PlaceholderService.SERVICE_URL,
                 )
             );
         }
@@ -25,5 +26,6 @@ class PlaceholderService {
     }
 }
 PlaceholderService.SERVICE_NAME = "None";
+PlaceholderService.SERVICE_URL = "https://placeholder.com";
 
 module.exports = PlaceholderService;
