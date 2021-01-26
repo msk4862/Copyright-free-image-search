@@ -1,0 +1,26 @@
+language: node_js
+node_js:
+  - "stable"
+cache: npm
+
+notification:
+  email: false
+
+before-install:
+  - cd client-side
+
+install:
+  - npm ci
+
+script:
+  - npm run format
+  - npm run test
+  - npm run build
+
+deploy:
+  access_key_id: $AWS_ACCESS
+  bucket: ncimages.tech
+  local_dir: build
+  provider: s3
+  secret_access_key: $AWS_SECRET
+  skip_cleanup: true
