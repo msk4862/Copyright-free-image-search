@@ -18,29 +18,34 @@ const ImageCard = ({ url, previewURL, author, service, serviceUrl }) => {
 
         // componentWillUnmount
         return () => window.removeEventListener("resize", resizeGridItem);
-        // eslint-disable-next-line        
+        // eslint-disable-next-line
     }, []);
 
-    function resizeInstance(instance){
+    function resizeInstance(instance) {
         const item = instance.elements[0];
         resizeGridItem(item);
-     }     
+    }
 
     const resizeGridItem = (item) => {
         // from css properties
         const gridGap = 10;
         const gridAutoRows = 5;
-        if(imageRef && imageRef.current) {
-            const rowSpan = Math.ceil((imageRef.current.getBoundingClientRect().height + gridGap)/(gridAutoRows + gridGap));
+        if (imageRef && imageRef.current) {
+            const rowSpan = Math.ceil(
+                (imageRef.current.getBoundingClientRect().height + gridGap) /
+                    (gridAutoRows + gridGap)
+            );
             setRowSpan(rowSpan);
         }
-    }
-    
+    };
+
     return (
-        <div
-            className="imgCard"
-            style={{gridRowEnd: `span ${rowSpan}`}}>
-            <a role="button" href={url} target="_blank" rel="noopener noreferrer">
+        <div className="imgCard" style={{ gridRowEnd: `span ${rowSpan}` }}>
+            <a
+                role="button"
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer">
                 <img
                     ref={imageRef}
                     className="image"
@@ -51,7 +56,12 @@ const ImageCard = ({ url, previewURL, author, service, serviceUrl }) => {
             <div className="overlay">
                 <image-meta>
                     <span>{author}</span>
-                    <a href={serviceUrl} rel="noopener noreferrer" target="_blank">{service}</a>
+                    <a
+                        href={serviceUrl}
+                        rel="noopener noreferrer"
+                        target="_blank">
+                        {service}
+                    </a>
                 </image-meta>
             </div>
         </div>

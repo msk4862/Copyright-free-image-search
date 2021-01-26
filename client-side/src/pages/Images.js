@@ -7,7 +7,11 @@ import LoadSVG from "../components/LoaderSVG";
 import history from "../history";
 import Filters from "../components/Filters";
 import "../styles/base.scss";
-import { DEFAULT_SEARCH_TERM, MAX_IMAGES, MAX_IMAGES_PER_PAGE } from "../uitilities/Constants";
+import {
+    DEFAULT_SEARCH_TERM,
+    MAX_IMAGES,
+    MAX_IMAGES_PER_PAGE,
+} from "../uitilities/Constants";
 import { getCurrentPageImages } from "../uitilities/paginatonUtils";
 import { dataParser } from "../uitilities/dataUtils";
 
@@ -34,7 +38,9 @@ class Images extends Component {
 
     componentDidMount() {
         const searchTermFromUrl = this.props.match.params.term;
-        let searchTerm = searchTermFromUrl ? searchTermFromUrl : DEFAULT_SEARCH_TERM;
+        let searchTerm = searchTermFromUrl
+            ? searchTermFromUrl
+            : DEFAULT_SEARCH_TERM;
         this.onSearchSubmit(searchTerm);
     }
 
@@ -45,7 +51,7 @@ class Images extends Component {
     upadeQuery = (term) => {
         history.push(`/search/${term}`);
         this.onSearchSubmit(term);
-    }
+    };
 
     /**
      * calls api to get images related to the provided search term
@@ -62,7 +68,7 @@ class Images extends Component {
         API.get("images/", {
             params: {
                 img: term,
-                total_images: MAX_IMAGES
+                total_images: MAX_IMAGES,
             },
         })
             .then((res) => {
@@ -84,10 +90,10 @@ class Images extends Component {
 
     setFilterKey = (key) => {
         this.setState({
-            filterKeys: [key], 
+            filterKeys: [key],
             currentPage: 1,
         });
-    }
+    };
 
     /**
      * Change page number to the requested page
@@ -104,7 +110,15 @@ class Images extends Component {
         let totalImages = 0;
         let parsedImages = [];
 
-        const { images, totalProviders, filterKeys, currentPage, imagesPerPage, loading, error } = this.state;
+        const {
+            images,
+            totalProviders,
+            filterKeys,
+            currentPage,
+            imagesPerPage,
+            loading,
+            error,
+        } = this.state;
 
         if (images) {
             parsedImages = dataParser(images, filterKeys);
@@ -122,25 +136,25 @@ class Images extends Component {
             <div className="d-flex flex-column">
                 <Header onSubmit={this.upadeQuery} />
                 <Suspense fallback={<LoadSVG />}>
-                    <ImagesContext.Provider 
+                    <ImagesContext.Provider
                         value={{
                             setFilterKey: this.setFilterKey,
                         }}>
-                        <Filters totalProviders={totalProviders}/>
+                        <Filters totalProviders={totalProviders} />
                     </ImagesContext.Provider>
                     <ImageList
-                            images={currentPageImages}
-                            loading={loading}
-                            error={error}
+                        images={currentPageImages}
+                        loading={loading}
+                        error={error}
                     />
-                    {!loading && !error &&
+                    {!loading && !error && (
                         <Pagination
                             totalImages={totalImages}
                             imagesPerPage={imagesPerPage}
                             currentPage={currentPage}
                             paginate={this.paginate}
                         />
-                    }
+                    )}
                 </Suspense>
                 <Footer />
             </div>

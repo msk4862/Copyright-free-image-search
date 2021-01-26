@@ -1,5 +1,5 @@
 import React from "react";
-import {Route, Router, Switch} from "react-router-dom";
+import { Route, Router, Switch } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Images from "./pages/Images";
@@ -13,7 +13,7 @@ const App = () => {
                 <Route path="/search/:term?" exact component={Images} />
             </Switch>
         </Router>
-    )
-}
+    );
+};
 
 export default App;

@@ -8,15 +8,14 @@ const Header = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (searchTerm.trim() !== "")
-            props.onSubmit(searchTerm);
+        if (searchTerm.trim() !== "") props.onSubmit(searchTerm);
     };
 
     return (
         <nav className="nav navbar navbar-small">
             <div className="logo">
                 <Link to={"/"}>
-                    <img src={logo_sm} alt="logo"/>
+                    <img src={logo_sm} alt="logo" />
                 </Link>
             </div>
             <form className="col-12 col-sm-8 col-md-4" onSubmit={handleSubmit}>
@@ -29,15 +28,13 @@ const Header = (props) => {
                         value={searchTerm}
                         onChange={(evt) => setSearchTerm(evt.target.value)}
                     />
-                    <button
-                        className=""
-                        aria-label="Search">
+                    <button className="" aria-label="Search">
                         <i className="fas fa-search"></i>
                     </button>
                 </div>
             </form>
         </nav>
-    )
-}
+    );
+};
 
 export default Header;

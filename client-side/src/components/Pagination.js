@@ -2,7 +2,6 @@ import React from "react";
 import { getPageNumbers } from "../uitilities/paginatonUtils";
 
 const Pagination = (props) => {
-
     const { totalImages, imagesPerPage, currentPage } = props;
     const pages = getPageNumbers(totalImages, imagesPerPage);
 
@@ -21,13 +20,14 @@ const Pagination = (props) => {
         });
     };
 
-    return pages.length > 1 &&
-        (
-        <nav>
-            <ul className="d-flex flex-row justify-content-center mt-3 mb-3">
-                {renderPageNumbers()}
-            </ul>
-        </nav>
+    return (
+        pages.length > 1 && (
+            <nav>
+                <ul className="d-flex flex-row justify-content-center mt-3 mb-3">
+                    {renderPageNumbers()}
+                </ul>
+            </nav>
+        )
     );
 };
 

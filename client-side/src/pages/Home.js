@@ -4,7 +4,10 @@ import SearchBar from "../components/SearchBar";
 import Footer from "../components/Footer";
 import API from "../apis/imageAPI";
 import LoadSVG from "../components/LoaderSVG";
-import { DEFAULT_SEARCH_TERM, HOMEPAGE_IMAGE_COUNT } from "../uitilities/Constants";
+import {
+    DEFAULT_SEARCH_TERM,
+    HOMEPAGE_IMAGE_COUNT,
+} from "../uitilities/Constants";
 import "../styles/base.scss";
 
 // using lazy loading
@@ -19,13 +22,13 @@ class Home extends Component {
             error: false,
             redirect: false,
         };
-    }      
+    }
 
     componentDidMount() {
         API.get("images/", {
             params: {
                 img: DEFAULT_SEARCH_TERM,
-                total_images: HOMEPAGE_IMAGE_COUNT
+                total_images: HOMEPAGE_IMAGE_COUNT,
             },
         })
             .then((res) => {

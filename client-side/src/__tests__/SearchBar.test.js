@@ -12,7 +12,7 @@ test("Testing serach bar", () => {
     const { container } = render(
         <BrowserRouter>
             <SearchBar onSubmit={handleSubmit} />
-            <Route path={`/search/${searchTerm}`} >{searchTerm}</Route>
+            <Route path={`/search/${searchTerm}`}>{searchTerm}</Route>
         </BrowserRouter>
     );
 

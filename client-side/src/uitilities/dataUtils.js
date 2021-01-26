@@ -9,14 +9,13 @@ export const dataParser = (images, filterKeys = [], sortKey = "") => {
     let filteredImages = images;
 
     // apply all filters
-    for(let filterKey of filterKeys) {
+    for (let filterKey of filterKeys) {
         let filtered = applyFilter(filteredImages, filterKey);
         filteredImages = filtered;
     }
 
-
     return filteredImages;
-}
+};
 
 /**
  * To filter images array accrording to given filterKey
@@ -24,7 +23,7 @@ export const dataParser = (images, filterKeys = [], sortKey = "") => {
  * @param  {String} filterKey
  */
 export const applyFilter = (images, filterKey) => {
-    return images.filter(image => {
-        return image.service === filterKey
+    return images.filter((image) => {
+        return image.service === filterKey;
     });
-} 
+};
