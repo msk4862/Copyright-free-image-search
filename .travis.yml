@@ -6,7 +6,7 @@ cache: npm
 notification:
   email: false
 
-before-install:
+before_install:
   - cd client-side
 
 install:
