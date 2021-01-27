@@ -18,9 +18,9 @@ script:
   - npm run build
 
 deploy:
-  access_key_id: $AWS_ACCESS
-  bucket: ncimages.tech
-  local_dir: build
   provider: s3
+  access_key_id: $AWS_ACCESS
   secret_access_key: $AWS_SECRET
+  bucket: "ncimages.tech"
+  local_dir: build
   skip_cleanup: true
