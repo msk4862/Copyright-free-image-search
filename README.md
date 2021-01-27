@@ -3,6 +3,7 @@
     <p>
          <b>Tired of searching images from diffrent websites? Try using NCI which searches copyright free images from across the platforms like pixabay, unsplash, etc. and shows you the results in a single platform.</b>
     </p>
+      <img src="https://travis-ci.org/msk4862/Copyright-free-image-search.svg?branch=master" width="90">
       <img src="https://img.shields.io/github/license/msk4862/Copyright-free-image-search?style=flat-square" width="80">
       <img src="https://img.shields.io/github/v/release/msk4862/Copyright-free-image-search?style=flat-square" width="85">
       <img src="https://forthebadge.com/images/badges/made-with-javascript.svg" width="130">
