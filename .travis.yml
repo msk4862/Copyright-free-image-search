@@ -22,5 +22,6 @@ deploy:
   access_key_id: $AWS_ACCESS
   secret_access_key: $AWS_SECRET
   bucket: "ncimages.tech"
+  region: ap-south-1
   local_dir: build
   skip_cleanup: true
