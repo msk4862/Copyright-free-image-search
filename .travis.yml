@@ -12,6 +12,9 @@ before_install:
 install:
   - npm ci
 
+env: REACT_APP_ENV=production
+  REACT_APP_PRODUCTION_API_BASE_URL=http://nciserver-env.m2ecpqkmqs.ap-south-1.elasticbeanstalk.com/
+
 script:
   - npm run format
   - npm run test
