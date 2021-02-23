@@ -1,5 +1,5 @@
 <div align="center">
-    <h1>NCI</h1>
+    <h1><img src="https://user-images.githubusercontent.com/24875366/107914819-3c6e5b00-6f89-11eb-8ff9-88e9d226adea.png" width="180"></h1>
     <p>
          <b>Tired of searching images from diffrent websites? Try using NCI which searches copyright free images from across the platforms like pixabay, unsplash, etc. and shows you the results in a single platform.</b>
     </p>
