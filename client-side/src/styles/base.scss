@@ -33,6 +33,12 @@ body {
     font-family: $font-stack;
 }
 
+button,
+button:focus {
+    border: none;
+    outline-color: transparent;
+}
+
 .noselect {
     user-select: none;
     -moz-user-select: none;

@@ -1,17 +1,28 @@
 @import "config";
 
+.filters {
+    padding: 0.75rem 1.75rem;
+    background-color: $secondary-bg;
+}
+
+.filter-toggler {
+    display: none;
+}
+
 .image-filters {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    padding: 1rem 1.75rem;
+    align-items: center;
     color: $primary-color;
-    background-color: $secondary-bg;
 
     .dropdown {
         margin-left: 2rem;
         [data-toggle="dropdown"] {
             cursor: pointer;
+        }
+        span {
+            font-size: $small;
         }
         .dropdown-menu {
             border-radius: 0;
@@ -31,6 +42,37 @@
                     font-size: xx-small;
                 }
             }
+
+            .dropdown-item:hover {
+                background-color: $font-color;
+                color: $primary-color;
+            }
         }
+    }
+
+    .btn {
+        margin-left: 2rem;
+        font-size: $small;
+        background-color: $primary-color;
+        color: $font-color;
+    }
+}
+
+/* For tablet screens */
+@media screen and (max-width: 992px) {
+    .filter-toggler {
+        display: block;
+        margin-left: auto;
+        right: 10px;
+        top: 10px;
+        z-index: 1;
+        background-color: transparent;
+        i {
+            font-size: $h2;
+        }
+    }
+    .image-filters {
+        flex-direction: column;
+        gap: 0.75rem;
     }
 }

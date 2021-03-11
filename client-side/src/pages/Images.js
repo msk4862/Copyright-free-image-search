@@ -13,7 +13,7 @@ import {
     MAX_IMAGES_PER_PAGE,
 } from "../uitilities/Constants";
 import { getCurrentPageImages } from "../uitilities/paginatonUtils";
-import { dataParser } from "../uitilities/dataUtils";
+import { dataParser, getPageTitle } from "../uitilities/dataUtils";
 
 export const ImagesContext = React.createContext(null);
 
@@ -32,7 +32,7 @@ class Images extends Component {
             currentPage: 1,
             imagesPerPage: MAX_IMAGES_PER_PAGE,
             totalProviders: [],
-            filterKeys: [],
+            filterKeys: {},
         };
     }
 
@@ -58,6 +58,9 @@ class Images extends Component {
      * @param  {String} term
      */
     onSearchSubmit = (term) => {
+        // updating page title based on search
+        document.title = getPageTitle(term);
+
         this.setState({
             error: false,
             loading: true,
@@ -88,9 +91,26 @@ class Images extends Component {
             });
     };
 
-    setFilterKey = (key) => {
+    /**
+     * Update filter keys
+     * @param  {String} key
+     */
+    setFilterKey = (filterKey, value) => {
+        let updatedFilters = this.state.filterKeys;
+        updatedFilters[filterKey] = value;
+
         this.setState({
-            filterKeys: [key],
+            filterKeys: updatedFilters,
+            currentPage: 1,
+        });
+    };
+
+    /**
+     * Clear filter keys
+     */
+    clearFilters = () => {
+        this.setState({
+            filterKeys: {},
             currentPage: 1,
         });
     };
@@ -106,9 +126,11 @@ class Images extends Component {
     };
 
     render() {
-        let currentPageImages = [];
-        let totalImages = 0;
-        let parsedImages = [];
+        console.log(this.state);
+
+        let currentPageImages = [],
+            totalImages = 0,
+            parsedImages = [];
 
         const {
             images,
@@ -138,7 +160,10 @@ class Images extends Component {
                 <Suspense fallback={<LoadSVG />}>
                     <ImagesContext.Provider
                         value={{
+                            filterKeys: this.state.filterKeys,
+                            totalProviders: this.state.totalProviders,
                             setFilterKey: this.setFilterKey,
+                            clearFilters: this.clearFilters,
                         }}>
                         <Filters totalProviders={totalProviders} />
                     </ImagesContext.Provider>

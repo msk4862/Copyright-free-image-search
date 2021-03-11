@@ -8,7 +8,9 @@ const Header = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (searchTerm.trim() !== "") props.onSubmit(searchTerm);
+
+        const term = searchTerm.trim();
+        if (term !== "") props.onSubmit(term);
     };
 
     return (

@@ -1,20 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { ImagesContext } from "../pages/Images";
 import "../styles/filters.scss";
 
-const FilterDropdown = ({ filterName, options }) => {
-    const { setFilterKey } = useContext(ImagesContext);
-    const [filter, setFilter] = useState(filterName);
+const FilterDropdown = ({ filterName, options, setFilter }) => {
+    const { filterKeys } = useContext(ImagesContext);
 
-    /**
-     * To set clicked filter
-     * @param  {String} key - Clicked filter
-     */
-    const onFilterSet = (key) => {
-        setFilter(key);
-        setFilterKey(key);
-    };
-
+    const filter = filterKeys[filterName] || filterName;
     return (
         <div className="dropdown">
             <span
@@ -31,7 +22,7 @@ const FilterDropdown = ({ filterName, options }) => {
                             <span
                                 key={option}
                                 className="dropdown-item"
-                                onClick={() => onFilterSet(option)}>
+                                onClick={() => setFilter(filterName, option)}>
                                 {option}{" "}
                                 {filter === option && (
                                     <i className="active fas fa-check"></i>
