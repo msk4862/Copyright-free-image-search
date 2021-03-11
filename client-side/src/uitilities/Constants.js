@@ -32,4 +32,4 @@ export const ORIENTATION_FILTER = {
     VALUES: ["Landscape", "Potrait"],
 };
 
-export const SORT_KEYS = ["Popular"];
+export const SORT_KEYS = ["Popularity"];
