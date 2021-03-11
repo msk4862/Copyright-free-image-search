@@ -24,7 +24,7 @@ export const DEFAULT_SEARCH_TERM = "india";
 
 export const OWNER_FILTER = {
     NAME: "Owner",
-    VALUES: [],
+    VALUES: ["Pixabay", "Unsplash", "Pexels"],
 };
 
 export const ORIENTATION_FILTER = {
