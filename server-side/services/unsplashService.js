@@ -21,11 +21,14 @@ class UnsplashService {
                     for (const image of data.results) {
                         result.push(
                             new Image(
+                                image.width,
+                                image.height,
                                 image.links.html,
                                 image.urls.small,
                                 image.user.username,
+                                image.likes,
                                 UnsplashService.SERVICE_NAME,
-                                UnsplashService.SERVICE_URL,
+                                UnsplashService.SERVICE_URL
                             )
                         );
                     }

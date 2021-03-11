@@ -19,11 +19,14 @@ class PexelsService {
                     for (const image of data.photos) {
                         result.push(
                             new Image(
+                                image.width,
+                                image.height,
                                 image.url,
                                 image.src.medium,
                                 image.photographer,
+                                0,
                                 PexelsService.SERVICE_NAME,
-                                PexelsService.SERVICE_URL,
+                                PexelsService.SERVICE_URL
                             )
                         );
                     }
