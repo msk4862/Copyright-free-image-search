@@ -1,38 +1,23 @@
 import React, { useContext } from "react";
 import { ImagesContext } from "../pages/Images";
-import "../styles/filters.scss";
+import Dropdown from "./Dropdown";
+import "../styles/filterDropdown.scss";
 
-const FilterDropdown = ({ filterName, options, setFilter }) => {
-    const { filterKeys } = useContext(ImagesContext);
+const FilterDropdown = ({ filterName, options }) => {
+    const { setFilterKey, filterKeys } = useContext(ImagesContext);
+
+    /**
+     * Passing filterKey to main setFilterKey method
+     * @param  {} _
+     * @param  {String} filterKey
+     */
+    const onFilterSet = (_, filterKey) => {
+        setFilterKey(filterName, filterKey);
+    };
 
     const filter = filterKeys[filterName] || filterName;
-    return (
-        <div className="dropdown">
-            <span
-                className="noselect"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false">
-                {filter} <i className="fas fa-caret-down"></i>
-            </span>
-            <div className="dropdown-menu">
-                {options &&
-                    options.map((option) => {
-                        return (
-                            <span
-                                key={option}
-                                className="dropdown-item"
-                                onClick={() => setFilter(filterName, option)}>
-                                {option}{" "}
-                                {filter === option && (
-                                    <i className="active fas fa-check"></i>
-                                )}
-                            </span>
-                        );
-                    })}
-            </div>
-        </div>
-    );
+
+    return <Dropdown title={filter} options={options} onSelect={onFilterSet} />;
 };
 
 export default FilterDropdown;

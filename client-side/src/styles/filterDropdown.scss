@@ -1,0 +1,34 @@
+@import "config";
+
+.dropdown {
+    [data-toggle="dropdown"] {
+        cursor: pointer;
+    }
+    span {
+        font-size: $small;
+    }
+    .dropdown-menu {
+        border-radius: 0;
+        background-color: $primary-color;
+
+        .dropdown-item {
+            cursor: pointer;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            color: $secondary-bg;
+            background-color: $primary-color;
+            padding-bottom: 0.5rem;
+
+            i {
+                font-size: xx-small;
+            }
+        }
+
+        .dropdown-item:hover {
+            background-color: $font-color;
+            color: $primary-color;
+        }
+    }
+}

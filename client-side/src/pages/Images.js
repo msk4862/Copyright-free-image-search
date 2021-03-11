@@ -33,6 +33,7 @@ class Images extends Component {
             imagesPerPage: MAX_IMAGES_PER_PAGE,
             totalProviders: [],
             filterKeys: {},
+            sortKey: "",
         };
     }
 
@@ -96,11 +97,25 @@ class Images extends Component {
      * @param  {String} key
      */
     setFilterKey = (filterKey, value) => {
-        let updatedFilters = this.state.filterKeys;
-        updatedFilters[filterKey] = value;
+        // let updatedFilters = this.state.filterKeys;
+        // updatedFilters[filterKey] = value;
 
         this.setState({
-            filterKeys: updatedFilters,
+            filterKeys: {
+                ...this.state.filterKeys,
+                [filterKey]: value,
+            },
+            currentPage: 1,
+        });
+    };
+
+    /**
+     * Sort result based on sortKey
+     * @param  {String} sortKey
+     */
+    setSortKey = (sortKey) => {
+        this.setState({
+            sortKey: sortKey,
             currentPage: 1,
         });
     };
@@ -136,6 +151,7 @@ class Images extends Component {
             images,
             totalProviders,
             filterKeys,
+            sortKey,
             currentPage,
             imagesPerPage,
             loading,
@@ -143,7 +159,7 @@ class Images extends Component {
         } = this.state;
 
         if (images) {
-            parsedImages = dataParser(images, filterKeys);
+            parsedImages = dataParser(images, filterKeys, sortKey);
             totalImages = parsedImages.length;
 
             //Get images for current page
@@ -160,10 +176,12 @@ class Images extends Component {
                 <Suspense fallback={<LoadSVG />}>
                     <ImagesContext.Provider
                         value={{
-                            filterKeys: this.state.filterKeys,
-                            totalProviders: this.state.totalProviders,
+                            filterKeys: filterKeys,
+                            sortKey: sortKey,
+                            totalProviders: totalProviders,
                             setFilterKey: this.setFilterKey,
                             clearFilters: this.clearFilters,
+                            setSortKey: this.setSortKey,
                         }}>
                         <Filters totalProviders={totalProviders} />
                     </ImagesContext.Provider>

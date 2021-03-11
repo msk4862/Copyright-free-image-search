@@ -1,20 +1,47 @@
-import { OWNER_FILTER, ORIENTATION_FILTER } from "./Constants";
+import { OWNER_FILTER, ORIENTATION_FILTER, SORT_KEYS } from "./Constants";
 
 /**
  * To perform all filtering and sorting oprations on image array
  * @param  {Array} images
- * @param  {Array} filterKeys - Data will be filtered according to these keys of String
+ * @param  {Object} filterKeys - Data will be filtered according to the keys of object
  * @param  {String} sortKey - Data will be sorted by according to this key
  * @returns {Array} Data after applying filtering and sorting
  */
 export const dataParser = (images, filterKeys = {}, sortKey = "") => {
-    let filteredImages = images;
+    let parsedImages = images;
 
-    // apply all filters
-    // for (let filterKey of filterKeys) {
-    //     let filtered = applyFilter(filteredImages, filterKey);
-    //     filteredImages = filtered;
-    // }
+    if (sortKey !== "") parsedImages = sortData(parsedImages, sortKey);
+
+    if (Object.keys(filterKeys).length > 0)
+        parsedImages = filterData(parsedImages, filterKeys);
+
+    return parsedImages;
+};
+
+/**
+ * Sort data based on sortKey
+ * @param  {} images
+ * @param  {} sortKey
+ */
+export const sortData = (images, sortKey) => {
+    return images.sort((img1, img2) => {
+        switch (sortKey) {
+            // Popularity
+            case SORT_KEYS[0]:
+                return img2.likes - img1.likes;
+
+            default:
+                return -1;
+        }
+    });
+};
+
+/**
+ * @param  {Array} images
+ * @param  {Object} filterKeys
+ */
+export const filterData = (images, filterKeys) => {
+    let filteredImages = images;
 
     for (let key in filterKeys) {
         if (filterKeys.hasOwnProperty(key)) {
@@ -33,7 +60,6 @@ export const dataParser = (images, filterKeys = {}, sortKey = "") => {
                     break;
                 default:
             }
-            console.log(key, filterKeys[key]);
         }
     }
 
