@@ -22,21 +22,24 @@ NCIRouter.route("/").get((req, res) => {
     let images = [];
     const successfulServices = [];
     const unsuccessfulServices = [];
-    Promise.all(promises.map((p) => p.catch((e) => e)))
+    Promise.allSettled(promises.map((p) => p.catch((e) => e)))
         .then((result) => {
             for (let i = 0; i < result.length; i++) {
                 const serviceResult = result[i];
                 const serviceName = ServicesList.getEnabledServicesList()[i]
                     .SERVICE_NAME;
 
-                if (serviceResult instanceof Error) {
+                if (
+                    serviceResult.status !== "fulfilled" ||
+                    serviceResult.value instanceof Error
+                ) {
                     console.log(
                         `Service failed - ${serviceName}: `,
                         serviceResult.stack
                     );
                     unsuccessfulServices.push(serviceName);
                 } else {
-                    images = images.concat(serviceResult);
+                    images = images.concat(serviceResult.value);
                     successfulServices.push(serviceName);
                 }
             }
