@@ -1,6 +1,7 @@
 import { CONFIG } from '@/utils/config';
 import Image from '../models/Image';
 import { fetcher } from '../apis';
+import { TImageServiceResonse } from '../types';
 
 type IUnsplashImageResponse = {
   width: number;
@@ -11,7 +12,10 @@ type IUnsplashImageResponse = {
   likes: number;
 };
 
-type TUnspashResponse = TImageServiceResonse<'results', IUnsplashImageResponse>;
+type TUnsplashResponse = TImageServiceResonse<
+  'results',
+  IUnsplashImageResponse
+>;
 
 class UnsplashService {
   MAX_PLACEHOLDERS = 15;
@@ -32,7 +36,7 @@ class UnsplashService {
         query
       )}&per_page=${per_page_images}`;
 
-      fetcher<TUnspashResponse>(url, 'GET', {
+      fetcher<TUnsplashResponse>(url, 'GET', {
         Authorization: `Client-ID ${CONFIG.UNSPLASH_KEY}`,
       })
         .then((response) => {

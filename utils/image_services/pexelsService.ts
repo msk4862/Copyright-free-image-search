@@ -1,6 +1,7 @@
 import { CONFIG } from '@/utils/config';
 import Image from '../models/Image';
 import { fetcher } from '../apis';
+import { TImageServiceResonse } from '../types';
 
 type IPexelImageResponse = {
   width: number;

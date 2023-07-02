@@ -1,48 +1,18 @@
-.imgCard {
-  position: relative;
+.image-card {
+  &:hover {
+    .image-card__overlay {
+      height: 2.5rem;
+      margin-bottom: 5px;
+    }
+  }
 
   .image {
     transition: 0.5s ease;
     backface-visibility: hidden;
-    object-fit: cover;
-    z-index: 0;
-    display: block;
-    width: 100%;
-    height: auto;
   }
 
-  .overlay {
-    z-index: 1;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 0;
-    overflow: hidden;
+  &__overlay {
     transition: 0.35s ease-out;
     background-color: rgba($color: #000, $alpha: 0.5);
-
-    image-meta {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      height: 100%;
-      padding-left: 10px;
-      padding-right: 10px;
-
-      a,
-      a:hover {
-        color: white;
-        text-decoration: none;
-      }
-    }
-  }
-}
-
-.imgCard:hover {
-  .overlay {
-    height: 2.5rem;
-    margin-bottom: 10px;
   }
 }

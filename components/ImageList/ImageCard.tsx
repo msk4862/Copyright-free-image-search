@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-// import imagesLoaded from "imagesloaded";
+import Link from 'next/link';
 import './ImageCard.scss';
 
 type ImageCardProps = {
@@ -24,23 +24,11 @@ export const ImageCard = ({
   const imageRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
-    // const imageNode = imageRef.current;
-    // resizeGridItem(imageNode);
-
     // resizing elements if screen size is changing
     window.addEventListener('resize', resizeGridItem);
 
-    // when image is fully loaded
-    // imagesLoaded(imageNode, resizeInstance);
-
-    // componentWillUnmount
     return () => window.removeEventListener('resize', resizeGridItem);
   }, []);
-
-  // function resizeInstance(instance) {
-  //   const item = instance.elements[0];
-  //   resizeGridItem(item);
-  // }
 
   const resizeGridItem = () => {
     // from css properties
@@ -56,20 +44,34 @@ export const ImageCard = ({
   };
 
   return (
-    <div className="imgCard" style={{ gridRowEnd: `span ${rowSpan}` }}>
-      <a role="button" href={url} target="_blank" rel="noopener noreferrer">
+    <div
+      className="image-card relative"
+      style={{ gridRowEnd: `span ${rowSpan}` }}
+    >
+      <Link role="button" href={url} target="_blank" rel="noopener noreferrer">
         <Image
           ref={imageRef}
-          className="image"
-          // onLoad={resizeInstance}
+          className="image block w-full h-auto object-cover z-0"
+          onLoad={resizeGridItem}
           src={previewURL}
+          placeholder="blur"
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mO8Ww8AAj8BXkQ+xPEAAAAASUVORK5CYII="
+          loading="eager"
+          sizes="(min-height: 100px)"
           alt={`${service} image by ${author}`}
+          width={50}
+          height={50}
         />
-      </a>
-      <div className="overlay">
-        <div>
+      </Link>
+      <div className="image-card__overlay absolute left-0 right-0 bottom-0 h-0 overflow-hidden z-10">
+        <div className="flex justify-between items-center h-full pl-4 pr-4">
           <span>{author}</span>
-          <a href={serviceUrl} rel="noopener noreferrer" target="_blank">
+          <a
+            href={serviceUrl}
+            className="hover:text-white"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             {service}
           </a>
         </div>

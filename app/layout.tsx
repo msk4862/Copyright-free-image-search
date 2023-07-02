@@ -5,6 +5,7 @@ import { SearchBar } from '@/components/SearchBar';
 import logo from '@/public/logo_sm.png';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Footer } from '@/components/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
           <SearchBar className="w-5/6 ml-10" />
         </header>
         {children}
+        <Footer />
       </body>
     </html>
   );

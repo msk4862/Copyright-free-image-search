@@ -1,5 +1,6 @@
 import { CONFIG } from './config';
 import Image from './models/Image';
+import { GetImageRouteResponse } from './types';
 
 const createUrl = (path: string) => {
   return `${CONFIG.HOST}/${path}`;
@@ -24,6 +25,9 @@ export const fetcher = async <TResponse, TRequestBody = unknown>(
   return res.json();
 };
 
-export const fetchImages = async (searchTerm: string) => {
-  return fetcher<Image[]>(createUrl(`api/images/${searchTerm}`), 'GET');
+export const fetchImages = (searchTerm: string) => {
+  return fetcher<GetImageRouteResponse>(
+    createUrl(`api/images/${searchTerm}`),
+    'GET'
+  );
 };

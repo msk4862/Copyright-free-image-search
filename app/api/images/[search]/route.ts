@@ -1,27 +1,13 @@
 import { NextResponse } from 'next/server';
-
 import ServicesList from '@/utils/servicesList';
 import Image from '@/utils/models/Image';
 import { shuffleArray } from '@/utils/util';
-import {
-  UnsplashService,
-  PexelsService,
-  PixabayService,
-  PlaceholderService,
-} from '@/utils/image_services';
-
-type TServices =
-  | typeof UnsplashService.SERVICE_NAME
-  | typeof PexelsService.SERVICE_NAME
-  | typeof PixabayService.SERVICE_NAME
-  | typeof PlaceholderService.SERVICE_NAME;
-
-export type GetImageResponse = ReturnType<typeof GET>;
+import { GetImageRouteResponse, TServices } from '@/utils/types';
 
 export const GET = async (
   _: Request,
   { params }: { params: { search: string } }
-) => {
+): Promise<NextResponse<GetImageRouteResponse>> => {
   // fetching all enabled services
   const enabledServices = ServicesList.getEnabledServicesList();
   const per_service_images = 3;
