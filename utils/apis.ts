@@ -1,6 +1,5 @@
 import { CONFIG } from './config';
 import { MAX_IMAGES_PER_PAGE, PAGE_NO } from './constants';
-import Image from './models/Image';
 import { GetImageRouteResponse } from './types';
 
 const createUrl = (path: string) => {

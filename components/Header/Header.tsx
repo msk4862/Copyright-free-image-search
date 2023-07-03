@@ -13,17 +13,17 @@ export const Header = () => {
           width={200}
           height={150}
         />
-        <div className="pt-20 flex flex-col items-center col-span-10">
-          <p className=" text-3xl col-auto font-medium">
+        <div className="pt-6 md:pt-12 lg:pt-14 flex flex-col text-center">
+          <p className="text-lg md:text-2xl lg:text-3xl font-medium">
             Stunning and copyright free images
           </p>
-          <p className="pt-5 text-slate-200	font-light">
+          <p className="pt-3 md:pt-5 text-xs md:text-base text-slate-200	font-light">
             Tired of searching copyright free images from diffrent websites? Try
             using NCI which searches copyright free images from across the
             popular platforms and shows you the results in a single platform.
           </p>
         </div>
-        <SearchBar className="w-2/3 mt-4" />
+        <SearchBar className="w-full md:w-2/3 pl-4 pr-4 md:pl-0 md:pr-0 mt-4" />
       </div>
     </div>
   );

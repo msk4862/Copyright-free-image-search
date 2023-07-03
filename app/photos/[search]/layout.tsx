@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 import { PropsWithChildren } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import { SearchBar } from '@/components/SearchBar';
-import Link from 'next/link';
 
 type Props = {
   params: { search: string };
@@ -23,16 +23,17 @@ export function generateMetadata({ params }: Props): Metadata {
 export default function ImageListLayout({ children }: PropsWithChildren) {
   return (
     <>
-      <header className="flex w-full items-center justify-center p-4 bg-blue-900">
+      <header className="flex w-full items-center justify-center p-2 md:p-4 bg-blue-900 h-50">
         <Link href={'/'}>
           <Image
             src={'/images/logo_sm.png'}
+            className="logo--small"
             alt="logo"
             width={90}
             height={35}
           />
         </Link>
-        <SearchBar className="w-5/6 ml-10" />
+        <SearchBar className="w-5/6 ml-5 md:ml-10" />
       </header>
       <section>{children}</section>
     </>

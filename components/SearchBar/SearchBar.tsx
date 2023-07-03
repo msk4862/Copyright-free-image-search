@@ -1,4 +1,5 @@
 'use client';
+
 import clsx from 'clsx';
 import { usePathname, useRouter } from 'next/navigation';
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
@@ -25,13 +26,17 @@ export const SearchBar = ({ className = '' }: { className?: string }) => {
     <form className={clsx('flex', className)} onSubmit={onSubmitHandler}>
       <input
         type="text"
-        className="text-slate-950 p-3 pt-2 pb-2 w-full rounded-l-3xl outline-none"
+        className="text-sm md:text-base text-slate-950 p-3 pt-2 pb-2 w-full rounded-l-3xl outline-none"
         value={searchItem}
         onChange={(event: ChangeEvent<HTMLInputElement>) =>
           setSearchItem(event.target.value)
         }
+        placeholder="Type here..."
       />
-      <button type="submit" className="bg-green-600 pl-2 pr-2 rounded-r-3xl">
+      <button
+        type="submit"
+        className="text-sm md:text-base bg-green-600 p-1 md:pl-2 md:pr-2 rounded-r-3xl"
+      >
         Search
       </button>
     </form>

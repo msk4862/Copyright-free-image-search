@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 import { TweenMax, TimelineMax, Bounce, Power4 } from 'gsap';
 
-export const Loader = () => {
+export const LoaderSVG = () => {
   useEffect(() => {
     TweenMax.from('.panda', 1.25, {
       scale: 0,

@@ -1,6 +1,6 @@
 'use client';
 
-import { Suspense, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import './ImageCard.scss';
@@ -65,7 +65,7 @@ export const ImageCard = ({
       </Link>
       <div className="image-card__overlay absolute left-0 right-0 bottom-0 h-0 overflow-hidden z-10">
         <div className="flex justify-between items-center h-full pl-4 pr-4">
-          <span>{author}</span>
+          <span className="cursor-pointer">{author}</span>
           <a
             href={serviceUrl}
             className="hover:text-white"

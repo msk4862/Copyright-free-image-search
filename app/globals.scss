@@ -26,3 +26,12 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+@media screen and (max-width: 576px) {
+  header {
+    .logo--small {
+      height: 30px;
+      width: auto;
+    }
+  }
+}
