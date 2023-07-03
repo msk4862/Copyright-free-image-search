@@ -25,11 +25,17 @@ class PixabayService {
     return false;
   }
 
-  request(query: string, per_page_images: number): Promise<Image[]> {
+  request(
+    query: string,
+    per_page_images: number,
+    page: number
+  ): Promise<Image[]> {
     return new Promise((resolve, reject) => {
       const url = `https://pixabay.com/api/?key=${
         CONFIG.PIXABAY_KEY
-      }&q=${encodeURIComponent(query)}&per_page=${per_page_images}`;
+      }&q=${encodeURIComponent(
+        query
+      )}&per_page=${per_page_images}&page=${page}`;
 
       fetcher<TPixabayResponse>(url, 'GET')
         .then((response) => {

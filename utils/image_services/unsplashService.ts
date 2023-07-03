@@ -30,11 +30,15 @@ class UnsplashService {
     return false;
   }
 
-  request(query: string, per_page_images: number): Promise<Image[]> {
+  request(
+    query: string,
+    per_page_images: number,
+    page: number
+  ): Promise<Image[]> {
     return new Promise((resolve, reject) => {
       const url = `https://api.unsplash.com/search/photos/?query=${encodeURIComponent(
         query
-      )}&per_page=${per_page_images}`;
+      )}&per_page=${per_page_images}&page=${page}`;
 
       fetcher<TUnsplashResponse>(url, 'GET', {
         Authorization: `Client-ID ${CONFIG.UNSPLASH_KEY}`,

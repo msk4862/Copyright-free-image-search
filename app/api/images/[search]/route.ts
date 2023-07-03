@@ -1,22 +1,32 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import ServicesList from '@/utils/servicesList';
 import Image from '@/utils/models/Image';
-import { shuffleArray } from '@/utils/util';
+import { getParsedValue, shuffleArray } from '@/utils/util';
 import { GetImageRouteResponse, TServices } from '@/utils/types';
+import { MAX_IMAGES_PER_PAGE, PAGE_NO } from '@/utils/constants';
 
 export const GET = async (
-  _: Request,
+  req: NextRequest,
   { params }: { params: { search: string } }
 ): Promise<NextResponse<GetImageRouteResponse>> => {
+  const { searchParams } = req.nextUrl;
+
+  const imagesPerPage = getParsedValue(
+    searchParams.get('images_per_page'),
+    parseInt,
+    MAX_IMAGES_PER_PAGE
+  );
+  const page = getParsedValue(searchParams.get('page'), parseInt, PAGE_NO);
+  const searchTerm = params.search;
+
   // fetching all enabled services
   const enabledServices = ServicesList.getEnabledServicesList();
-  const per_service_images = 3;
-  //  const per_service_images = Math.ceil(total_images / enabledServices.length);
+  const per_service_images = Math.ceil(imagesPerPage / enabledServices.length);
 
   const promises: Array<Promise<Image[]>> = [];
   // calling all enabled service's apis
   for (const service of enabledServices) {
-    promises.push(new service().request(params.search, per_service_images));
+    promises.push(new service().request(searchTerm, per_service_images, page));
   }
 
   let images: Image[] = [];
@@ -27,8 +37,6 @@ export const GET = async (
     const responses = await Promise.allSettled<Image[]>(
       promises.map((p) => p.catch((e) => e))
     );
-
-    console.log('route', responses);
 
     for (let i = 0; i < responses.length; i++) {
       const serviceResult = responses[i];

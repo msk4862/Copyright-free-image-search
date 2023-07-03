@@ -1,4 +1,5 @@
-import { Metadata, ResolvingMetadata } from 'next';
+import { Pagination } from '@/components/Pagination';
+import { Metadata } from 'next';
 import { PropsWithChildren } from 'react';
 
 type Props = {

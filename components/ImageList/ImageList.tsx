@@ -1,20 +1,19 @@
 import { fetchImages } from '@/utils/apis';
 import { ImageCard } from './ImageCard';
+import { PAGE_NO } from '@/utils/constants';
 
 import './ImageList.scss';
-import { Loader } from '../Loader';
-import { Suspense } from 'react';
 
 type Props = {
   searchTerm: string;
+  page?: number;
 };
 
-export const ImageList = async ({ searchTerm }: Props) => {
-  const imagesRes = await fetchImages(searchTerm);
+export const ImageList = async ({ searchTerm, page = PAGE_NO }: Props) => {
+  const imagesRes = await fetchImages(searchTerm, page);
 
   if (!imagesRes.status) {
-    // return <div>{`Something went wrong -  ${images.error.toString()}`}</div>;
-    return 'dsli';
+    return 'Something went wrong';
   }
 
   const { result } = imagesRes;

@@ -2,8 +2,8 @@ import React from "react";
 import { getPageNumbers } from "../uitilities/paginatonUtils";
 
 const Pagination = (props) => {
-    const { totalImages, imagesPerPage, currentPage } = props;
-    const pages = getPageNumbers(totalImages, imagesPerPage);
+    // const { totalImages, imagesPerPage, currentPage } = props;
+    // const pages = getPageNumbers(totalImages, imagesPerPage);
 
     const renderPageNumbers = () => {
         return pages.map((number) => {

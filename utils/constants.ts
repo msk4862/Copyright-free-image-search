@@ -21,6 +21,7 @@ export const TEXTS = {
 export const HOMEPAGE_IMAGE_COUNT = 20;
 export const MAX_IMAGES_PER_PAGE = 25;
 export const MAX_IMAGES = 150;
+export const PAGE_NO = 1;
 
 export const DEFAULT_SEARCH_TERM = 'india';
 

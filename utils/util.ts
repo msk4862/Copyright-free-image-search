@@ -1,5 +1,5 @@
 /**
- * Shuffles input array inplace
+ * @description Shuffles input array inplace
  */
 export const shuffleArray = <T>(array: Array<T>) => {
   var range = array.length;
@@ -12,4 +12,20 @@ export const shuffleArray = <T>(array: Array<T>) => {
 
     range -= 1;
   }
+};
+
+/**
+ * @description Parses `value` if it has non-bull value using provided `parserFn`,
+ * otherwise return `defaultValue`
+ */
+export const getParsedValue = <TInput, TDefaultValue>(
+  value: TInput,
+  parserFn: (input: NonNullable<TInput>) => TDefaultValue,
+  defaultValue: TDefaultValue
+) => {
+  if (value) {
+    return parserFn(value);
+  }
+
+  return defaultValue;
 };

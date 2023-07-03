@@ -25,11 +25,15 @@ class PexelsService {
     return false;
   }
 
-  request(query: string, per_page_images: number): Promise<Image[]> {
+  request(
+    query: string,
+    per_page_images: number,
+    page: number
+  ): Promise<Image[]> {
     return new Promise((resolve, reject) => {
       const url = `https://api.pexels.com/v1/search?query=${encodeURIComponent(
         query
-      )}&per_page=${per_page_images}`;
+      )}&per_page=${per_page_images}&page=${page}`;
 
       fetcher<TPexelResponse>(url, 'GET', {
         Authorization: CONFIG.PEXELS_KEY as string,
