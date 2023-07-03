@@ -25,13 +25,13 @@ export const SearchBar = ({ className = '' }: { className?: string }) => {
     <form className={clsx('flex', className)} onSubmit={onSubmitHandler}>
       <input
         type="text"
-        className="text-slate-950 p-3 pt-2 pb-2 w-full"
+        className="text-slate-950 p-3 pt-2 pb-2 w-full rounded-l-3xl outline-none"
         value={searchItem}
         onChange={(event: ChangeEvent<HTMLInputElement>) =>
           setSearchItem(event.target.value)
         }
       />
-      <button type="submit" className="bg-blue-600 pl-2 pr-2">
+      <button type="submit" className="bg-green-600 pl-2 pr-2 rounded-r-3xl">
         Search
       </button>
     </form>

@@ -4,7 +4,6 @@ import { ImageListContainer } from '@/components/ImageList';
 import { Loader } from '@/components/Loader';
 import { PAGE_NO } from '@/utils/constants';
 import { getParsedValue } from '@/utils/util';
-
 type Props = {
   params: { search: string };
   searchParams?: { page: string };

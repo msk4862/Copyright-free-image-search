@@ -1,6 +1,8 @@
-import { Pagination } from '@/components/Pagination';
 import { Metadata } from 'next';
 import { PropsWithChildren } from 'react';
+import Image from 'next/image';
+import { SearchBar } from '@/components/SearchBar';
+import Link from 'next/link';
 
 type Props = {
   params: { search: string };
@@ -19,5 +21,20 @@ export function generateMetadata({ params }: Props): Metadata {
 }
 
 export default function ImageListLayout({ children }: PropsWithChildren) {
-  return <section>{children}</section>;
+  return (
+    <>
+      <header className="flex w-full items-center justify-center p-4 bg-blue-900">
+        <Link href={'/'}>
+          <Image
+            src={'/images/logo_sm.png'}
+            alt="logo"
+            width={90}
+            height={35}
+          />
+        </Link>
+        <SearchBar className="w-5/6 ml-10" />
+      </header>
+      <section>{children}</section>
+    </>
+  );
 }

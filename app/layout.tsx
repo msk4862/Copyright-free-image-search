@@ -1,11 +1,7 @@
 import { PropsWithChildren } from 'react';
-import './globals.css';
 import { Inter } from 'next/font/google';
-import { SearchBar } from '@/components/SearchBar';
-import logo from '@/public/logo_sm.png';
-import Image from 'next/image';
-import Link from 'next/link';
 import { Footer } from '@/components/Footer';
+import './globals.scss';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,13 +15,10 @@ export const metadata = {
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/images/nextjs_logo.png" type="images/png" />
+      </head>
       <body className={inter.className}>
-        <header className="flex w-full items-center p-3">
-          <Link href={'/'}>
-            <Image src={logo} alt="logo" height={35} />
-          </Link>
-          <SearchBar className="w-5/6 ml-10" />
-        </header>
         {children}
         <Footer />
       </body>

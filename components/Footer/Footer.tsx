@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export const Footer = () => {
   return (
-    <footer className="flex flex-col p-5 bg-blue-900 text-white justify-center items-center">
+    <footer className="flex flex-col mt-5 p-5 bg-blue-900 text-white justify-center items-center">
       <div className="flex w-full justify-center gap-5">
         <Link
           href={SOCIALS_LINKS.LINKEDIN}

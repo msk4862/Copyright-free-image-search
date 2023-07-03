@@ -19,7 +19,7 @@ export const ImageList = async ({ searchTerm, page = PAGE_NO }: Props) => {
   const { result } = imagesRes;
 
   return (
-    <div className="image-list mt-4 grid p-10">
+    <div className="image-list mt-2 grid p-5">
       {result.map((image) => {
         return <ImageCard key={image.id} {...image} />;
       })}

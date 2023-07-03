@@ -18,14 +18,14 @@ export const Pagination = ({ pageNo, setPageNo }: PaginationProps) => {
   return (
     <nav className="flex justify-center align-middle items-center mt-5 mb-5 w-full">
       <button
-        className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"
+        className="border border-white hover:bg-gray-700 text-white py-2 disabled:text-gray-400 px-4 rounded-l-3xl"
         onClick={() => handleNavigation('prev')}
         disabled={pageNo === 1}
       >
         Prev
       </button>
       <button
-        className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r"
+        className="border border-l-0 border-white hover:bg-gray-700 text-white py-2 px-4 rounded-r-3xl"
         onClick={() => handleNavigation('next')}
       >
         Next
