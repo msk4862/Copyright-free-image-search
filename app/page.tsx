@@ -1,11 +1,16 @@
 import { Header } from '@/components/Header';
-import { ImageList } from '@/components/ImageContainer';
+import { ImageContainer } from '@/components/ImageContainer';
+import { HOMEPAGE_IMAGE_COUNT } from '@/utils/constants';
 
 export default function HomePage() {
   return (
     <div className="home w-screen flex flex-col">
       <Header />
-      <ImageList searchTerm="india" showPagination={false} />
+      <ImageContainer
+        searchTerm="india"
+        showPagination={false}
+        imagesPerPage={HOMEPAGE_IMAGE_COUNT}
+      />
     </div>
   );
 }

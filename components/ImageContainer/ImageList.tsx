@@ -25,23 +25,21 @@ export const ImageList = ({
 
   useEffect(() => {
     const parsedImages = dataParser(fetchedImages, filterKeys, sortKey);
-    console.log('pared again');
 
     setImages(parsedImages, imageProviders);
   }, [fetchedImages, imageProviders, setImages, filterKeys, sortKey]);
 
-  console.log('sort', sortKey, images[0]);
-
   return (
     <div className="image-list mt-2 grid p-5">
-      {images.length === 0 && (
+      {!images || images.length === 0 ? (
         <ImageListEmptyContainer>
           Sorry no results matches your search filters!
         </ImageListEmptyContainer>
+      ) : (
+        images.map((image) => {
+          return <ImageCard key={image.id} {...image} />;
+        })
       )}
-      {images.map((image) => {
-        return <ImageCard key={image.id} {...image} />;
-      })}
     </div>
   );
 };

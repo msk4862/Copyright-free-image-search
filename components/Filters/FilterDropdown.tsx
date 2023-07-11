@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { Dropdown } from '../Dropdown';
 import { ImagesContext } from '@/context/ImagesContext';
 
-import './Filters.scss';
 import { TFilterKeys, TServices } from '@/utils/types';
 
 type FilterDropdownProps<T extends string> = {

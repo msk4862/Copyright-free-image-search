@@ -4,6 +4,7 @@ import { Pagination } from './Pagination';
 import { ImageList } from './ImageList';
 import { Filters } from '../Filters';
 import { PAGE_NO } from '@/utils/constants';
+import { ImagesContextProvider } from '@/context/ImagesContext';
 
 import './ImageContainer.scss';
 
@@ -18,15 +19,17 @@ export const ImageListEmptyContainer = ({ children }: PropsWithChildren) => {
 type ImageListProps = {
   searchTerm: string;
   showPagination?: boolean;
+  imagesPerPage?: number;
   page?: number;
 };
 
 export const ImageContainer = async ({
   searchTerm,
   showPagination = true,
+  imagesPerPage,
   page = PAGE_NO,
 }: ImageListProps) => {
-  const imagesRes = await fetchImages(searchTerm, page);
+  const imagesRes = await fetchImages(searchTerm, page, imagesPerPage);
 
   if (!imagesRes.status) {
     return (
@@ -37,7 +40,7 @@ export const ImageContainer = async ({
   const { result } = imagesRes;
 
   return (
-    <>
+    <ImagesContextProvider>
       {result.length === 0 && (
         <ImageListEmptyContainer>
           Sorry no result found!
@@ -55,6 +58,6 @@ export const ImageContainer = async ({
           {showPagination && <Pagination page={page} />}
         </>
       )}
-    </>
+    </ImagesContextProvider>
   );
 };

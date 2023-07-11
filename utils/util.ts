@@ -47,10 +47,14 @@ export const dataParser = (
 ) => {
   let parsedImages = images;
 
-  if (sortKey !== 'Default') parsedImages = sortData(parsedImages, sortKey);
+  if (sortKey !== 'Default') {
+    parsedImages = sortData(parsedImages, sortKey);
+  }
 
-  if (Object.keys(filterKeys).length > 0)
-    parsedImages = filterData(parsedImages, filterKeys);
+  if (filterKeys) {
+    if (Object.keys(filterKeys).length > 0)
+      parsedImages = filterData(parsedImages, filterKeys);
+  }
 
   return parsedImages;
 };
