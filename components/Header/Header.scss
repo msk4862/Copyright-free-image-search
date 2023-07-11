@@ -1,0 +1,25 @@
+.header {
+  min-height: 450px;
+  background-image: url('/images/header.jpg');
+}
+
+@media screen and (max-width: 576px) {
+  .header {
+    min-height: 260px;
+    align-items: start;
+
+    img {
+      margin-top: 15px;
+      width: auto;
+      height: 50px;
+    }
+
+    form {
+      width: 100%;
+      margin-top: 0.75rem;
+      input {
+        height: 2rem;
+      }
+    }
+  }
+}

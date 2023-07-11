@@ -1,0 +1,17 @@
+footer {
+  min-height: 150px;
+
+  .social-icon {
+    transition: transform 0.45s cubic-bezier(0.38, 0.81, 0.34, 1.43);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  footer {
+    min-height: 100px;
+  }
+
+  .social-icon {
+    margin: 10px 0;
+  }
+}

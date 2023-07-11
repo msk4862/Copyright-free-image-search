@@ -1,0 +1,48 @@
+$dropdown-bg-color: #000;
+$dropdown-text-color: #fff;
+
+.dropdown {
+  min-width: 150px;
+
+  .Dropdown-control {
+    cursor: pointer;
+    background-color: transparent;
+    color: $dropdown-text-color;
+    border-radius: 1.5rem;
+  }
+
+  .Dropdown-menu {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+
+    .Dropdown-option {
+      background-color: $dropdown-bg-color;
+      color: $dropdown-text-color;
+
+      &.is-selected {
+        border: 1px solid $dropdown-text-color;
+      }
+    }
+  }
+}
+
+/* For mobo screens */
+@media screen and (max-width: 600px) {
+  .dropdown {
+    min-width: 0;
+
+    .Dropdown-control {
+      width: 100px;
+      padding: 5px 20px 5px 5px;
+    }
+
+    .Dropdown-placeholder {
+      margin-right: 0;
+    }
+
+    .Dropdown-arrow {
+      top: 12px;
+    }
+  }
+}
