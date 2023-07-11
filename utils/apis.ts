@@ -20,12 +20,13 @@ export const fetcher = async <TResponse, TRequestBody = unknown>(
     });
 
     if (!res.ok) {
-      throw new Error('API Error');
+      return Promise.reject({ status: false });
     }
 
     return res.json();
   } catch (e) {
-    throw new Error('API Error');
+    console.error('Something went wrong: ', e);
+    return Promise.reject({ status: false });
   }
 };
 
