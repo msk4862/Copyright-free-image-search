@@ -30,7 +30,6 @@ export const Pagination = ({ pageNo, setPageNo }: PaginationProps) => {
       >
         Next
       </button>
-      <div className="absolute right-10">{pageNo} / 11111</div>
     </nav>
   );
 };

@@ -3,6 +3,7 @@ import { PropsWithChildren } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { SearchBar } from '@/components/SearchBar';
+import { capitalize } from '@/utils/util';
 
 type Props = {
   params: { search: string };
@@ -12,7 +13,7 @@ type Props = {
  * Change page metadata for image search page
  */
 export function generateMetadata({ params }: Props): Metadata {
-  const searchTerm = params.search;
+  const searchTerm = capitalize(params.search);
 
   return {
     title: `Collection of Copyright Free Images for ${searchTerm} | Search & Download non-copyright images`,

@@ -1,6 +1,6 @@
 'use client';
 import { usePagination } from '@/hooks';
-import './ImageList.scss';
+import './ImageContainer.scss';
 
 type PaginationProps = {
   page: number;

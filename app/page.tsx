@@ -1,5 +1,5 @@
 import { Header } from '@/components/Header';
-import { ImageList } from '@/components/ImageList';
+import { ImageList } from '@/components/ImageContainer';
 
 export default function HomePage() {
   return (

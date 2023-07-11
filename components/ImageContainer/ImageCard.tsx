@@ -45,25 +45,24 @@ export const ImageCard = ({
 
   return (
     <div
-      className="image-card relative"
+      className="image-card relative overflow-hidden"
       style={{ gridRowEnd: `span ${rowSpan}` }}
     >
       <Link role="button" href={url} target="_blank" rel="noopener noreferrer">
         <Image
           ref={imageRef}
-          className="image block w-full h-auto object-cover z-0"
+          className="image block w-full h-auto object-cover z-0 hover:scale-105"
           onLoad={resizeGridItem}
           src={previewURL}
           placeholder="blur"
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mO8Ww8AAj8BXkQ+xPEAAAAASUVORK5CYII="
           loading="eager"
-          sizes="(min-height: 100px)"
           alt={`${service} image by ${author}`}
-          width={50}
-          height={50}
+          width={80}
+          height={80}
         />
       </Link>
-      <div className="image-card__overlay absolute left-0 right-0 bottom-0 h-0 overflow-hidden z-10">
+      <div className="image-card__overlay absolute left-0 right-0 bottom-0 h-0 overflow-x-hidden z-10 w-full">
         <div className="flex justify-between items-center h-full pl-4 pr-4">
           <span className="cursor-pointer">{author}</span>
           <a

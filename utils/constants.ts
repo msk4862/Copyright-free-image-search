@@ -19,20 +19,17 @@ export const TEXTS = {
 };
 
 export const HOMEPAGE_IMAGE_COUNT = 20;
-export const MAX_IMAGES_PER_PAGE = 25;
+export const MAX_IMAGES_PER_PAGE = 50;
 export const MAX_IMAGES = 150;
 export const PAGE_NO = 1;
 
 export const DEFAULT_SEARCH_TERM = 'india';
 
-export const OWNER_FILTER = {
-  NAME: 'Owner',
-  VALUES: ['Pixabay', 'Unsplash', 'Pexels'],
-};
+export const FILTER_KEYS = Object.freeze({
+  OWNER: 'Owner',
+  ORIENTATION: 'Orientation',
+});
 
-export const ORIENTATION_FILTER = {
-  NAME: 'Orientation',
-  VALUES: ['Landscape', 'Potrait'],
-};
+export const ORIENTATION_FILTER_KEYS = ['Landscape', 'Potrait'] as const;
 
-export const SORT_KEYS = ['Popularity'];
+export const SORT_KEYS = ['Default', 'Popularity'] as const;

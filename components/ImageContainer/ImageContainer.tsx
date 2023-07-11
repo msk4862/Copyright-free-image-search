@@ -1,10 +1,11 @@
 import { PropsWithChildren } from 'react';
 import { fetchImages } from '@/utils/apis';
-import { ImageCard } from './ImageCard';
 import { Pagination } from './Pagination';
+import { ImageList } from './ImageList';
+import { Filters } from '../Filters';
 import { PAGE_NO } from '@/utils/constants';
 
-import './ImageList.scss';
+import './ImageContainer.scss';
 
 export const ImageListEmptyContainer = ({ children }: PropsWithChildren) => {
   return (
@@ -20,7 +21,7 @@ type ImageListProps = {
   page?: number;
 };
 
-export const ImageList = async ({
+export const ImageContainer = async ({
   searchTerm,
   showPagination = true,
   page = PAGE_NO,
@@ -46,12 +47,11 @@ export const ImageList = async ({
       )}
       {result.length > 0 && (
         <>
-          <div className="image-list mt-2 grid p-5">
-            {result.map((image) => {
-              return <ImageCard key={image.id} {...image} />;
-            })}
-          </div>
-
+          {showPagination && <Filters />}
+          <ImageList
+            images={result}
+            imageProviders={imagesRes.successfulServices}
+          />
           {showPagination && <Pagination page={page} />}
         </>
       )}
