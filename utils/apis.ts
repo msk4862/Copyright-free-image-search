@@ -17,7 +17,6 @@ export const fetcher = async <TResponse, TRequestBody = unknown>(
       method,
       headers: headers && headers,
       body: body && JSON.stringify(body),
-      cache: 'no-store',
     });
 
     if (!res.ok) {
@@ -37,9 +36,7 @@ export const fetchImages = (
   images_per_page: number = MAX_IMAGES_PER_PAGE
 ) => {
   return fetcher<GetImageRouteResponse>(
-    createUrl(
-      `api/images/${searchTerm}?images_per_page=${images_per_page}&page=${page}`
-    ),
+    `/api/images/${searchTerm}?images_per_page=${images_per_page}&page=${page}`,
     'GET'
   );
 };

@@ -29,11 +29,7 @@ export const Filters = () => {
           filterName={FILTER_KEYS.ORIENTATION}
           options={ORIENTATION_FILTER_KEYS}
         />
-        <button
-          className="rounded-3xl md:border border-white text-white flex gap-1 md:px-3 md:py-2 items-center"
-          onClick={clearFilters}
-        >
-          <XCircle />
+        <button className="text-white mr-2" onClick={clearFilters}>
           <span className="hidden md:block">Clear</span>
         </button>
       </div>

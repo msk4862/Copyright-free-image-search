@@ -58,8 +58,9 @@ export const ImageCard = ({
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mO8Ww8AAj8BXkQ+xPEAAAAASUVORK5CYII="
           loading="eager"
           alt={`${service} image by ${author}`}
-          width={80}
-          height={80}
+          width={70}
+          height={70}
+          quality={40}
         />
       </Link>
       <div className="image-card__overlay absolute left-0 right-0 bottom-0 h-0 overflow-x-hidden z-10 w-full">
