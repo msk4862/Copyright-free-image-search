@@ -17,7 +17,6 @@ export const fetcher = async <TResponse, TRequestBody = unknown>(
       method,
       headers: headers && headers,
       body: body && JSON.stringify(body),
-      cache: 'no-store',
     });
 
     if (!res.ok) {

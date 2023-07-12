@@ -2,6 +2,7 @@ import { PropsWithChildren } from 'react';
 import { Inter } from 'next/font/google';
 import { Footer } from '@/components/Footer';
 import './globals.scss';
+import { ImagesContextProvider } from '@/context/ImagesContext';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,7 +20,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
         <link rel="icon" href="/images/nextjs_logo.png" type="images/png" />
       </head>
       <body className={inter.className}>
-        {children}
+        <ImagesContextProvider>{children}</ImagesContextProvider>
         <Footer />
       </body>
     </html>

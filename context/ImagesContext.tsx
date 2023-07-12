@@ -11,6 +11,7 @@ import {
 
 type TImageStates = {
   images: Image[];
+  filteredImages: Image[];
   filterKeys: TFilterKeys;
   sortKey: TSortKey;
   totalProviders: TServices[];
@@ -24,6 +25,7 @@ type TImagesContext = TImageStates & {
   clearFilters: () => void;
   setImages: (images: Image[], imageProviders: TServices[]) => void;
   setSortKey: (sortKey: TSortKey) => void;
+  setFilteredImages: (images: Image[]) => void;
 };
 
 type SetFilterAction = {
@@ -48,14 +50,21 @@ type SetImagesAction = {
   payload: { images: Image[]; imageProviders: TServices[] };
 };
 
+type SetFilteredImagesAction = {
+  type: 'SET_FILTERED_IMAGES';
+  images: Image[];
+};
+
 type Action =
   | SetFilterAction
   | ClearFilterAction
   | SetImagesAction
-  | SetSortKeyAction;
+  | SetSortKeyAction
+  | SetFilteredImagesAction;
 
 const initialState: TImageStates = {
   images: [],
+  filteredImages: [],
   filterKeys: {} as TFilterKeys,
   sortKey: 'Default',
   totalProviders: [],
@@ -70,9 +79,18 @@ const imageReducer = (state: TImageStates, action: Action): TImageStates => {
       return {
         ...state,
         images,
+        filteredImages: images,
         totalProviders: imageProviders,
       };
     }
+
+    case 'SET_FILTERED_IMAGES': {
+      return {
+        ...state,
+        filteredImages: action.images,
+      };
+    }
+
     case 'SET_FILTER': {
       const { filterKey, value } = action.payload;
       return {
@@ -121,13 +139,24 @@ export const ImagesContextProvider = ({ children }: PropsWithChildren) => {
     []
   );
 
+  const setFilteredImages = useCallback((images: Image[]) => {
+    dispatch({ type: 'SET_FILTERED_IMAGES', images });
+  }, []);
+
   const setSortKey = useCallback((sortKey: TSortKey) => {
     dispatch({ type: 'SET_SORT_KEY', sortKey });
   }, []);
 
   return (
     <ImagesContext.Provider
-      value={{ ...state, setFilterKey, clearFilters, setImages, setSortKey }}
+      value={{
+        ...state,
+        setFilterKey,
+        clearFilters,
+        setImages,
+        setSortKey,
+        setFilteredImages,
+      }}
     >
       {children}
     </ImagesContext.Provider>
