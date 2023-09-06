@@ -3,8 +3,6 @@
       <br>
       <img src="https://img.shields.io/github/license/msk4862/Copyright-free-image-search?style=flat-square" width="80">
       <img src="https://img.shields.io/github/v/release/msk4862/Copyright-free-image-search?style=flat-square" width="85">
-      </br>
-      <img src="https://forthebadge.com/images/badges/built-with-love.svg" width="180">
 </div>
 
 ## Tools
